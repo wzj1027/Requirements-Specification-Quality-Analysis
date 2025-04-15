@@ -1,0 +1,105 @@
+3. Data Model and Description
+
+3.1 Data objects
+
+Child Data Object
+ ChildID A unique identifier assigned to the child.
+ ParentID The parent's identification number.
+ Name The child’s name.
+ BirthDate The child's birth date.
+ Gender The child’s gender.
+ ClassroomID The classroom that the child has been assigned to.
+ SpecialNeeds Any special needs such as allergies or physical handicaps.
+ Photo A photo of the child.
+ Status Indicates if the child is enrolled or on a waiting list.
+ Comments A teacher's comments about the child's behavior.
+
+
+Parent Data Object
+ ParentID A unique number assigned to the parent.
+ Name The parent’s name.
+ Address The address of the parents.
+ HomePhone The home phone number for the parents.
+ WorkPhone A work phone number for a parent.
+ Email An email address for the parents.
+ EmgName A name to contact in an emergency if the parents cannot be reached.
+ EmgPhone The phone number to call in an emergency if the parents cannot be reached.
+ AuthPickUp The name of someone the parent has authorized to pick up their child.
+
+
+Employee Data Object
+ UserID A unique number assigned to the employee.
+ Password The employee's password used to log on to the computer system.
+ FirstName The employee's first name.
+ LastName The employee's last name.
+ Classification The job classification of the employee. Limited to administrator, teacher, or assistant.
+
+
+Classroom Data Object
+ ClassroomID A unique number for the classroom.
+ Name The name of the classroom.
+ RoomNo The classroom number.
+ PhoneNumber The phone number for the classroom.
+ Teacher The name of the teacher assigned to the classroom.
+ Assistant The name of the teacher assistant assigned to the classroom.
+
+
+Bill Data Object
+ InvoiceID A unique number for an invoice. Invoices are issued each month to every parent.
+ ParentID The identifier number of a parent.
+ AmountDue The amount owed for a particular invoice.
+ AmountPaid The amount that has been paid for a particular invoice.
+ DatePaid The date the invoice was paid.
+
+
+Call Sheet Data Object
+ ChildID The identifier number of a child.
+ Date The date that the information was entered.
+ SignIn The time the child arrived at the Day Care Center.
+ SignOut The time the child left the Day Care Center.
+
+
+Change Data Object
+ UserID The number of the employee changing the record.
+ Time The time of the change.
+ Description A description of the change being made.
+
+
+Immunization Data Object
+ ImmuneID A unique number assigned to the immunization record.
+ ChildID The identifier number of the child that received the immunization.
+ Type A description of the immunization.
+ Date The date that the immunization was received.
+
+
+Registration Data Object
+ ChildID The identifier number of the child.
+ RegisterDate The date that the child registered.
+ EnrollDate The date that the child actually enrolled.
+ WithdrawDate The date that the child withdrew.
+
+
+Reminder Data Object
+ ReminderID A unique identifier for the reminder.
+ EmployeeID The ID number of the employee entering the reminder.
+ Date The date of the reminder.
+ Message The reminder message to be displayed.
+^ TOP
+
+3.2 Relationships
+
+ In order for a parent to have an account with the Child Care Center they must have at least one child. Since a parent can have multiple children a one-to-many relationship exists. It is also true that a parent and child cannot exist alone in the NCCM system. In general all children must have parents and a parent without a child has no need to register for the Day Care Center.
+
+ A parent will receive a new bill each month so a one-to-many relationship exists. Before the first month of enrollment a parent may exist without a bill, however after the first month the two data objects cannot exist alone.
+
+ Each classroom can hold up to twenty children so the twenty-first child will be added to a waiting list. With fewer than 21 children there is no need for a waiting list; however a waiting list must always be associated with a classroom. A one-to-one relationship exists because a classroom will have at most one waiting list and each list can only be used for a single classroom.
+
+ An immunization data object is created for every immunization a child receives. Therefore each child will have many immunizations and a one-to-many relationship exists. A child will not be admitted without an immunization, therefore an immunization and child cannot exist alone.
+
+ An employee may add multiple events to their daily reminder list so a one-to-many relationship exists. Since the employee may not need to be reminded of anything it is possible for an employee to exist without a daily reminder, but a daily reminder must be assigned to a specific employee.
+
+ Each time an employee edits a record it will be recorded in the change data object. Most employees will make multiple changes so there is a one-to-many relationship between employees and change data objects. An employee may not make any changes and can therefore exist alone. However, a change object must be associated with an employee and therefore cannot exist alone.
+
+ An immunization object will be created for a child each time they receive a new immunization, therefore a one-to-many relationship will exist. A new call sheet object will be created every day so it will also be in a one-to-many relationship with the child. The registration data object could also be in a one-to-many relationship because a child could withdraw and then reenroll. Typically there will only be a one-to-one relationship between the child and registration objects, but this is not by design. Neither the immunization, call sheet or registration objects can exist without a child object.
+
+ Each classroom can have up to twenty children so a one-to-many relationship exists between classrooms and children. It is also true that a classroom and child should not exist alone.

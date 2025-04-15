@@ -1,0 +1,555 @@
+2.2. Product Functions
+The system can function in two modes, namely, Normal Interactive Mode and Election Mode. The system 
+will be in Election Mode, for the purpose of vote polling only on the Election Day. Normal  
+Interactive  Mode  is  for  accepting  registrations,  discussions  between  voters  and 
+candidates, campaigns and the system is available in this mode all  the time except Election Days.
+
+2.2.1.   Normal Interactive Mode
+2.2.1.1.             Voter Registration
+That system will be used only  by the people who have been registered to the system. Main actor of 
+the  registration operator is the voter.  The registration operator is approved by the ECAs.
+
+2.2.1.2.             Approve Applicant
+By  using  this  function, ECA  approves  the  application  sent  by  the  voters  in  order to  
+use  the ONEV. The main actor is the ECA.
+
+2.2.1.3.             Update Registered Voters
+ECA  deletes  voters  from  the  system  who  cannot  use  their  vote  officially.  ECA  also  
+updates voter’s information. The main actor is the ECA.
+
+2.2.1.4.             Open Candidate Account
+The EC’s profile must be created by the ECA. This functionality helps to perform this action. The 
+ECA is the main actor of this functionality.
+
+2.2.1.5.             Login/Logout
+All of the system users login to system by their user ids and passwords. All of the users are the 
+main actor of this use case.
+
+2.2.1.6.              Account Update
+By using this function the EC may change his password that enters the system. The main actor of 
+this use case is the EC.
+
+2.2.1.7.             View EC Information
+This function allows the voters to reach information about the EC such as their CVs, promises etc. 
+Main actor is the voter for this use case.
+
+2.2.1.8.             Ask To Candidate
+By  using  this  functionality  the  voters  can  direct  questions  to  the  ECs  about  their  
+election campaigns. The main actor for this use case is voter.
+
+2.2.1.9.             CV Edit
+This function provides the EC to edit his CV information on his own profile. The EC is the main 
+actor of that functionality.
+
+2.2.1.10.           Add / Edit Promises
+By using that function the EC’s may add or edit  promises to their own profile. The main actor of 
+this use case is the EC.
+
+2.2.1.11.           Read/Answer Questions
+This function provides ECs to read or answer questions about their election campaigns. The main 
+actor is the EC.
+
+2.2.1.12.           View Election Results
+This functionality provides voters to see the current or past years’ election result in a proper 
+way. The main actor is the voter.
+
+2.2.2.   Election Mode
+2.2.2.1.             Open System
+This function provides ESS to start the system during the  Election Day or before.  The  ESS is the 
+main actor of this operation.
+
+2.2.2.2.             Mark Generate Password
+Bu using that function the ESS will generate a password which will be used at voting operation by 
+the voters. Main actor of this operation is the ESS.
+
+2.2.2.3.             Online Vote
+This is the main function of the system that provides online voting for the general public. The 
+main actor is the voter and votes are collected in the DB.
+
+2.2.2.4.             Enter Offline Votes
+By using this function the ESSs enters the offline votes to the system. The main actor of this use 
+case is the ESS.
+
+2.3. Constraints, Assumptions and Dependencies
+The  system  enables  voters  to  poll  their  vote  from  any  election  centers  that  the  
+system  is installed in. In Turkey, the voting operation is executed nearly in 150,000 ballot 
+boxes. This means that the system will work on these boxes at the same time.
+Security and safety are the most crucial fundamentals of  the ONEV system. The system has 
+zero-tolerance  with  regard  compromising.  The  system  should  not  allow  ESS  to  download 
+votes to infer how voters in their regions have voted. The system should provide means for 
+protecting and securing recounts of ballots cast in election.
+For  the  proper  working  of  the  system  we  can  list  our  assumptions  and  dependencies  as 
+follows.
+•    Working internet connection
+•    A   web   server   should   have   Java   installed   on   the   machine,   along   with   
+Java’s cryptographic packages.
+•    The election server runs on a http server, that is ”jsp” enabled.
+•    A  web  browser  through  which  the  voters  access  the  server  should  have  minimal 
+support for cookies and encrypted transactions.
+
+
+3.2. Functional Requirements
+
+3.2.1.   Normal Interactive Mode
+This  is  a  normal mode  –before  and after  Election Day  - a  user interacts  with the  system.  
+It involves registration for voting, updating profile, viewing election candidates (EC) as well as 
+sending  them  questions.  It  also  includes  functions  for  the  Election  Commission  Authority 
+(ECA)  to  register  EC  and  approve  registered  voters.  The  following  use-cases  describe  
+the functional requirements.
+
+3.2.1.1.             Voter Registration
+
+Use case name: VoterRegistration
+ID: 1
+Priority: High
+
+Primary actor: Voter
+Stakeholders and interests:
+Voter – wants to register to system.
+Use case type: Detail, essential
+
+Brief description: In order to use the system the voters must register to system. This explains the 
+registration process.
+Precondition: None
+Trigger: None Relationships: Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.   Voter enters the system homepage.
+2.   He clicks the “register now” button.
+3.   The system prompts the application form.
+4.   He fills in the necessary information related with him in the application form.
+5.   He uploads a picture for Voter Identity Card (VID).
+6.   He sends the request for registration by using “send” button.
+a.   If the information is correctly entered the system prints a successful message.
+b.   Otherwise, it prints appropriate error message, redisplays the application form.
+
+3.2.1.2.             Approve Application
+
+Use case name: ApproveApplicant
+ID: 2
+Priority: High
+
+Primary actor: ECA Stakeholders and Interests :
+Voters - Wants ECA to approve their application Form
+Use case type: Detail, essential
+ECA - Wants to approve the Voters by checking Applicaitons Form
+
+Brief  description:  This  describe  how  ECA  will  approve  the  application  form  of  voter  
+and generate the new account to that voter
+Precondition: The voter should have filled his application form
+Trigger: Relationships: Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.   ECA selects the online voter application form from list
+2.   ECA checks the information of the applicant
+a.   If the the given information is correct
+i.   ECA approves the form by pressing “Approve” buton
+ii.   ECA generates the new online account to this new voter
+iii.   ECA prepares the VIC and generates password
+iv.   ECA sends VIC and password to adress of voter
+b.   if the given information is not correct
+i.   ECA will inform voter about misinformation via postal mail
+
+3.2.1.3.             Update Registered Voters
+
+Use case name: UpdateVoters
+ID: 3
+Priority: High
+
+Primary actor: ECA Stakeholders and Interests :
+ECA : Wants to update all voters according to their state
+Use case type: Detail, essential
+
+
+Brief description: This describe how ECA updates online voters
+
+Precondition: Trigger: Relationships:
+Association:
+Include: Extend:
+
+Normal flow of events:
+1.   ECA selects on “Update Voters” from menu and displays that page
+2.   ECA click on “Update Now” button
+3.   The system checks online voters with respect to upcoming election’s voters list
+a.   If the voter exists in the list, the system updates the voter with respect to official the 
+voter information.
+b.   If  the  voter  does  not  exist  in  the  list,  the  system  deletes  that  voter  from 
+database.
+
+3.2.1.4.             Open Candidate Account
+
+Use case name: OpenCandidateAccount
+ID: 4
+Priority: High
+
+Primary actor: ECA Stakeholders and Interests :
+EC, ECA -  ECA generates new accounts to EC’s
+Use case type: Detail, essential
+
+
+Brief description: This describes how ECA will generate all election candidates’ new accounts.
+
+Precondition: Trigger: Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.   ECA selects on “Create Candidate Accounts” from menu
+2.   System  displays Create Candidate Accounts page
+3.   ECA opens a new form for every official Candidate
+4.   ECA fills the form according to candidate’s information
+5.   ECA presses on “Generate password” button
+6.   System creates an account and password for that candidate
+7.   ECA presses on “Print” button and the system prints that document
+8.   ECA finishes the task by pressing on “Finish” button
+9.   ECA sends candidate’s user information via postal mail.
+
+3.2.1.5.             Log In / Log out
+
+Use case name: Login/Logout
+ID: 5
+Priority: High
+
+Primary actor: User
+Stakeholders and interests:
+Voter – Wants to log into the system ECA – Wants to log into the system ECC – Wants to log into the 
+system
+Use case type: Detail, essential
+Brief description: This describes how the users log into the system
+
+Precondition: The user opens the login page Trigger: The user enters his id and password 
+Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.       The user enters his login id and password
+A.   If the login and password is valid, a session is opened
+i.       The security is verified
+ii.       The specific page of every user is loaded
+B.   If the login or password is not valid, the login screen is redisplayed with an error message
+2.       The user click on the logout button
+i.       The session is terminated.
+ii.       The login screen is displayed.
+
+3.2.1.6.             Update Account
+
+Use case name: AccountUpdate
+ID: 6
+Priority: Medium
+
+Primary actor: User Stakeholders and Interests:
+Election Candidates – Wants to change password Voter - Wants to change password
+Use case type: Detail, essential
+
+Brief description: This explains how the candidate can change his password.
+
+Precondition: The user should be logged in into the system
+Trigger: The user clicks the “Update Account” button.
+Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+
+1.   In the user profile there is a button labeled “Update Account” he clicks it to update his 
+account.
+-     The system opens a new page to enter old password and the new one.
+2.   The user enters his old password. He then enters his new password
+3.   User clicks the “submit” button.
+-     If the old password was entered incorrectly, the system will print an error message and the 
+form to change password will re-appear.
+-     If the old password was entered correctly the system changes password and prints a success 
+message and redirects to his profile.
+
+3.2.1.7.             View Election Candidate Information
+
+Use case name: ViewECInformation
+ID: 7
+Priority: Medium
+
+Primary actor: Voter
+Stakeholders and interests:
+Use case type: Detail, essential
+Voter – wants to see the candidates’ profiles in his own election region.
+
+Brief description: By using this function the voters can reach information about the candidates’ 
+CVs, promises and answers to asked questions.
+Precondition:  -The voter should be already registered to the system
+-The voter should have logged in to the system
+-Account of the EC should be activated by himself.
+Trigger: Relationships: Association: Include: Extend:
+
+Normal flow of events:
+1.   Voter selects the candidate from candidate list by mouse clicking.
+A.   If the  candidate  has  not  activated his  profile  then there  will  not  be  any  link  to 
+his profile
+B.   If the candidate’s page is activated then voter clicks on the candidate’s profile link and 
+EC’s profile page is displayed
+i.           By clicking the “CV”  link voter can reach the general information about the EC.
+ii.          By clicking the “promises” link voter can view the EC’s election campaign.
+iii.         By  clicking  the  “Questions/Answers”  link  voter  can view  questions/answers and send questions.
+
+3.2.1.8.             Ask Question to A Candidate
+
+Use case name: AskToCandidate
+ID: 8
+Priority: Medium
+
+Primary actor: Voter
+Stakeholders and interests:
+Use case type: Detail, essential
+Voter – wants to direct questions to candidates about their election campaign.
+
+Brief  description:  This  explains  how  the  voters  use  the  system  for  asking  questions  to 
+candidates.
+Precondition:
+Trigger:
+Relationships:
+Association:
+Include:
+Extend: ViewECInformation
+Normal flow of events:
+1.   User clicks on the “Questions/Answers” link
+2.   He writes his question on the text field
+3.   By pressing “Send Question”, user sends his question
+
+3.2.1.9.             CV Edit (Candidate)
+
+Use case name: CVEdit
+ID: 9
+Priority: Medium
+
+Primary actor: Candidate Stakeholders and Interests:
+Use case type: Detail, essential
+
+Election Candidates – Wants to Add or Edit his CV contents.
+
+Brief description: This explains how the candidate can Add contents to or edit his CV. The CV can 
+be seen by voters.
+Precondition: The user should be logged in into the system Trigger: The user clicks the View And 
+Edit CV button or link. Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.    In the user profile there is a button labeled “View And Edit CV” he clicks it to edit his CV.
+-     The system opens a new page that contains the candidate’s CV with data in it if any in edit mode.
+2.   The user edits his CV using the free editing template.
+3.   The user clicks “Save And Return” button to save the changes and return to his profile.
+
+3.2.1.10.           Add /Edit Promises
+
+Use case name: Add/Edit Promises Primary actor: Candidate Stakeholders and Interests:
+ID: 10
+Use case type:
+Priority: Medium
+
+Election Candidates – Wants to Add or Edit his promises, that is, what he promises to do to his 
+people he will lead if they select him.
+
+Brief description: This explains how the candidate can Add or edit his promises.
+Precondition: The user should be logged in into the system
+
+Trigger: The user clicks the Add or edit promises button or link.
+Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.    In the user profile there is a button labeled “Add Or Edit Promises” he clicks it to add or edit his promises.
+-     The system opens a new page that contains the candidate’s promises with data in it if any in edit mode.
+2.   The user adds or edits his promises using the free editing template.
+3.   The user clicks “Save And Return” button to save the changes and return to his profile.
+
+3.2.1.11.           Read / Answer Questions
+
+Use case name: Read/Answer Questions
+Primary actor: Candidate Stakeholders and Interests:
+ID: 11
+Use case type:
+Priority: Medium
+
+Election  Candidates  –  Wants  to  Read  and/or  answer  questions  from  the  voters  before  the 
+election.
+
+Brief  description:  This  explains  how  the  candidate  can  read  and/or  write  answers  to  
+the questions asked by the voter-to-be.
+Precondition: The user should be logged in into the system
+
+Trigger: The user clicks the Read and/or Answer questions button or link.
+Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+
+1.    In  the  user  profile  there  is  a  button  labeled  “Questions”  he  clicks  it  to  read  and/or answer the questions.
+-     The system opens a new page that contains the questions from the voters
+-     If there are questions the candidate clicks on the question to read and answer it on the provided answer text box.
+-     User can choose to return to his profile.
+2.   The user reads and/or answers questions if any.
+3.   The user clicks ”Reply and send” to save and send anwers of the questions.
+4.    The system takes the user to the questions page
+5.   User clicks on “Return” button to return to his profile
+
+3.2.1.12.           View Election Results
+
+Use case name: ViewElectionResults
+ID: 12
+Priority: Medium
+
+Primary actor: Voter
+Stakeholders and interests:
+Use case type: Detail, essential
+General public (Voters, ECs, ESS, etc.) – wants to see the election results.
+
+Brief  description:  This  describes  the  process  of  how  the  voters  view  the  election  
+results  by using the system.
+Precondition: Trigger:
+Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.   He clicks on the election results link.
+2.   He chooses Election/Region/Political Party and presses click on button “show results”
+3.   The system displays the required information according to the selected choices.
+
+3.2.2.   Election Mode
+
+3.2.2.1.             Open System
+
+Use case name: OpenSystem
+ID: 13
+Priority: High
+
+Primary actor: User
+Stakeholders and interests:
+Use case type: Detail, essential
+Election Station Supervisor – Wants to initiate the system
+
+Brief description: This use case describes how the supervisor starts the system/systems of the 
+station of his responsibility
+Precondition: The user turns on the system/systems
+Trigger: The user enters his/her TCK, supervisorID and password
+Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+The user enters his/her TCK, supervisorID and password
+A.   If the TCK, supervisorID and password is valid, a session is opened
+I.       The security is verified
+II.       The voting page is loaded
+B.   If  the  TCK,  supervisorID  and   password  is   not   valid,  the   login   screen  is 
+redisplayed with an error message
+
+3.2.2.2.             Mark Voted and Generate Password
+
+Use case name: MarkGeneratePassword
+ID: 14
+Priority: High
+
+Primary actor: User
+Stakeholders and interests:
+Use case type: Detail, essential
+Election  Station  Supervisor  –  Wants  to  generate  a  password  for  a  voter  and  check  and  
+mark him/her as “Has Voted”
+
+Brief description: This describes how ESS checks voter’s voting condition and mark him/her as “Has 
+Voted” and if voter wants to use the online system generate a password for the voter to be used in 
+voting.
+Precondition: The ESS opened the system Trigger: The user enters voter’s TCK Relationships:
+Association:
+Include: Extend:
+
+Normal flow of events:
+1.       A screen displays asking for the user to enter voter’s TCK
+2.       User Enters voter’s TCK
+A.   If the voter with specified TCK has not voted yet
+A.   The menu is appears with “online vote” and “offline vote” buttons
+a.   If  user  presses  to  “online  vote”,  the  password  is  generated  and printed
+b.    If  user  presses  to  “offline  vote”,  the  voter  marked  as  “  Offline Voted” by the 
+system
+B.   If the voter with specified TCK has voted or wrong TCK entered
+I.        The login screen is redisplayed with appropriate error message
+
+3.2.2.3.             Vote Online
+
+Use case name: VoteOnline
+ID: 15
+Priority: High
+
+Primary actor: Voter
+Stakeholders and interests:
+Voter – wants to use his vote by using system.
+Use case type: Detail, essential
+
+Brief description: This explains voting process by using the system.
+
+Precondition: Trigger: Relationships:
+Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.   Voter gets a hash password from the ESS.
+2.   Voter fills the Voter Identification Number (VIN), password and hash password areas.
+3.   Voter press “log in” button.
+A.   If  the  login  operation  is  not  verified  the  system  prompts  an  error  message  and 
+returns to login page.
+B.   If login operation is verified
+i.           The system will prompt the list of parties/candidates.
+ii.          Voter chooses one of the parties/candidates from list.
+iii.         He presses the “vote” button for voting process.
+iv.         If the operation is successful, voter marked as “ Online Voted” by the system
+v.          System automatically returns to the log in page
+
+3.2.2.4.             Enter Offline Votes
+
+Use case name: EnterOfflineVotes
+ID: 16
+Priority: High
+
+Primary actor: Election Station Supervisor
+Stakeholders and interests:
+Use case type: Detail, essential
+Election Station Supervisor – Wants to enter offline vote results to the system
+
+Brief description: This describes how ESS enters offline vote results to the system immediately 
+after the voting period.
+Precondition: The ESS opened the system
+Trigger: Relationships: Association:
+Include:
+Extend:
+
+Normal flow of events:
+1.       A screen displays asking for the user to enter supervisorID and password
+2.       Supervisor enters supervisorID and password
+A.   If the TCK, supervisorID and password is not valid, the login screen is redisplayed with an 
+error message
+B.   If the TCK, supervisorID and password are valid,
+a.   The secuity is verified
+b.   The  screen  displaying  every  Political  Party/  Candidate  and  their input fields is 
+opened
+c.    The ESS fills every PP / EC fields with the number of votes each PP
+/ EC got and presses button “Enter Votes”
+d.   The system compares the number of votes ESS entered with the number of votes marked as 
+“Offline Voted” for that station.
+i.   If  equality  holds  the  system  stores  given  values  to  the system and the main page is 
+displayed.
+ii.   If  equality  does  not  match,  the  screen  displaying  every Political    Party/    
+Candidate    and    their    input    fields    is reopened with en error message.

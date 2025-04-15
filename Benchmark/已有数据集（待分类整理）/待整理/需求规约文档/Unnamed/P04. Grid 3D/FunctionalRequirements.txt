@@ -1,0 +1,18 @@
+The product shall plot the data points in a scientifically correct manner.
+The grid axis should be labelled correctly according to the input from the data file.
+Data points should be coloured in accordance to the cluster number (contained in the data file)
+The product should be able to handle up to 2000 data points.
+A single click of the mouse over a data point should bring up the name of the data point.
+A double-click of the mouse over the data point should cause the application to display all
+the data point's details.
+The product should allow multiple points to clicked so that multiple names can be displayed.
+The product should allow the grid to be oriented by the user. Rotation, zoom and move
+functions should be employed.
+
+The use of the Grid 3D application involves the user supplying a data file. This data file contains all
+the information of the points that are to be plotted.
+The data file should contain:
+A name for the data point,
+3 parameters from which the data point is to be plotted,
+A single parameter to designate the colour of the point,
+A description for the data point.

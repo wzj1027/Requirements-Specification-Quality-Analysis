@@ -1,0 +1,118 @@
+Documents are of types: Catalogue, RFQ (Request for Quotation), Quotation, Purchase Order, Variants, PO Response, Fulfilment Notification, Receipt Advice, Rectification Advice, Invoice, Self Billed Invoice, Credit Note, Credit Note, Remittance Advice, Statement.
+
+Catalogue is sent from the Seller to the Buyer to provide Item price and other information for use in locally held Catalogues.
+
+RFQ (Request for Quotation) is a request from the Buyer to the Seller to quote terms and conditions under which the Seller is willing to supply specific goods or services.
+
+Quotation is sent from sent from Seller to Buyer to: 
+set out the terms and conditions under which the Seller is willing or able to supply goods or services; or 
+in the case of “punch out” (where the Buyer orders on the Seller’s web site), to provide information for the Buyer’s internal processes. 
+
+Purchase Order is sent by the Buyer to tell the Seller that the sender wishes to purchase goods and/or services.  It is a promise to buy. 
+
+Variants may support revision or cancellation of the Purchase Order either in content (Items ordered or quantity of Items) and/or in terms of fulfilment (changed delivery details, required by date etc).
+
+PO Response is sent by the Seller to inform the Buyer of the sender’s intention to supply goods or perform services in response to a Purchase Order.  It acknowledges that the Purchase Order has been received and that it will be fulfilled in total, in part or not at all.  It may also give additional information about specific delivery. 
+
+Fulfilment Notification is sent by the Seller to tell the Buyer that goods have been despatched or delivered or that a service has been performed.  The Seller may use this Document to notify the Buyer of shipping details via a third party carrier and to notify partial or complete delivery of a Purchase Order.
+
+Receipt Advice is sent by the Buyer to the Seller to acknowledge receipt in full or in part and to describe discovered variances e.g. un-notified under-delivery, over-delivery, wrong Items delivered or damaged goods.
+
+Rectification Advice is sent from the Seller to the Buyer to tell the Buyer of action to be taken regarding the goods or services at variance from the actual requirement e.g. the Seller may ask the Buyer to return the goods, await collection of the goods (by the Seller or his carrier) or destroy the goods.
+
+Invoice is sent from the Seller to the Buyer to request payment for goods delivered or services performed. 
+
+Invoice is a Value Added Tax (VAT) Document.
+
+Self Billed Invoice is an Invoice sent from the Buyer to the Seller where the two have a self billing arrangement.
+
+Credit Note is sent from the Seller to the Buyer, confirming that the Seller owes money to the Buyer.  It may be used to rectify errors and/or variances in the invoicing process.  
+
+Credit Note is a VAT Document.
+
+Debit Note is sent from the Buyer to the Seller, stating that Buyer has deducted amounts from a Seller’s Invoice.  A Debit Note precludes the need for a Seller to raise a Credit Note. 
+
+Debit Note is a VAT Document.
+
+Remittance Advice is sent from the Buyer to the Seller, notifying payment and stating what Invoices, Credit and Debit Notes have been accounted for.
+
+Statement is sent from the Seller to the Buyer summarising the status of the Buyer’s account and the Invoices, Remittances, Debit and Credit Notes submitted within a specific time period.
+
+A Party is any person, organisation or computer system that sends or receives goods, services or information.
+
+A role is a job done by a particular Party.  One Party may play a number of roles in a Document. 
+
+Every Document has a sender and receiver, one of which is a Buyer role, the other a Seller role.  The Party types, roles names and Documents sent and received are shown in Table 2.
+
+Buyer roles include: Purchasing Manager, Originator, Order Point, Delivery Point, Accounts Payable.
+
+Purchasing Manager is responsible for the arrangement and maintenance of trading agreements with suppliers, including Catalogue data. The Purchasing Manager is not involved in other transactions; if the Purchasing Manager requests or makes a purchase, that individual adopts the role of Originator or Order Point respectively.
+
+Originator also known as requisitioner, has the original demand for each Item of goods and/or services.  If Originator subsequently places a Purchase Order, the Originator adopts the role of Order Point.
+
+Order Point raises Purchase Order. Purchase Card (credit or debit card) information may be associated with the Order Point.
+
+Delivery Point also known as goods inwards, is where the goods or services are delivered and variances in receipt are identified.
+
+Accounts Payable also known as accounts payable, is responsible for Invoice processing and payment and, in some circumstances, the issuing of Self Billed Invoices.
+
+Seller roles include: Sales Point, Despatch Point, Customer Service, Accounts Receivable.
+
+Sales Point is responsible for all communication with the Buyer up to and including the acceptance of a Purchase Order.
+
+Despatch Point is responsible for the despatch, delivery and shipping of goods and the performance of services. 
+
+Customer Service is responsible for resolving issues arising from Purchase Order fulfilment.
+
+Accounts Receivable is responsible for invoicing and credit control.  It may include Electronic Funds Transfer (EFT) information i.e. bank details.
+
+Carrier is Third Party role that is assigned by the Seller or the Buyer to deliver or return goods.  
+
+
+A Party is any person, organisation or computer system that sends or receives information, goods or services. 
+
+A role is a job done by a particular Party.  One Party may play a number of roles in a Document. 
+
+Document is the main container for information sent from a sender to a recipient.  All Documents have two or more Parties and one or more Lines. A single Line contains information about one Item.  
+
+Each Document is identified with a Document identifier, date and status e.g. original, copy or test and includes details of the sender and intended recipient as well as metadata (information about the Document itself).  
+
+Linkage at the Line level between Documents allows a many-to-many relationship between Documents such as Purchase Order and Invoice. 
+
+Each Document contains one or more Lines.  Each Line relates to a single type of Item. 
+
+Catalogue is sent by the Sales Point (Seller) to the Purchasing Manager (Buyer) to provide Item price and other information for use in locally held Catalogues.
+
+Each Catalogue Line references a single priced Item, which may be associated with a quantity range and date interval. 
+
+RFQ is sent by the Originator (Buyer) to the Sales Point (Seller) to request the Seller to supply terms and conditions under which the it is willing to supply goods or services.
+
+Each Line specifies a Line Quantity and references a single Item.
+
+Quotation is sent by the Sales Point (Seller) to Originator (Buyer) to inform the Buyer of the terms and conditions under which the Seller is willing or able to supply goods or services. 
+
+Quotation is also used as the response Document from the Sales Point (Seller) when the Originator (Buyer) has purchased directly from the Seller’s web site (also known as ‘punch out’).
+
+Each Quotation Line references a single priced Item, a quantity, Line value and Delivery Point.  It may also reference a corresponding RFQ.
+
+Purchase Order is sent by the Order Point (Buyer) to inform the Sales Point (Seller) that the Buyer wishes to purchase goods or services.  It is a promise to buy. Variants may support cancellation or revision of the Purchase Order either in content (Items ordered or quantity of Items) and/or in terms of fulfilment (changed delivery details, required by date etc.).
+
+PO (Purchase Order) Response is sent by the Sales Point (Seller) to inform the Order Point (Buyer) of the intention to supply goods or perform services in response to a Purchase Order.  It acknowledges that the Purchase Order has been received and that it will be fulfilled in total, in part or not at all.  
+
+Fulfilment Notification is sent by the Despatch Point (Seller) to inform the Delivery Point (Buyer) that goods have been despatched or delivered or that a service has been performed.  The Seller may use this Document to notify the Buyer of shipping details via a third party carrier and to notify partial or complete delivery of an order.
+
+Receipt Advice is sent by the Delivery Point (Buyer) to Customer Service (Seller) acknowledging receipt in full or in part and describing discovered variances e.g. un-notified under-delivery, over-delivery, wrong Items delivered, damaged goods etc.  
+
+Rectification Advice is sent from Customer Service (Seller) to Delivery Point (Buyer) to inform the Buyer of the action to be taken as regards the goods or services at variance from the actual requirement, such as an error in delivery.  This may be in response to a Receipt Advice that contains variance.  For example, the Seller may instruct the Buyer to return the goods, await collection of the goods (by the Seller or his carrier) or destroy the goods.
+
+Invoice is sent by Accounts Receivable (Seller) to Accounts Payable (Buyer)  to request payment for goods delivered or services performed.
+
+A Self Billed Invoice is sent by Accounts Payable (Buyer) to Accounts Receivable (Seller), obviating the need for an Invoice as described above.
+
+Credit Note is sent by Accounts Receivable (Seller) to Accounts Payable (Buyer), confirming that the Buyer owes money to the Seller.  It may be used to rectify errors and/or variances in the invoicing process.
+
+Credit Note is sent by Accounts Receivable (Seller) to Accounts Payable (Buyer), confirming that the Buyer owes money to the Seller.  It may be used to rectify errors and/or variances in the invoicing process.
+
+Remittance Advice is sent by Accounts Payable (Buyer) to Accounts Receivable (Seller) notifying payment.  It provides the recipient with a reference for payments made i.e. to which Invoice(s) payments relate and which Credit and Debit Note(s) are accounted for.
+
+Statement is sent from Accounts Receivable (Seller) to Accounts Payable (Buyer) summarising the status of the customer account, showing a summary of Invoices, payments, Debit and Credit Notes submitted within a given time period.

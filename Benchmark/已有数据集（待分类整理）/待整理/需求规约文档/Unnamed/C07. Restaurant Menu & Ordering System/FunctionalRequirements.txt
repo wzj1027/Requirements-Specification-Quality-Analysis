@@ -1,0 +1,55 @@
+G01 A server shall host the RMOS and provide system data processing and storage capability.
+G02 A surface computer shall provide a customer with all customer system functionality.
+G03 A tablet shall provide a waiter/supervisor with all waiter/supervisor system functionality (according to access control).
+G04 A display shall provide a chef with all chef system functionality.
+G05 All system functionality shall be accessible through touch sensitive surface computers, tablets and displays via simple touch gestures.
+G06 A tablet shall be capable of interfacing with a register to facilitate the accurate processing of a payment.
+
+C01 A customer shall be able to engage their menu by double tapping the activated surface computer in their table.
+C02 A customer shall be able to dismiss their menu by double tapping its dismiss option.
+C03 A customer shall be able to create an empty pending order through their engaged menu.
+C04 A customer shall not be able to dismiss their engaged menu while there is a non-empty pending order associated with the engaged menu.
+C05 A customer shall be able to navigate through the available items in their engaged menu.
+C06 A customer shall be able to add an item to a pending order by dragging the item from the engaged menu onto the order.
+C07 A customer shall be able to remove an item from a pending order by dragging the item off the order.
+C08 A customer shall be able to add a special dietary requirement to an order by dragging the requirement from the engaged menu onto the order.
+C09 A customer shall be able to add a wildcard special dietary requirement to an order in the case that their requirement is not represented by the system.
+C10 A customer shall be able to place an order through their engaged menu if it is pending and not empty.
+C11 A customer shall be able to cancel an order through their engaged menu if it is pending and not yet placed.
+C12 A customer shall be able to call for waiter assistance through their engaged menu.
+C13 A customer shall be able to engage bill mode to finalise payment through their engaged menu.
+C14 A customer shall be able to disengage bill mode to cancel the billing process through their engaged menu.
+C15 When in billing mode, a surface computer shall display a representation of a cash payment for the whole table.
+C16 When in billing mode, a surface computer shall display a representation of a bankcard payment for each customer.
+C17 When in billing mode, a surface computer shall display a representation of every meal ordered that may each be dragged into a payment.
+C18 When in billing mode, a surface computer shall display a representation of tip denominations that may be dragged into a payment.
+C19 A customer shall be able to drag a meal into a bankcard payment or a cash payment.
+C20 A customer shall be able to drag a meal out of a bankcard payment or a cash payment.
+C21 A customer shall be able to drag a tip denomination into a bankcard payment or a cash payment.
+C22 A customer shall be able to drag a tip denomination out of a bankcard payment or a cash payment.
+
+W01 A waiter shall be able to log into a tablet using their assigned username and password.
+W02 A waiter shall be able to log out of a tablet.
+W03 A waiter shall be able to activate a surface computer and consequently open its associated account through a tablet.
+W04 A waiter shall be able to deactivate a surface computer and consequently close its associated account through a tablet.
+W05 A waiter who activates a surface computer shall be assigned to the table that contains it.
+W06 A waiter assigned to a table shall be alerted via their wireless tablet when:
+   • An order is placed from that table
+   • An item ordered by that table is rejected by the kitchen
+   • An item ordered by that table is ready to be served
+   • The table has requested waiter assistance
+W07 A tablet shall allow a waiter to accept an order placed by a customer through a surface computer.
+W08 A tablet shall allow a waiter to reject an order placed by a customer through a surface computer.
+W09 A tablet shall allow a waiter to indicate the delivery of an item to its customer.
+W10 A tablet shall allow a waiter to process a payment using cash.
+W11 A tablet shall allow a waiter to process a payment using a bankcard.
+
+K01 A chef shall be able to accept a customer’s order item through a display.
+K02 A chef shall be able to reject a customer’s order item through a display.
+K03 A chef shall be able to indicate that a customer’s order item is ready to be served through a display.
+
+S01 A supervisor shall be able to do everything a waiter can.
+S02 A supervisor shall be able to do everything a chef can.
+S03 A supervisor shall be able to abort/purge a customer’s meal from the active system with no expectation of payment.
+S04 A supervisor shall be able to abort/purge a table's account/meals from the active system with no expectation of payment.
+S05 A supervisor shall be able to issue a refund for one or more items to a customer.

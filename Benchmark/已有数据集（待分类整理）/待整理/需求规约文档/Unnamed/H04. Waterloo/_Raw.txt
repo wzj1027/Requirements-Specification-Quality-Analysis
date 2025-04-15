@@ -1,0 +1,743 @@
+Caller initiates phone call with Callee.
+This use case captures the process of establishing a phone call.
+Administrator requests tests to be conducted on a specific phone. The phone number is passed in as input.
+This use case captures the process of conducting tests on a phone subsystem.
+Administrator requests system status.
+This use case captures the process of checking system status.
+Administrator requests to log in to the System.
+This use case captures the login process to the System.
+Administrator requests to log out of the System.
+This use case captures the logout process of the System.
+Administrator generates account bills at the end of the billing month.
+This use case captures the process of performing end-of-month duties.
+Administrator creates a new user in the system.
+This use case captures the process of creating a new user in the system.
+Administrator requests to create a new billing plan.
+This use case captures the process of creating a new billing plan.
+Administrators requests to cancel an account. The phone number is passed as input.
+This use case captures the process of cancelling an existing account in the system.
+Administrator selects option to enter payment. The phone number is passed as input.
+This use case captures the process of inputting payment information.
+Administrator selects option to suspend a users account. The phone number is passed as input.
+This use case captures the process of suspending an existing account in the system.
+Administrator requests to modify the user information.
+This use case captures the process of modifying information for a user.
+Administrator requests to create an account.
+This use case captures the process of creating an account.
+Administrator requests to modify the account information.
+This use case captures the process of modifying the information for an account.
+Administrator requests to modify a billing plan.
+This use case captures the process of modifying a billing plan.
+Administrator selects option to reactivate an account.  The phone number is passed as input.
+This use case captures the process of reactivating a suspended account in the system.
+Administrator selects option to find the next unused phone number.
+This use case captures the process of obtaining the next unused number in the system.
+Administrator requests to view the test and call log files.
+This use case captures the process of viewing the test and call log files.
+Administrator requests a phone to be reset. The phone number is passed in as input.
+This use case captures the process of resetting a phone.
+Administrator requests to set the maximum number of simultaneous connections.
+This use case captures the process of setting the maximum simultaneous connections.
+Administrator requests to set the automatic test interval.
+This use case captures the process of setting the automatic test interval.
+Timer requests automatic tests to be performed on the system phones.
+This use case captures the process of automatic testing on the system phones.
+Administrator tells the system to create a bill for a specific user for the billing period, and then print it out to send
+This use case captures the process of an administrator generating the bill to be sent to the customer. Bills automatically are generated every month, and when the account gets terminated. This issue bill will be for other circumstances
+Administrator records the payment of a bill that comes from a user of the phone system
+This use case captures the process of an administrator recording a bill payment into the system. This balances the specific users account.
+Administrator displays user information on screen.
+This use case captures the process of an administrator bringing up user information (user information includes voicemail security code)
+Administrator changes specific information about a user (except the phone number).
+This use case captures the process of an administrator going into a specific user record and changing the data.
+Administrator searches for a specific user, or groups of users.
+This use case captures the process of an administrator using search parameters to find the user he or she wants to manipulate on the system.
+Administrator changes the phone number of a user
+This use case captures the process of an administrator changing the extension of a user. This is generated randomly.
+Administrator sets the maximum number of calls allowed at any given time in system.
+This use case captures the process of an administrator setting the maximum number of calls allowed in the system. The system checks if the number of calls has exceeded the maximum when users pick up the phone, so calls that are currently happening will not be cut off.
+Administrator tells the system to change the billing rate for callers
+This use case captures the process of an administrator setting a different billing rate on the system. The rate for executives is always half as much as the rate for regular users.
+Administrator gets list of changes that can be made to the system.
+This use case captures the process of an administrator retrieving the menu options that affect the system as a whole.
+Administrator tells the system to change period that is considered nighttime and daytime.
+This use case captures the process of an administrator setting the hours for nighttime and daytime (for billing purposes).
+Administrator tells the system to change the billing period (how often the bills are sent out)
+This use case captures the process of an administrator setting the period for which bills are issued.
+Administrator tells the system to reset the state of the system
+This use case captures the process of an administrator resetting the state of the system to its original form.
+Administrator displays the status information of all the phones in the system
+This use case captures the process of an administrator displaying on the screen the status of each phone connected to the network. Phones maybe in the disconnected state, or in the ready state, or in an error state.
+Administrator tells the system to test a specific phone in the network, and displays the status of the phone on screen
+This use case captures the process of an administrator testing and displaying on the screen the status of a specific phone connected to the network. This phone maybe in the disconnected state, or in the ready state, or in an error state.
+Administrator tells the system to reset the phone status to available
+This use case captures the process of an administrator resetting the status of a phone to available because something has gone wrong in the system.
+Caller makes a call to another person in the network. The extension number of callee is passed as input into the system by caller.
+This use case captures the process of a caller making a call to a callee till completion.
+Caller places a call through to a user that has blocked the caller
+This use case captures the process of a caller placing a call to another user on the network, that has requested through the administrator that the caller be blocked.
+Caller makes a call to another person in the network. The callee has call waiting service, so callee will hear a ringing noise in the middle of the conversation.
+This use case captures the process of a caller making a call to a callee that is already on the phone.
+Caller makes a call to another person in the network. The callee has call waiting service, but has used up the call waiting service on 1 person already.
+User uses phone to check own voicemail.
+This use case captures the process of a user dialing 1000 in order to check own voicemail when there is 1 message in the voicemail box.
+Caller calls into callee, saves a message for the callee that can be retrieved later
+This use case captures the process of a caller making a call to a callee, and the callee is not available, so a voice message prompt is given.
+Administrator login to the system
+Description of internal behaviors when the administrator logins to the system	
+Administrator logout the system
+Description of internal behaviors when the administrator logouts
+Administrator manage user accounts in the system
+Description of internal behaviors when the administrator manages user account	
+Administrator manages the IP address and Phone mapping for the user account
+Description of internal behaviors when Administrator manages IP and Phone mapping for the user
+Administrator manages hardwares
+Description of internal behaviors when Administrator manages hardwares
+Caller makes a phone call
+User picks up the phone, dials the number and starts a conversation
+Administrator manages bills for the system including generates bills, modify bill and pay bill.
+Description of internal behavior of generating bills for all appropriate users
+Administrator manages the plans.
+Description of internal behavior of managing plan for user including set discount plan and modify plan.
+Subscriber lifts hand set to make a local call.
+This use case details the sequence of actions taken on behalf of the actors and the server to complete a local call.
+Administrator initiates a process to create a user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to create a new user account.
+Administrator initiates process to edit an existing user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to edit an existing user account.
+Administrator initiates process to cancel a user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to cancel a user account.
+Administrator initiates process to create an administrator account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to create another administrator account.
+Administrator initiates process to create a billing plan.
+This use case details the sequence of actions taken on behalf of the administrator and the server to create a billing plan.
+Administrator initiates process to create a new billing plan using an existing plans parameters.
+This use case details the sequence of actions taken on behalf of the administrator and the server to create a new billing plan based on an existing plans parameters.
+Administrator initiates process to set the maximum number of concurrent calls.
+This use case details the sequence of actions taken on behalf of the administrator and the server to set the maximum number of concurrent calls.
+Administrator initiates process to view hardware status.
+This use case details the sequence of actions taken on behalf of the administrator and the server to view the hardware status.
+Administrator initiates process to perform a hardware test.
+This use case details the sequence of actions taken on behalf of the administrator and the server to perform a hardware test.
+Administrator initiates process to enable a device.
+This use case details the sequence of actions taken on behalf of the administrator and the server to enable a device.
+Administrator initiates process to disable a device.
+This use case details the sequence of actions taken on behalf of the administrator and the server to disable a device.
+Administrator initiates process to reset a device.
+This use case details the sequence of actions taken on behalf of the administrator and the server to reset a device.
+Administrator initiates process to view an invoice.
+This use case details the sequence of actions taken on behalf of the administrator and the server to view an invoice.
+Administrator initiates process to generate an invoice.
+This use case details the sequence of actions taken on behalf of the administrator and the server to generate an invoice.
+Administrator initiates process to send invoice to customer.
+This use case details the sequence of actions taken on behalf of the administrator and the server to send a invoice.
+Administrator initiates process to send invoices to all customers.
+This use case details the sequence of actions taken on behalf of the administrator and the server to send invoices to all customers.
+Administrator initiates process for changing a billing plan of a phone.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to change the billing plan of a phone.
+Administrator initiates process for an administrator login operation.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to login.
+Administrator initiates process for registering a paid bill.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to register a paid bill into the system.
+Administrator initiates process for adding a service to a phone.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to add a particular service to a user accounts phone.
+Administrator initiates process for suspending a user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to suspend an account.
+Administrator initiates process for resuming a user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to resume an account.
+Administrator initiates process for adding a phone to a user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to add a phone to an existing user account.
+Administrator initiates process for removing a phone from a user account.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to remove a phone from a user account.
+Administrator initiates process for assigning a billing plan to a phone.
+This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to assign a billing plan to a phone.
+Administrator logs into the System Console. A user name and password are provided.
+This use case captures the process of the administrator logging into the System Console. The administrator will provide a user name and password, and if they are correct, then the system will let the administrator access it.
+The administrator adds a new user account to the system. The user data is an input.
+When a user is added to the system, an administrator must find an unassigned phone number, an available IP address, and associate the phone number with the IP address. 
+The administrator assigns a user a phone number which is mapped to an IP address. This event requires the user, a unique phone number, and a unique IP address.
+The administrator adds an unassigned phone number and an available IP address to a user account, and associates the phone number with the IP address
+Administrator checks that a specific phone number has not been mapped.
+The user requests a specific phone number for their account. The administrator validates that the number is available before mapping it to the IP and user.
+Administrator assigns a user some combination of phone privileges. This event accepts the targeted user and the desired privileges as inputs.
+The administrator can assign a user with some combination of the following privileges  originate calls, receive calls.
+Administrator chooses to suspend users account.
+This use case captures the process of suspending a users account, be it because of a hardware malfunction or a users request
+Administrator chooses to reactivate users account.
+This use case captures the process of reactivating a users account
+The user decides to unsubscribe from the telephone service. The administrator needs to know the users name.
+The administrator dissociates the phone number and IP from the users file. This is done because the user decided to end the service
+The administrator initiates hardware tests. It is to be conducted whenever a user complains about the service.
+The Administrator requests that tests be conducted to ensure that the system is functioning properly.
+The administrator checks that all the hardware is fully functional.
+Periodically, the administrator needs to check that the VoIP system is functioning properly. If errors are detected, the administrator must fix it.
+The load of the system is set. A number for the load is required.
+The administrator sets the number of calls that the system can handle at once. This number changes based on added resources or customer complaints.
+The administrator chooses to search for a specific user. The user name is needed for this event to occur.
+In the main screen of the system console, a search function will be available to the administrator to search for a specific user by first and/or last name. It will filter out the matching user names in a list. It is assumed that the administrator is already logged into the system
+Hardware diagnostic tests will automatically run every x seconds.
+This is a check that the phone is operating normally. If there is a resource leakage, the resource will be released. When the error has been fixed, the phone will be available again.
+Administrator chooses to view user bill.
+This use case captures the process of the administrator viewing a users bill.
+Administrator chooses to record users bill payment.
+This use case captures the process of the administrator recording a bill payment into the system.
+Server generates a monthly bill and sends it to customer.
+This use case captures the process of the server automatically generating a users bill and sending it to the user.
+Administrator wants to print a users bill.
+The administrator needs a bill printed and they system prints one.
+Administrator chooses to register new billing plan.
+This use case captures the process of the administrator creating and registering a new billing plan.
+Administrator chooses to modify billing plan.
+This use case captures the process of the administrator modifying an already existing billing plan.
+Administrator chooses to delete an existing billing plan.
+This use case captures the process of the administrator deleting an existing billing plan.
+Administrator chooses to attach billing plan to user.
+This use case captures the process of the administrator subscribing a billing plan to a user.
+User decides to make a phone call to another user of telephone exchange system.
+This use case captures the process of one user making a phone call to another user.
+User receives a phone call from another user of telephone exchange system.
+This use case captures the process of one user receiving a phone call from another user.
+User ends a phone call by hanging up.
+This use case captures the process of a user ending a phone call by hanging up.
+The administrator wishes to view the systems other administrator accounts.
+The administrator opens the Administrators Account module of the system
+The administrator changes his/her login password.
+The administrator can change his/her password. He/She must supply the old password, the new password.
+The administrator adds a new administrator account.
+The administrator can add a new administrator account by providing a new username and password.
+The administrator removes an existing administrator account.
+The administrator can remove the account of an existing administrator.
+The IP phone has been fixed.
+The IP Phone was disabled due to errors. Since it has been fixed, the phone is enabled again and resources are reallocated.
+The physical phone is broken or the software on the phone is erroneous, leading to resource leakage.
+There is a problem with the phone and it is disabled to save resources.
+Administrator wishes to log in.
+The administrator logs into the administration system, gaining access to the rest of the provided functions.  The administrator cannot use the system until they log in.  The administrator enters a username and a password to log in.  Only one administrator can be longed in at a time.
+Administrator wishes to create a new customer account.
+The administrator creates a new customer account.  The administrator first inputs the new customers information into the system.  Then the administrator finds the customers IP address and assigns the correct phone to the customers account.  The administrator finds an unassigned phone number and assigns it to the account, and then assigns the customer a billing plan.  Finally, the administrator initializes the phone and starts the customers service.
+Administrator wishes to find the IP address of a new customers phone.
+The administrator finds the IP address of a new customers phone in order to associated it with the account.
+Administrator wishes to find an unassigned phone number
+The administrator finds an unassigned phone number.  Either the administrator wants to find any unassigned phone number, or he/she wants to check if a requested phone number is free.
+Administrator wishes to assign a phone number to a customers phone, phone number, account ID as input
+The administrator assigns a phone number to a customers account.
+Administrator wishes to assign a billing plan to a customer.
+The administrator assigns an existing billing plan to a customer.  This use case covers both assigning a billing plan to a new customer and changing an existing customers plan.  If the customer is new, then the billing period starts on the day it is assigned.  If the administrator is changing an existing customers plan, then the customer has the option of either starting a new billing period immediately or scheduling the change of plan for when the current plans period ends.
+Administrator wishes to cancel a customers account.
+The administrator cancels the service of a customer.  This use case bypasses the suspension phase of a customers account and proceeds directly to the cancellation.  After cancellation, the accounts phone number and phone/IP address are free for reuse.
+Administrator wishes to suspend a customers service.
+The administrator suspends the service of one of the customers.  After the suspension, the customer cannot make or receive any calls.  The sole exception is that the customer may call the administrator number after suspension.  If an account has been suspended for 30 days, then the account is cancelled and its phone number may be reassigned to a new customer.
+Administrator wishes to resume a suspended customers account.
+The administrator reverses the suspension of a customers service.  The customer may again make and receive calls.
+Administrator wishes to create a new billing plan.
+The administrator creates a new billing plan that he/she can later assign to customers.  Each bill plan consists of two parts  the flat rate and per minute charge.  The flat rate is the base cost of the plan, charged to the user each month.  The per minute charge is the cost of making calls.  The per minute charge may vary over the time of day or day of week.  The billing period for each plan lasts for one month.
+Administrator wishes to create new administrator account.
+The administrator creates accounts for other administrators.  The administrator provides a username and a password.  Another administrator may then log in with that username and password.
+Administrator wishes to edit customers filter lists.
+The administrator edits a customers filter lists.  Each customer has two filter lists  black list, which cause numbers on the list to be blocked; and white list, which allows only the users on the list to call, blocking everyone else.  The administrator may add or remove numbers from either filter list.
+Administrator wishes to turn on a customers filter.
+The administrator turns on either the black list filter or the white list filter.  The filter selection is mutually exclusive; either the black filter is on, the white filter is on, or no filter is on.
+Administrator wishes to turn off all filters on customers phone.
+The administrator turns off the filter on the customers phone.
+Administrator wishes to set system parameters.
+The administrator sets certain system parameters, such as the maximum allowable number of connections.  If the administrator sets the maximum allowable number of collections lower than the current number of connections, then the system will refuse to make new connections but will continue to serve the existing ones.  The administrator will also be able to view system information, such as the current system load.
+Administrator wishes to view customer accounts.
+The administrator can view the account information of all customers, including their billing records.  The information about customers accounts remain in the system regardless of the status of the account (active, suspended or cancelled).
+Administrator wishes to print a bill. Customer ID, billing period as input.
+The administrator prints out a customers billing record for a chosen billing period.  The printed bill is formatted for sending to the customer.
+Administrator wishes to view error messages.
+The administrator views a log of all the error messages.  The error messages all have severity levels, timestamps, and intelligible descriptions.  The most severe errors are displayed first.
+Administrator wishes to log out.
+The administrator logs out of the administration system.  After the log out, the administrator cannot use the system until he/she logs in again.  After the administrator logs out, another administrator may log in.
+Caller wishes to call callee.
+This use case captures the process by which the caller places a call to the callee.  The caller picks up the phone, receives a dial tone, and then proceeds to dial 4 digits to make the call.
+Caller is calling callee.
+This use case captures the process by which a callee receives the callers call.  The receivers phone will ring until the callee picks up the phone.  The caller and callee can then communicate until one of them hangs up (UC21).
+The user places an outgoing call to another user
+This use case captures the process of one user making a call to another user, establishing a connection, and engaging in conversation
+Administrator/User plugs in a VoIP telephone set.
+This use case captures the process of Administrator/User plugging in a phone and the initialization of VoIP telephone service.
+Administrator/User unplugs a VoIP telephone set.
+This use case captures the process of Administrator/User unplugging a phone and the finalization of VoIP telephone service.
+The administrator selects the Disable/Enable Phone option from the Maintenance tab.
+This use case captures the process of the administrator disabling a phone or re-enabling a disabled phone.  Once a phone is disabled, it can no longer be used by or assigned to a user.
+The administrator selects the option to add or edit a user account from the administrative console.
+This use case captures the process of the administrator adding a new user account or editing an existing user account for the VoIP telephone system.  The administrator defines the users name, contact information, billing plan, filter options, phone IP, and phone number [optional].
+The administrator selects the option to cancel a user account from the administrative console.
+This use case captures the process of the administrator canceling a user account from the VoIP telephone system.
+Administrator selects the option to add a new billing plan or edit an existing billing plan from the administrative console.
+This use case captures the process of Administrator adding a new billing plan to or editing an existing billing plan of the VoIP telephone system.  Administrator defines/changes the regular rate, the discount periods during which discount rates apply, and the discount rates for each of the n discount periods defined.
+Administrator selects the option to delete existing billing plans from the administrative console.
+This use case captures the process of Administrator deleting existing billing plans from the VoIP telephone system.  Only inactive billing plans can be deleted.  A billing plan is inactive if it is not associated with any user account.
+The administrator selects a specific test to run on the system.
+The use case provides the general process that the system goes through in order to test various aspects of the system.
+The administrator selects the view option for a specific users bill
+This use case captures the process of viewing/printing one bill of a specific user to the screen of the administrative console.
+The administrator opens the administration application that runs on the administrative console.
+This use case captures the process of the administrator starting up the Administration Console application and logging in as the system administrator.
+The administrator chooses to close the Administration Console application.
+This use case captures the process of the administrator closing the administration console application for the VoIP telephone system.
+The administrator selects to reset the software on a users phone through the administrative console.
+This use case captures the process of the administrator resetting or reinitializing the software that is running on a VoIP phone that is registered within the VoIP network. The purpose of this use case is that a serious error could have occurred on the VoIP phone or the user wishes to reset their phones settings.
+The user changes the maximum number of simultaneous connections that the system can handle.
+This use case captures the process of the administrator attempting to limit the number of simultaneous connections (phone calls, or other client connections) in the VoIP network.
+Administrator selects the option to enter a users bill payment
+This use case captures the process of Administrator adding a new billing plan to or editing an existing billing plan of the VoIP telephone system.  Administrator defines/changes the regular rate, the discount periods during which discount rates apply, and the discount rates for each of the n discount periods defined.
+Super Administrator can add or edit an administrator account
+The Super-admin specifies a username and password for a general admin, which can manipulate user accounts
+Super Administrator can delete an administrator account
+The super-admin deletes an administrator account.
+The administrator selects to suspend or activate a user account.
+This use case captures the process of the administrator suspending a user account or reactivating a previously suspended user account.  Upon reactivating a user account, the administrator defines the phone IP address to be associated with this account.
+The administrator determines the billing period for a specific users account
+This use case captures the process of the Administrator defining the billing interval, as well as billing start date, mapped to a specific user account.
+End of the current billing, when a user account is cancelled or a change in billing period causes the current time to be at or beyond the end of the new billing period.
+This use case captures the process of printing the users bill after billing period has expired, when a user account has been cancelled, or a change in the billing period causes the current time to be at or beyond the end of the new billing period.
+Administrator selects the option to view the call history.
+This use case captures the process of administrator viewing and/or printing the call history of a specific user for a specific period.
+
+Caller picks up phone and dials a number of another employee. The number dialed is passed as input.
+This use case will show the behaviour and scenarios of the system when a caller is trying to make a phone call. This also ties in with voice mail and do not disturb status.
+Caller picks up phone and dials a number to access the server. The number dialed is passed as input.
+This use case will show the behaviour and scenarios of the system when a caller makes a call to the system to work with their voicemail or Do Not Disturb status.
+An administrator wishes to add a new employee account into the system. The employees information is passed as input.
+This use case describes the behaviour of the system when the administrator adds a new employee to the system. 
+An administrator searches for an employee and selects to edit the employee. Employees id is passed as input.
+This use case describes the behaviour of the system when an administrator wants to edit an employees information. The searches an employee by their employee id. 
+An administrator searches for an employee and selects to edit the employees voice mailbox messages. Employees id is passed as input.
+This use case describes the behaviour of the system when an administrator wishes to add edit an employees voice mailbox messages. The administrator can delete messages off an employees voicemail. 
+An administrator searches for an employee and selects to edit the employees do not disturb status. Employees id is passed as input.
+This use case describes the behaviour of the system when an administrator wishes to edit the do not disturb status of the employees phone. 
+An administrator searches for an employee and selects to terminate the employees service. Employees id is passed as input.
+This use case describes the behaviour of the system when an administrator wants to terminate the employees service. 
+An administrator searches for an employee and selects to resume the employees service. Employees id is passed as input.
+This use case describes the behaviour of the system when an administrator wants to resume an existing employees service. The administrator finds the employee by their employee id. 
+An administrator can create a new department. Department name, location, and issue bill date are passed as input
+This use case describes the behaviour of the system when an administrator wants to create a new department. 
+An administrator can edit an existing department. Department name is passed as input
+This use case describes the behaviour of the system when an administrator wants to edit a department. The department name is first searched and then it can be edited, which works similar to UC9.
+An administrator can active or inactive a department. Department name is passed as input.
+This use case describes the behaviour of the system when an administrator wants to delete or undelete a department. The department name is first searched and then it can be deleted or undeleted. Delete changes the status to inactive; undeleted changes to active.
+An administrator can modify department privileges. Department name is passed as input.
+This use case describes the behaviour of the system when an administrator wants to change the departments privileges (voicemail, call display, DND status)
+An administrator can add a billing plan to the system. Billing start and end times and rates are passed as input.
+This use case describes the behaviour of the system when an administrator wishes to add a bill plan to the system. 
+An administrator wishes to edit an existing billing plan. Billing plan information is passed as input.
+This use case describes the behaviour of the system when an administrator wishes to edit existing billing plan. The administrator can change the name, times, and rates of the billing plan. Actions similar to UC 13.
+An administrator wishes to delete or undelete an existing billing plan. Department is passed in as input.
+This use case describes the behaviour of the system when an administrator wishes to delete or undelete a billing plan for a department. When deleting a plan, it will change the plans status to active and vise versa. An inactive plan cannot be used.
+Issuing a bill when the departments issue bill date matches with the current date.
+This use case describes the behaviour of the system when a bill needs to be issued for a department.
+An administrator can check the departments billing history. Department name is passed as input.
+This use case describes the behaviour of an administrator checking the billing history of a department. It will show whether a department has paid a bill for a particular month.
+An administrator can record that a department has paid a bill. Department name is passed as input.
+This use case describes the behaviour of an administrator recording a bill paid by a department. 
+An administrator can retrieve all available extension numbers and IP addresses.
+This use case describes the behaviour of an administrator looks up all available ext numbers and IP addresses. 
+An administrator can change the load balance.
+This use case describes the behaviour of an administrator changing the number of calls the system can handle. 
+An administrator can the voice mailbox capacity
+This use case describes the behaviour of an administrator changing the maximum number of messages allowed on any employees voice mailbox. 
+The system will test each IP address that is currently assigned to an employee
+This use case describes the behaviour of the system testing if the IP addresses are working properly. If there is an error, it will print to the system console.
+An administrator can manually test an IP address. Extension number is passed as input.
+This use case describes the behaviour of an administrator manually checking an IP address. The administrator will enter extension numbers to test the IP address. 
+The administrator wants to modify the auto HW test plan.
+This use case describes the behavior of the system when an administrator modifies the auto hw test plan. The plan is based on time and date. 
+The administrator wants to reset the phones status
+This use case describes the behavior of the system when an administrator wants to reset a phones status. 
+The administrator wants to change the auto message time. Amount of days are passed as input
+This use case describes the behavior of the system when an administrator wants to change the automatic time a message is deleted. 
+The administrator wants to view an admins history of actions. Administrator name is passed in as input.
+This use case describes the behavior of the system when an administrator wants to change the automatic time a message is deleted. 
+A Caller wishes to make a phone call to another phone user (Callee).  The phone number is passed as an input
+This use cases captures the process of making a successful phone connection from a Caller to a Callee. The connection is initiated by the Caller
+Administrator wishes to retrieve a users account information.
+This use case captures the process of logging into the system console
+Administrator wishes to retrieve account information.  The search criteria (ie. Account number) is passed as the input.
+This use case captures the process of retrieving and viewing the account information linked to a specified search criteria.
+Administrator wishes to modify a customers account information.  The account number is passed as the input.
+This use case captures the process of editing a customers account information on the system console
+Administrator wishes to suspend a users account.  The account number is passed as the input.
+This use case captures the process of an administrator suspending a users account on the system console.
+Administrator wishes to delete a users account.  The account number is passed as the input.
+This use case captures the process of an administrator deleting a users account on the system console.  The account is deleted permanently
+Administrator wishes to add a new user account.
+This use case captures the process of adding a new user account.  An unused phone number is assigned to a valid IP address.
+Administrator wishes to alter an existing billing plan.
+This use case captures the process of changing an existing billing plan.  The administrator can choose from a list of existing billing plans.  All accounts linked to the changed billing plan are updated.
+Administrator wishes to add a new billing plan.
+This use case captures the process of an administrator adding a new billing plan on the system console.
+Administrator wishes to cancel a user account. The user account number is passed as input.
+This use case captures the process of canceling a user account given by the specified account number.  The administrator must first logon to the system console with a user id and password.
+Administrator wishes to enter a users bill payment.
+This use case captures the process of the administrator entering a users bill payment.  The administrator must first logon to the system console with a user id and password.
+Administrator wishes to change the system configurations.
+This use case captures the procedure for the administrator to change the maximum number of concurrent calls and the hardware fault duration time.
+Administrator chooses to view hardware status and run a connectivity test.
+This use case captures the process the administration running a connectivity test to verify that the users phone is connected to the system.
+Caller places a voice call
+Description of system's internal behaviour when user attempts to place a voice call by picking up their telephone receiver and dialing the extension of the destination party. Scenario includes initiating a voice call, participating in a voice call, and ending a voice call
+Callee receives a voice call
+Description of system's internal behaviour and interaction with the user when user receives a voice call by picking up their telephone receiver while another party is requesting voice communication. Scenario includes receiving a voice call, participating in a voice call, and ending a voice call
+Caller leaves voice message in callee's mailbox
+Description of system's internal behaviour and interaction with the caller when the a caller's call request is forwarded to the voice mail system
+User wishes to hear / delete voice messages
+Description of system's internal behaviour and interaction with the user when the user dials the voice mail extension with the purpose of checking their voice messages
+User wishes to change the greeting played to callers who are forwarded to the user's voice mail
+Description of system's internal behaviour and interaction with the user when user logs in to the voice mail system and changes their greeting
+User wishes to change their voice mail password
+Description of system's internal behaviour and interaction with the user when user logs in to the voice mail system and changes their password
+User wishes to forward their end of the conversation to a different person on the network or to a different terminal
+Description of system's internal behaviour and interaction with the user when either the caller or the callee forwards their end of a voice conversation to another location
+Administrator logs in to perform administrative functions
+Description of system's internal behaviour and interaction with the administrator when the administrator logs in to perform administrative functions on the system
+Administrator logs out when they are finished using administrative functions
+Description of system's internal behaviour and interaction with the administrator when the administrator logs out after performing administrative functions on the system
+Administrator checks whether an extension is free
+Description of system's internal behaviour and interaction with the administrator when the administrator checks whether an extension is free in order to add a new user to the system
+Administrator adds a new user account to the system
+Description of system's internal behaviour and interaction with the administrator when the administrator adds a new account to the system
+Administrator removes user account from the system
+Description of system's internal behaviour and interaction with the administrator when the administrator removes a user account from the system
+Administrator modifies attributes associated with an account
+Description of system's internal behaviour and interaction with the administrator when the administrator modifies an account's attributes
+Administrator initializes a user account so that user can use services
+Description of system's internal behaviour and interaction with the administrator when the administrator initializes an account
+Administrator prints bill associated with an account
+Description of system's internal behaviour and interaction with the administrator when the administrator prints the bill for an account for a specified time period
+Administrator records bill payment after receiving payment from a user
+Description of system's internal behaviour and interaction with the administrator when the administrator records payment of a bill by a user
+Administrator views outstanding bill associated with account identifier
+Description of system's internal behaviour and interaction with the administrator when the administrator wishes to view the outstanding bill associated with an account identifier
+Administrator views account usage statistics for a given time period and account identifier
+Description of system's internal behaviour and interaction with the administrator when the administrator wishes to view account usage statistics for a given time period and account identifier
+Administrator suspends user's telephone service due to an event such as an unpaid bill
+Description of system's internal behaviour and interaction with the administrator when the administrator suspends a user's telephone service
+Administrator resumes telephone service following an event such as user paying an overdue bill
+Description of system's internal behaviour and interaction with the administrator when the administrator resumes a suspended account
+Administrator sets an upper limit on the number of active voice calls in the system
+Description of system's internal behaviour and interaction with the administrator when the administrator sets a limit on the number of active voice calls in the system
+Administrator adds a new billing plan to the system to which users may subscribe
+Description of system's internal behaviour and interaction with the administrator when the administrator adds a new billing plan to the system
+Administrator removes a billing plan from the system
+Description of system's internal behaviour and interaction with the administrator when the administrator removes a billing plan from the system
+Administrator adds a new phone to the system
+Description of system's internal behaviour and interaction with the administrator when the administrator adds a new phone to the system
+Administrator removes a phone from the system
+Description of system's internal behaviour and interaction with the administrator when the administrator removes a phone from the system
+Administrator or System Timer requests tests be run on hardware
+Description of system's internal behaviour and interaction with the administrator when the administrator requests hardware tests be run on a set of phones
+Administrator views results from a previously-run hardware test
+Description of system's internal behaviour and interaction with the administrator when the administrator wishes to view the results of a hardware test
+Administrator resets a call process
+Description of system's internal behaviour and interaction with the administrator when the administrator resets a call process by resetting a phone to its base state
+Administrator performs create, retrieve, update, and cancel actions on various user accounts.
+This use case utilizes various sub-use cases to demonstrate the administrative activities done on users.
+An administrator performs add, remove, enable, disable, test, and reset on new and existing devices.
+This use case captures the process of the administrator adding a new phone to the system using the system console. It also captures the process of the administrator removing, enabling, disabling, test, and resetting an existing phone in the system.
+An administrator updates the billing plan for a department or registers a payment.
+This use case captures the process of the administrator changing the billing plan of a department, and registering the payment of an invoice to the system.
+An employee accesses his or her voicemail for messages or to change voicemail options
+This use case captures the process of an employee accessing his or her voicemail
+User places a call.
+The process of a call being attempted, connected, and completed.
+Administrator brings IP Phone system offline
+Description of internal behavior when an administrator brings the IP Phone system offline.
+Administrator turns on and initializes IP Phone system
+Description of internal behavior when an administrator brings IP Phone system online.
+User calls another user
+Description of internal behavior when a user makes a call to another user in the system. 
+Administrator logs into the system console
+Description of internal behavior when an administrator logs into the system console.
+Administrator logs out of the system console
+Description of internal behavior when an administrator logs out of the system console.
+Administrator modifies user account settings
+Description of internal behavior when administrator attempts to modify user/ account information
+Administrator modifies calling plan settings applicable to all users
+Description of internal behavior when administrator accesses universal billing plan configuration
+Administrator modifies system settings
+Description of internal behavior when administrator accesses system configuration
+This use case captures how an Administrator manages the hardware of the system.
+This use case captures the process of the administrator logging on/off the server.
+This use case captures the process of the administrator making changes to the user account information
+This use case captures the process of a hardware test running automatically
+This use case captures the process of the administrator making changes to the billing plan
+This use case captures the process of the administrator making changes to the IP-Phone mapping 
+Captures the process of a complete calling sequence from caller picks up the phone to either party hangs up.
+A user can act as a caller and make a phone call to another user in the system
+Administrator views user accounts and has the option to add a new user or edit
+This use case captures the scenarios where administrator validates the
+This use case captures the scenarios where user logs on the voice message
+The Administrator requests the bills from the system. The email and
+Department sends money to the Administrator who updates the system to add credit
+Handles the case where the department has not paid his bill for one full period
+The Administrator wishes to see the IP Phone status and choose to add and delete an IP Phone.  Adding an IP phone is for the system to search a new IP Phone. To delete and IP phone the administrator must make sure that no extension is associated with that phone. If that is the case, system shows an error message.
+A call from the user to the administrator indicating that the user would like to have a new account added. Information user passes as input includes   her first, middle and last name, her address, IP address of the Phone she would like to have activated, the new phone number she would like to have for the new IP Phone and the phone number of a temporary phone where she can be reached for feedback.
+Description of internal behaviour while system administrator adds new account to system
+Administrator decides to suspend or resume certain accounts due to bill payment issues.
+Description of internal behaviour while system administrator suspends or resumes certain accounts
+Administrator decides to cancel a service either because user has skipped too many bills or user does not use the particular account anymore (probably due to the user not using the accounts phone anymore)
+Description of internal behaviour while system administrator cancels a service in the system.
+System administrator decides to modify certain attributes of a particular user service/account, the attributes including everything but the status field (the changes of which is covered in UC1, UC2, UC3.
+Description of internal behaviour while system administrator performs updates on a particular user account.
+While administrator is trying to start a service (create an account) for a user, administrator finds that the user does not exist in the system altogether (i.e., user has no account on system), administrator needs to add user to system before being able to add service(s) for that user.
+Description of internal behaviour while system administrator adds a new user to the system.
+For reasons such as not paying bills or abusing the service, system administrator decides to deactivate a certain user in the system
+Description of internal behaviour while system administrator performs various administrative functions on the IP Phone System.
+Administrator decides to add or remove a billing plan to or from the system.
+Description of internal behaviour while system administrator adds or removes a billing plan to or from the system.
+Administrator decides to view a bill of an account of a particular user.
+Description of internal behaviour while system administrator views a bill.
+Administrator decides to modify a bill of a particular user.
+Description of internal behaviour while system administrator modifies a bill.
+Administrator decides to print a bill of a particular user.
+Description of internal behaviour while system administrator prints a bill.
+
+Description of internal behaviour while system administrator performs maintenance tests on the IP Phone System.
+A user of the IP Phone System attempts to make a telephone communication with another user of the IP Phone System
+Description of internal behaviour while user makes calls over the IP Phone System
+A user of the IP Phone System notices that the ringer of her phone has gone off, she proceeds to pick up the phone and attempts to conduct a normal conversation with the initiating party at the other end.
+Description of internal behaviour before, during, and after user receives a call on the IP Phone System
+This use case is initiated when the system starts running.
+The clock on the server machine is external to the system. It sends time updates to the system and the system carries out time-related tasks, e.g., phone status checks and automated billing.
+Caller picks up the phone and dials a 4-digit number. The phone number is the input.
+This use case captures the process of making a call.
+Callee picks up the phone when the phone is ringing.
+This use case captures the process of receiving a call.
+Customer picks up the phone and dial to setup a number as speed dial
+This use case captures the process of which a customer wants to set up the certain numbers as speed dial.
+Administrator starts the system console, login, and shut down the system console
+This use case captures the process of which administrator starts, login, and shut down the system console user interface.
+Administrator selects in system console to manage customer accounts
+This use case captures the process of which administrator managing customer accounts in the system
+Administrator selects in system console to setup call filter for certain customer
+This use case captures the process of administrator setting up call filter for certain customer
+Administrator selects in system console to change a customers bill plan
+This use case captures the process of which administrator changes the bill plan of a customer
+Administrator selects in system console to display current bill of customer
+This use case captures the process of administrator requesting to display the current bill of particular customer
+Administrator selects in system console to record payment
+This use case captures the process of administrator recording a bill payment
+Administrator selects search for customer in system console
+This use case captures the process of the administrator performing customer searches in the system
+Administrator selects in system console to manage billing plans
+This use case captures the process of administrator managing the bill plans in the system
+Administrator selects in system console to manage phone hardware/software
+This use case captures the process of which administrator managing the hardware and software of the phone subsystems
+Administrator selects in system console to request displaying the current system status
+This use case captures the process of which administrator requesting to display the current system status
+Administrator selects in system console to change maximum number of calls allowed concurrently
+This use case captures the process of changing the maximum number of calls allowed concurrently
+Administrator selects in system console to manage system resources
+This use case captures the process of assigning managing system resources
+User picks up the phone and dials a phone number. The off-hook event is the input to the system.
+User wants to make a phone call. User picks up the phone and dials the phone number. 
+User dials a phone number. The phone number is passed in as input.
+A user dials a phone number, waits until the person on the other end picks up his phone, and then starts talking with him. At the end of the conversation, user hangs up the phone.
+User picks up a ringing phone. The off-hook event is passed in as input.
+User 1s phone rings. User 1 picks up the phone. User 1 has a conversation with the person calling. User 1 hangs up the phone.
+User phones the voicemail subsystem. The voicemail phone number is the input.
+User picks up the phone and dials the voicemail subsystem number. User is redirected to the voicemail subsystem.
+User places the person he is talking to on hold. The phone number of the person that user wants to switch to is the input.
+User 1 hears a tone indicating that a person has called him while talking to user 2. User 1 places user 2 on hold by pressing 1. User 1 starts talking to user 3.
+Administrator logs in to the system console. The administrator password is the input.
+The administrator wants to access some of the functionality of the system console. The administrator logs in to the console by providing a login name and a password. The administrator can then access the functionality of the console.
+Administrator wants to find a user in the system. The search criteria are the input to the system.
+The administrator wants to find a user in the system. He enters some search criteria of the wanted user, and the system finds the user for him.
+Administrator wants to manage a users account on the system. The operation that the administrator wants to perform and the user he wants to perform it on are the input.
+The administrator wants to manage a users account. He either registers a new user to the system, or finds an existing user and changes the users account information
+Administrator manages the billing of a specific user. The selected user account and the operation to perform are the input.
+The administrator wants to record that a user has paid his bill, to view a particular users bill or to print a particular users bill. He finds the needed user and performs the desired task.
+Administrator chooses the edit plans option on the main menu. This is the only input.
+The administrator wants to change the billing plan rates or the times at which the discount rates apply. He selects the edit plans option on the main menu and makes the needed changes.
+Administrator chooses the configure periodic task option on the system console. There is no other input.
+Administrator decides to change the time frame at which periodic tasks are run. Administrator logs in to the console and chooses the configure periodic tasks option. Then he enters the new time frame.
+The IP Phone is placed on its cradle.
+This use case illustrates the process of hanging up a phone.
+User picks up phone.
+This use case illustrates the process of making a phone call.
+The IP Phone outputs a ring tone.
+This use case illustrates the process of receiving a phone call.
+Administrator opens login screen.
+This use case illustrates the process of logging into system console.
+Administrator closes system console.
+This use case illustrates the process of logging out of the system console.
+Administrator opens manage account screen.
+This use case illustrates the process of adding a new user account.
+Administrator opens manage account screen.
+This use case illustrates the process of editing an existing users account.
+Administrator opens manage account screen.
+This use case illustrates the process of resuming an existing users suspended account.
+Administrator opens manage account screen.
+This use case illustrates the process of deactivating an existing users account.
+Administrator opens manage account screen.
+This use case illustrates the process of searching for an existing users account.
+Administrator opens manage account screen.
+This use case illustrates the process of searching for available phone numbers and IP addresses.
+Administrator opens phones screen.
+This use case illustrates the process editing the mapping between the IP Phones and IP addresses.
+Administrator opens billing screen.
+This use case illustrates the process of calculating an existing users phone bill.
+Server generates bills daily.
+This use case illustrates the process of the automatic bill generation for users whose billing date is today.
+Administrator opens billing screen.
+This use case illustrates the process of displaying an existing users phone bill.
+Administrator opens billing screen.
+This use case illustrates the process of issuing a bill to an existing user.
+Administrator opens billing screen.
+This use case illustrates the process of applying a discount to an existing users account.
+Administrator opens billing screen.
+This use case illustrates the process of recording a bill payment from an existing user.
+Administrator opens billing screen.
+This use case illustrates the process of setting the billing period.
+Administrator opens billing screen.
+This use case illustrates the process of adding a new phone plan for an existing user.
+Administrator opens billing screen.
+This use case illustrates the process of changing an existing users phone plan.
+Administrator opens maintenance screen.
+This use case illustrates the process of starting a hardware test for all the IP phones.
+Administrator opens maintenance screen.
+This use case illustrates the process displaying the results from the hardware test.
+Administrator opens maintenance screen.
+This use case illustrates the process of displaying the system load statistics.
+Administrator opens maintenance screen.
+This use case illustrates the process of resetting the phone call processing when the system reaches a state of instability.
+Administrator opens phones screen.
+This use case illustrates the process of setting the maximum number of concurrent phone calls.
+Administrator opens phones screen.
+This use case illustrates the process disabling phones.
+Administrator opens phones screen.
+This use case illustrates the process enabling phones.
+Administrator opens maintenance screen.
+This use case illustrates the process of setting the mean time between hardware tests.
+Administrator requests to add a new user account into the system
+This user case captures the process of adding a new user into the system. When a user is added, the system set the user status to I
+Administrator requests to edit an existing user account in the system
+This use case captures the process of editing an existing user account in the system
+Administrator assigns phone number/IP address to an existing user who does not have a phone number/IP address
+This use case captures the process of assigning a randomly generated phone number/IP address to a user.  The user must exists in the system and does not have a phone number/IP address
+Administrator requests to delete an existing user in the system
+Capture the process of deleting the user and disassociating phone number/IP address from a user who no longer exists in the system
+User wants to add filter on one or more phone number(s)
+This use case captures the process of adding filter to one or more phone numbers.  Once the phone number is filtered from the user, the user would not be able to accept calls from the filtered number.
+User wants to modify or remove filter on one or more phone number(s)
+This use case captures the process of modifying/removing filter on one or more phone numbers.  Once a filter has been removed from a number, the user can receive call from that number again
+User complains his/.her phone does not work
+Administrator requests connectivity test for a specific phone number.  The system will indicate whether the phone pass or fail the test
+Administrator requests hardware test
+Administrator requests a hardware test; system captures hardware status; system reports the hardware status.
+Administrator wants to activate a phone number from an existing user
+The use case captures the process of activating the phone number of a suspended user. After the phone has been activated, the user status will be set to A
+Administrator requests to suspend a user who has overdue payment for 2 weeks or whose hardware is not working properly
+This use case captures the process of suspending a user who has overdue payment for 2 weeks or whose hardware is not working properly.  The system sets the user status = S
+Administrator requests to record a bill payment from a user
+Whenever the user make a payment, the administrator will record the payment in the system If the user does not make a payment more than 2 weeks, system suspend the user.  Any unpaid amount will be carried over to the next month
+Administrator requests to add new calling plan
+Whenever there is a new calling plan, the administrator needs to add to the system before the plan can be assigned to the user.  No two calling plans have the same name.
+Administrator wants to modify an existing calling plan
+This use case captures the process of editing an existing calling plan
+Administrator requests to print a bill of an employee
+This use case captures the process of printing an employees phone bill during a specified period
+Date Timer signals end of billing period
+This use case captures the process of automatic printing of bills for each billing period
+Caller places a call to the callee
+The caller picks up the phone, dials the 4 digit number and the phone sends each digit to the server individually. The server sets up a connection between the caller and the callee and increments the max count by 1 (the count is responsible for ensuring the number of connections does not exceed the capacity). The connection is disconnected when either side hangs up the phone.
+user makes phone call to another user
+user(callee) receives a call from another user(caller)
+Administrator logs into the sever
+Administrator adds one new account or active a cancelled account
+Administrator edit a particular user account
+Administrator cancel a particular users service
+Administrator adds a new plan to the system, specifically to PlanList
+Administrator deletes an existing plan from the system
+Administrator edits an existing plan in the system
+Administrator sets the maximum number of calls allowed at a time
+Enable a new/repaired phone in the system
+Display the status information of the hardware in System Console
+Run connectivity tests on an IP phone
+Administrator logout the system
+Administrator adds one more administrator to the system
+Administrator deletes another administrator
+Administrator asks system to print users bill
+Administrator suspends a particular users service
+Administrator resumes a particular users service
+Administrator monitors all of the calling processes.
+The administrator needs to do some kind of system maintenance
+This case describes the process of authenticating the system administrator.
+New phone is purchased to be added to the phone system
+This case describes the process required to add a new phone to the phone system
+A new person has moved into the complex/area
+This case shows the procedure for adding new users into the phone system
+A new phone and new user were added to the system
+This case demonstrates the process taken to active a phone/extension by associating a user
+A phone is no longer being used by any user; therefore make the phone inactive
+This case describes the course of action taken to change the phone from an active state to an inactive state
+Phone is either broken or out-dated and will be removed from phone system
+This case steps through removing a phone from the phone system
+System did not catch the hang-up event from the phone
+This case describes the method of resetting the status on a particular phone
+Administrator wants to view information about a particular phone
+This case shows the steps taken by the administrator to extract the information of a particular phone
+User requires new permissions or restrictions
+This case describes the procedure to apply filters to specific users
+Administrator wants to see the load on the phone system
+This case shows the steps taken by the administrator to extract the load on the phone system
+A customer (caller) would like to call another customer on the phone.
+This use case captures the process of a customer of the system making a phone call to either another customer of the system or to
+A customer (callee) of the system receives a telephone call. The callee's IP address is passed as input.
+This use case captures the process of receiving an incoming call from another customer of the system.
+A customer (callee) of the system receives a telephone call. The callee's 4-digit extension is passed as input.
+This use case captures the process of receiving an incoming call from the external telephone system.
+Callee is unavailable and has voice mail service. The callee's extension is sent as input.
+This use case captures the process of a caller leaving a voicemail message for an unavailable callee.
+Caller wishes to join a conference call.
+This use case captures the process of a caller joining an existing conference call.
+Customer requests to set up a conference call.
+This use case captures the process of setting up a new conference call.
+Customer wants to access any voicemail functionality.
+This use case captures the process of a customer accessing their voicemail system.
+Customer wants to listen to new voicemail messages. Customer's voicemail box and the message number is passed as input.
+This use case captures the process of a customer listening to new voicemail messages.
+Customer wants to listen to saved voicemail messages. Customer's voicemail box and the message number is passed as input.
+This use case captures the process of a customer listening to saved voicemail messages.
+Customer wants to change their voicemail greeting.
+This use case captures the process of a customer modifying their voicemail greeting.
+The administrator is logging into the server application
+The administrator logs into the system
+Customer requests addition to the VoIP system
+This use case captures the process of setting up an account for a new user
+The administrator adds a new account to a customer profile
+The administrator adds a new account that involves mapping a new extension to an IP address.
+The administrator searches for a customer
+The administrator searches for a customer in the database based on certain search criteria
+A customer has requested for an update on his/her account
+The administrator modifies the user account information from externally provided details
+Administrator changes a customers current billing plan
+The administrator searches for a customer profile and switches plan
+The administrator is creating a new basic plan
+The administrator accesses the system, chooses to create a new billing plan, enters the details of the plan and saves it.
+The administrator is creating a new discount plan
+The administrator accesses the system, chooses to create a new discount plan, enters the details of the plan and saves it.
+The administrator is adding a new discount plan to a billing plan
+The administrator attaches a discount plan to a billing plan
+Administrator enters payment information for customer.
+Illustrates process of inputting customer payment information into system.
+The administrator is viewing the information for all the account holders that have overdue payments
+The administrator looks up the users whose accounts are overdue
+The administrator is viewing the information for all the account holders that have overdue payments
+The administrator looks up the users whose accounts are overdue
+The administrator cancels an account
+The administrator searches for customer and deactivates account
+The administrator cancels and account
+The administrator searches for customer and deactivates account
+The administrator is finding an IP from an extension number or vice-versa
+The administrator navigates the interfaces to lookup extensions and IP addresses
+The administrator adjusts the maximum call load
+The administrator sets the maximum call load
+The administrator checks for the current call load
+The administrator verifies the current call load
+The administrator is manually enabling a device
+The administrator enters the choice of enabling or disabling a device. System ensures that the device is not already enabled or disabled.
+The administrator is manually disabling a device
+The administrator enters the choice of enabling or disabling a device. System ensures that the device is not already enabled or disabled.

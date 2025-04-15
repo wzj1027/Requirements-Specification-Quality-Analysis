@@ -1,0 +1,175 @@
+Back end users
+
+Administrator
+The administrator selects to manage modules in order to add new functionalities to the system by installing modules. This use cases also allows the administrator to configure or update previously installed modules.
+The administrator selects to configure the distribution map to set the specific projection and default extent for the Node area of interest.
+The administrator selects to add or delete the spatial layers displayed on the distribution map for the specific Node.
+The security officer performs this use case in order to create or delete accounts for the portal staff members so they can access restricted functionalities.
+
+Data manager
+The data manager wants to manage resources in order to import a new resource, edit a resource metadata or delete a resource.
+The data manager registers a new data source so the associated core resource is harvested during next harvesting job.
+Specializes Register a new data source to allow specific configuration for GBIF occurrence Web services data sources.
+Specializes Register a new data source to allow specific configuration for IPT data sources.
+The data manager previously added a data source which is no more relevant to the node or which is no more available. The data manager wants to unregister this source.
+The data manager wants to manage jobs so as to monitor finished and upcoming jobs, schedule a new job or cancel a scheduled job.
+The data manager checks core resources consistency with registered data sources to identify outdated core resources and unavailable data sources.
+The data manager selects to backup portal data so as to synchronize the portal biodiversity data with those hosted on the registered data sources.
+The data manager updates the taxonomic backbone.
+The data manager wants to install an extension to allow the system to deal with extra attributes for records of core resources.
+
+Portal manager
+The portal manager configures data metrics visibility in order to hide some metrics from the visitors in the front office.
+Portal manager customizes NPT instance to adapt the portal appearance and parameters to fit its organization.
+The data manager selects to manage front office languages so as to set the default language and chooses alternate language.
+
+Front end users
+
+Visitor
+The visitor sends feedback to the portal contact person so as to communicate remarks or suggestions about the portal or about the hosted data.
+The visitor wants to discover and access occurrence records. He can select his records of interest using simple taxonomic search or a more elaborate advanced search by combining various criteria.
+User selects to view occurrence records selection as a table in order to display their attributes.
+User exports the occurrence selection for further analysis.
+The visitor exports distribution map as an image so as to be able to insert it in a document.
+The visitor searches resource metadata, blog, article and news entries using full text search in order to find and access matching resources and entries.
+The visitor contacts the publisher of an occurrence resource to request more information or send a comment.
+The visitor downloads a checklist for consultation/analysis.
+The visitor chooses his language of preference.
+
+Registered visitor
+The registered visitor has built a filter and wants to be able to reuse it in the future. He saves the filter in his profile.
+Visitor loads a filter he previously saved in his profile.
+Visitor has built a filter. He wants to be able to reuse it in future visits. He saves the filter to be able to load it later.
+
+Back end functionalities
+
+Administrator
+FR-A1 The system shall allow the administrator to install modules.
+FR-A2 The system shall allow the administrator to uninstall modules.
+FR-A3 The system shall allow the administrator to configure the distribution map projection.
+FR-A4 The system shall allow the administrator to configure the distribution map default extent.
+FR-A5 The system shall allow the administrator to edit the email server configuration (URL, port, account).
+FR-A6 The system shall allow the administrator to add a spatial layer to the distribution map.
+FR-A7 The system shall allow the administrator to remove a spatial layer from the distribution map.
+FR-A8 The system shall allow the administrator to edit the name of a spatial layer of the distribution map.
+FR-A9 The system shall allow the administrator to view error logs.
+FR-A10 The system shall allow the administrator to download error logs.
+FR-A11 The system shall allow the security officer to create a new user account.
+FR-A12 The system shall allow the security officer to delete a user account.
+FR-A13 The system shall allow the security officer to assign a role to a user account.
+FR-A14 The system shall allow the security officer to remove a role from a user account.
+FR-A15 The system shall allow the security officer to edit the email address associated with a user account.
+FR-A16 The system shall allow the security officer to view audit logs
+FR-A17 The system shall allow the security officer to download audit log entries for a given month.
+
+Data manager
+FR-DM1 The system shall allow the data manager to import an occurrence resource.
+FR-DM2 The system shall allow the data manager to delete an occurrence resource.
+FR-DM3 The system shall allow the data manager to edit the metadata of an occurrence resource.
+FR-DM4 The system shall allow the data manager to search occurrence resources by keywords.
+FR-DM5 The system shall allow the data manager to import a checklist resource.
+FR-DM6 The system shall allow the data manager to delete a checklist resource.
+FR-DM7 The system shall allow the data manager to edit the metadata of a checklist resource.
+FR-DM8 The system shall allow the data manager to search checklist resources by keywords.
+FR-DM9 The system shall allow the data manager to import a multimedia resource.
+FR-DM10 The system shall allow the data manager to delete a multimedia resource.
+FR-DM11 The system shall allow the data manager to edit the metadata of a multimedia resource.
+FR-DM12 The system shall allow the data manager to search multimedia resources by keywords.
+FR-DM13 The system shall allow the data manager to import a bibliographic resource.
+FR-DM14 The system shall allow the data manager to delete a bibliographic resource.
+FR-DM15 The system shall allow the data manager to edit the metadata of a bibliographic resource.
+FR-DM16 The system shall allow the data manager to search bibliographic resources by keywords.
+FR-DM17 The system shall allow the data manager to import an institution resource.
+FR-DM18 The system shall allow the data manager to delete an institution resource.
+FR-DM19 The system shall allow the data manager to edit the metadata of an institution resource.
+FR-DM20 The system shall allow the data manager to search institution resources by keywords.
+FR-DM21 The system shall allow the data manager to import an expert resource.
+FR-DM22 The system shall allow the data manager to delete an expert resource.
+FR-DM23 The system shall allow the data manager to edit the metadata of an expert.
+FR-DM24 The system shall allow the data manager to search expert resources by keywords.
+FR-DM25 The system shall allow the data manager to register a GBIF index data source.
+FR-DM26 The system shall allow the data manager to register an IPT data source.
+FR-DM27 The system shall allow the data manager to unregister an IPT data source.
+FR-DM28 The system shall allow the data manager to unregister a GBIF index data source.
+FR-DM29 Schedule a harvesting job.
+FR-DM30 Cancel an harvesting job.
+FR-DM31 View report for a harvesting jobs.
+FR-DM32 Check core resources consistency with registered data sources.
+FR-DM33 Trigger a harvesting job.
+FR-DM34 The system shall allow the data manager to request restoration of the latest backup.
+FR-DM35 Update taxonomic backbone.
+FR-DM36 Install an extension.
+FR-DM37 Monitor portal usage.
+
+Portal manager
+FR-PM1 The system shall allow the portal manager to configure data metrics visibility.
+FR-PM2 The system shall allow the portal manager to change the logo displayed on the portal.
+FR-PM3 The system shall allow the portal manager to change the Node name displayed on the portal.
+FR-PM4 The system shall allow the portal manager to change the portal banner.
+FR-PM5 The system shall allow the portal manager to configure the name and email of the portal contact person.
+FR-PM6 The system shall allow the portal manager to configure the Network summary information.
+FR-PM7 The system shall allow the portal manager to choose the default language of the portal.
+FR-PM8 The system shall allow the portal manager to add an alternate language to the portal.
+FR-PM9 The system shall allow the portal manager to remove an alternate language to the portal.
+FR-PM10 The system shall allow the portal manager to contribute a portal news entry.
+FR-PM11 The system shall allow the portal manager to edit a portal news entry.
+FR-PM12 The system shall allow the portal manager to delete a portal news entry.
+FR-PM13 The system shall allow the portal manager to contribute a blog post.
+FR-PM14 The system shall allow the portal manager to edit a blog post.
+FR-PM15 The system shall allow the portal manager to delete a blog post.
+FR-PM16 The system shall allow the portal manager to manage the portal menu.
+FR-PM17 The system shall allow the portal manager to add a page to the portal.
+FR-PM18 The system shall allow the portal manager to delete a page from the portal.
+FR-PM19 The system shall allow the portal manager to edit a page from the portal.
+FR-PM20 The system shall allow the portal manager to edit the HTML metadata tags for the portal pages to help the portal to be discoverable through search engines.
+
+Front-end functionalities
+
+Visitor
+FR-V1 The system shall allow a visitor to build an occurrence selection filter.
+FR-V2 The system shall allow a visitor to add a taxonomic criterion to a filter.
+FR-V3 The system shall allow a visitor to add a dataset criterion to a filter.
+FR-V4 The system shall allow a visitor to add a depth criterion to a filter.
+FR-V5 The system shall allow a visitor to add an altitude criterion to a filter.
+FR-V6 The system shall allow a visitor to add a basis of records criterion to a filter.
+FR-V7 The system shall allow a visitor to add a geographic criterion to a filter.
+FR-V8 The system shall allow a visitor to add a date criterion to a filter.
+FR-V9 The system shall allow a visitor to remove a criterion from a filter.
+FR-V10 The system shall allow a visitor to select occurrence records using a filter.
+FR-V11 The system shall allow a visitor to view the distribution map for an occurrence record selection.
+FR-V12 The system shall allow a visitor to view an occurrence record selection as a table.
+FR-V13 The system shall allow a visitor to export an occurrence record selection.
+FR-V14 The system shall allow a visitor to export the distribution map for an occurrence record selection as an image.
+FR-V15 The system shall allow a visitor to search all the portal content using full text search.
+FR-V16 The system shall allow a visitor to contact an occurrence resource publisher.
+FR-V17 The system shall allow a visitor to export a checklist.
+FR-V18 The system shall allow a visitor to choose his preferred language for the portal interface.
+FR-V19 The system shall allow a visitor to send feedback to the portal contact person.
+FR-V20 The system shall allow a visitor to view latest blog posts.
+FR-V21 The system shall allow a visitor to read a blog post.
+FR-V22 The system shall allow a visitor to view latest portal news entries.
+FR-V23 The system shall allow a visitor to read a portal news entry.
+FR-V24 The system shall allow a visitor to view details for a taxon.
+FR-V25 The system shall allow a visitor to view metadata for a dataset.
+FR-V26 The system shall allow a visitor to view metadata for a checklist.
+FR-V27 The system shall allow a visitor to view details for a bibliographic record.
+FR-V28 The system shall allow a visitor to view details for an institution.
+FR-V29 The system shall allow a visitor to view details for an expert.
+FR-V30 The system shall allow a visitor to view metadata for a multimedia file.
+FR-V31 The system shall allow a visitor to download a multimedia file.
+FR-V32 The system shall allow a visitor to navigate (pan, zoom in and out) a distribution map.
+FR-V33 The system shall allow a visitor to toggle spatial layers visible/hidden on a distribution map.
+FR-V34 The system shall allow a visitor to register.
+FR-V35 The system shall allow a visitor to access the log in functionality.
+FR-V36 The system shall allow a visitor to request to be sent his password by email.
+FR-V37 The system shall allow a visitor to share a distribution map on twitter.
+FR-V38 The system shall allow a visitor to access a dashboard displaying data metrics for the portal.
+FR-V39 The system shall allow a visitor to export data metric archives for the portal.
+FR-V40 The system shall allow a visitor to view Network summary information.
+FR-V41 The system shall allow a visitor to view information about tools and services offered by the portal.
+FR-V42 The system shall allow a visitor to view latest news from GBIF newsfeeds relayed by the system.
+
+Registered visitor
+FR-RV1 The system shall allow a registered visitor to save a custom filter.
+FR-RV2 The system shall allow a registered visitor to load a custom filter.
+FR-RV3 The system shall allow a registered visitor to delete a custom filter.

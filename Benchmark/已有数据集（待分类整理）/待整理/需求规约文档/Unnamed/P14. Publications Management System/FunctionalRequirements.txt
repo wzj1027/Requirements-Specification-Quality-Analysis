@@ -1,0 +1,325 @@
+3.2 Functional Requirements
+3.2.1 Log in to the system from the internet
+Summary: accessing the system from outside the VUB-network
+Actors: everyone who wants to make use of the system
+Preconditions: the actor needs a computer with internet access
+Description: the actor gets a screen where he/she will be able to login
+Exceptions: user must be registered and have a username and password
+Result: the actor can login
+3.2.2 Log in to the system via the VUB-network
+Summary: accessing the system whilst using the VUB-Network.
+Actors: everyone who wants to make use of the system
+Preconditions: be on a computer that is connected to the VUB network
+Description: the actor gets a screen where he will be able to login or where he/she can
+start a search immediately
+Exceptions: none
+Result: the actor can login or can perform a search
+3.2. FUNCTIONAL REQUIREMENTS 27
+3.2.3 Register for an account
+Summary: requesting access to the system (become a Member)
+Actors: everyone who wants to make use of the system
+Preconditions: the actor needs a computer with internet access or is connected to the
+VUB-network
+Description:
+- the actor selects the Register function
+- the actor chooses a username and password and fills in personal data: name, login name, email address, university and department
+- the system checks if username already exists
+- the actor confirms
+Exceptions: none
+Result: an email is sent to the Administrator
+3.2.4 Log off
+Summary: Log o the system
+Actors: Members , Publishers, Moderators and Administrators
+Preconditions: the user is logged in to the system
+Description: the actor selects the Logout function
+Exceptions: none
+Result: the actor is directed to the system start page where he/she can log in.
+3.2.5 Change password
+Summary: A user who has forgotten his/her password, can request a new one.
+Actors: VUB-network users, Members , Publishers, Moderators and Administrators
+Preconditions: the user must have registered before, he/she must have a valid username
+on the system.
+Description:
+- the actor chooses to change password
+- the actor fills in his user name and enters a new password
+- the actor confirms
+Exceptions: no valid username on the system
+Result: an email is sent to the Administrator
+28 CHAPTER 3. SPECIFIC REQUIREMENTS
+3.2.6 Search for publications
+Summary: searching for publications in the system
+Actors: VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions: the actor needs to be logged in to the system or is connected to the
+VUB-network
+Description:
+- The actor selects the Search Pubication function.
+- The actor fills in the search criteria: keyword, author, period of publication and/or
+more advanced search criteria such as keyword(s) and/or reference, etc.
+Exceptions: none
+Result: a list of publications fulfilling the search criteria.
+3.2.7 View the results of a Search
+Summary : view of the results of a publication search
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having executed a Publication Search
+Description : The actor gets one or more screens displaying one or more of the search
+results. For each result, the title and the main author of the publication are displayed.
+Navigation through dierent screens of search results is possible with the next or previous
+page option.
+Exceptions : when the search criteria did not give any result
+Result : the actor will obtain the full list of all results satisfying his search criteria.
+3.2.8 View publication details
+Summary : view details of a selected publication
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having executed a Search and viewed the search results screen
+Description : the actor can view more detailed information of a selected publication by
+clicking the title of the publication or by clicking the view button located behind the
+title.
+Exceptions : none
+Result : the actor will obtain the title, authors, publication date, abstract, cited refer-
+ences, ... of the selected publication.
+3.2. FUNCTIONAL REQUIREMENTS 29
+3.2.9 View detailed information for multiple publications.
+Summary : detailed view of multiple publications
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having executed a Search and viewed the search results screen
+Description :
+- The actor selects some of the publications by ticking the box in front of the titles
+and selects the View function
+- or: The actor selects all publications by clicking the 'View All' button at the bottom
+of the screen.
+Exceptions : none
+Result : the actor obtains a set of screens displaying the title, authors, publication date,
+abstract, cited references, ... of the selected publications.
+3.2.10 Download a single publication
+Summary : downloading the full text of a publication
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions :
+- having executed a Search and viewed the search results screen
+- having entered the detailed view screen of a publication
+Description :
+- in the results screen : the actor can download a selected publication by clicking on
+the Download button for the selected publication
+- in the detailed view screen of a publication : the actor can download the publication
+by clicking the Download button just beneath the abstract.
+Exceptions : none
+Result : the actor will obtain an electronic copy of the publication.
+3.2.11 Download multiple publications
+Summary : downloading the full text of multiple publications
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having executed a Search and viewed the search results screen
+Description : the actor can download all the publications in a search result by clicking
+on the Download button next to "All" at the bottom of the screen.
+Exceptions : none
+Result : the actor will obtain an electronic copy of the publications.
+30 CHAPTER 3. SPECIFIC REQUIREMENTS
+3.2.12 Consult publication references
+Summary : consult the references cited in a publication resulting from a search done on
+the system
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions :
+- having executed a Search and viewed the search results screen
+- having entered the detailed view screen of a publication
+Description :
+- in the results screen : the actor clicks on the reference button located behind the
+publication title
+- in the detailed view screen of a publication : the actor clicks on the reference button
+just under the abstract.
+Exceptions : none
+Result : the actor will obtain a screen displaying the title, authors, publication date,
+abstract and cited references of the selected reference.
+3.2.13 Consult references for multiple publications
+Summary : consult the references cited in all the publications resulting from a search
+done on the system
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having executed a Search and viewed the search results screen
+Description : the actor can see all the references cited in the publications by clicking on
+the references button next to "All" at the bottom of the screen.
+Exceptions : none
+Result : the actor will obtain a list of references cited in the publications.
+3.2.14 Display the full text of a publication
+Summary : obtain a copy of the full text of a publication resulting from a search done
+on the system
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having entered the detailed view screen of a publication
+Description : in the detailed view screen of a publication : the actor displays the full
+text of the publication by clicking the full text button just under the abstract.
+Exceptions : full text must be available in the system
+Result : the actor will see the full text of the publication.
+3.2. FUNCTIONAL REQUIREMENTS 31
+3.2.15 View details of a reference
+Summary : view details of a selected reference cited in a publication resulting from a
+search done on the system
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having entered the detailed view screen of a publication
+Description : in the detailed view screen of a publication, the actor can access directly
+to the detailed view screen of a cited reference by clicking on the reference
+Exceptions : only when the reference is present in the system
+Result : the actor will access the view screen (containing title, authors, data of publi-
+cation, abstract and cited reference) of the selected reference .
+3.2.16 Export the references cited in a publication (BIB format)
+Summary : download the references cited in a publication in bib format
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having entered the detailed view screen of a publication
+Description : in the detailed view screen of a publication : the actor selects the format
+(bib) for the exported references and confirms.
+Exceptions : none
+Result : File with the references of a publication in bib format
+3.2.17 Export the references cited in a publication (RIS format)
+Summary : download the references cited in a publication in RIS format
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having entered the detailed view screen of a publication
+Description : in the detailed view screen of a publication : the actor selects the format
+(RIS) for the exported references and confirms.
+Exceptions : none
+Result : file with the references of a publication in RIS format
+3.2.18 View authors
+Summary : view information about an author of a publication in the system
+Actors : VUB-network users and Members , Publishers, Moderators and Administrators
+Preconditions : having executed a publication search and viewed the search results
+screen
+Description : in the results screen : the actor clicks on the author name of one of the
+publications
+Exceptions : none
+Result : the system shows the author details
+32 CHAPTER 3. SPECIFIC REQUIREMENTS
+3.2.19 Editing personal data
+Summary : editing personal data
+Actors : Members , Publishers, Moderators and Administrators
+Preconditions : the actor needs to be logged in to the system
+Description :
+- the actor selects the Edit Settings function
+- the actor changes his personal data such as password, university, department
+- the actor confirms
+Exceptions : none
+Result : the personal data of the user will be changed
+3.2.20 Access to your own publications
+Summary : access directly to your own publications
+Actors : Publishers, Moderators and Administrators
+Preconditions : none
+Description : the Publisher selects the "My Publications" box
+Exceptions : none
+Result : the user obtains a set of screens displaying the title, authors, publication
+date, abstract and cited references of the all the publications that he/she has previously
+uploaded in the system
+3.2.21 Edit your own publications
+Summary : possibility to modify information of your own publications by a Publisher
+Actors : Publishers , Moderators and Administrators
+Preconditions : the actor needs to be logged in to the system and has done a "My
+Publications" search
+Description :
+- in the results screen : the actor chooses a publication from the list, edits the
+publication and confirms his changes.
+- via the My Publications search : the list of Publisher publications will be displayed
+and editing is possible by ticking the "edit" box
+Exceptions : only for publications owned by the actor
+Result : changes are applied to the publication in the system.
+3.2. FUNCTIONAL REQUIREMENTS 33
+3.2.22 Upload publications
+Summary : add a publication to the system
+Actors : Publishers , Moderators and Administrators
+Preconditions : The actor has a document in one of the supported formats: pdf, ps, odt
+Description :
+- The actor selects the document to add to the system and confirms.
+- The system tries to retrieve the publication details from the document.
+- The system shows the new publication with the retrieved information.
+- The actor either accepts or makes some changes to the publication and confirms
+the changes.
+Exceptions : none
+Result : the system contains a new publication
+3.2.23 Search users
+Summary : searching users in the system
+Actors : Moderators and Administrators
+Preconditions : the actor needs to be logged into the system
+Description :
+- the actor selects the Search Users function.
+- the actor fills in some search criteria.
+- the system shows the results.
+Exceptions : none
+Result : list of users meeting the search criteria
+3.2.24 Edit user settings
+Summary : Select a system user (Members, Publishers, Moderators) and change his
+settings
+Actors : Moderators and Administrators
+Preconditions : a list of users as resulting from the user search function.
+Description :
+- The actor selects a user from a list of users resulting from a search query.
+- The actor changes the user settings.
+- The actor confirms the changes.
+Exceptions : none
+Result : the user settings are changed
+34 CHAPTER 3. SPECIFIC REQUIREMENTS
+3.2.25 Create User
+Summary : create a new user
+Actors : Administrator
+Preconditions : none
+Description :
+- Administrator selects the Create User function
+- Administrator fills in user details: username, password, email, group
+- Administrator confirms
+Exceptions : the username already exists in the system
+Result : the system contains a new user
+3.2.26 Delete User
+Summary : delete an existing user
+Actors : Administrator
+Preconditions : none
+Description :
+- Administrator selects the Delete User function
+- Administrator fills in username
+- System shows user details
+- Administrator confirms
+Exceptions : the username does not exist in the system
+Result : the user is deleted in the system
+3.2.27 Create Group
+Summary : create a new group
+Actors : Administrator
+Preconditions : none
+Description :
+- Administrator selects the Create Group function
+- Administrator fills in group details: groupname, users
+- Administrator confirms
+Exceptions : the groupname already exists in the system
+Result : the system contains a new group
+3.2. FUNCTIONAL REQUIREMENTS 35
+3.2.28 Search Group
+Summary : select a group from a list in order to view the group details
+Actors : Administrator
+Preconditions : none
+Description :
+- Administrator selects the Search Group function
+- Administrator fills in group details
+- System shows search results
+Exceptions : none
+Result : a list of groups fulfilling the search criteria
+3.2.29 Delete Group
+Summary : delete an existing group in the system
+Actors : Administrator
+Preconditions : the group must be empty (no users)
+Description :
+- Administrator selects the Delete Group function
+- Administrator fills in groupname
+- System shows group details
+- Administrator confirms
+Exceptions : the groupname does not exist in the system or the group is not empy
+Result : the group is deleted in the system
+3.2.30 Edit group settings
+Summary : Select a system group and change its settings
+Actors : Administrators
+Preconditions : a list of groups as resulting from the group search function.
+Description :
+- The actor selects a group from a list of groups resulting from a search query.
+- The actor changes the group settings.
+- The actor confirms the changes.
+Exceptions : none
+Result : the group settings are changed
+36 CHAPTER 3. SPECIFIC REQUIREMENTS
+3.2.31 Edit system configuration settings
+Summary : access the configuration panel in order to change the system configuration
+settings.
+Actors : Administrators
+Preconditions : none
+Description :
+- Administrator accesses the configuration panel.
+- Administrator changes the system configuration settings
+- Administrator confirms the changes
+Exceptions : none
+Result : configuration changes are applied to the system

@@ -1,0 +1,44 @@
+• Data Accessibility
+	• Entity profile information is publicly available via a searchable website
+	• Profile data is available for direct system-to-system access via an HTTP API (read only)
+	• System will track the date and time of last API data pull
+	• Profile details for individual institutions can be downloaded in Excel or PDF format
+
+• Entity Profile Administration
+	• Entities may submit online requests to have their profile added to the clearinghouse
+	• Authorized users can update the entity’s profile directly on the website
+	• Date and user name are logged when profile is changed
+	• Designated entity representatives can delegate editing rights to other users at their institution
+
+• User Accounts
+	• User accounts are password protected (Utilization of InCommon Federation will be considered in future phases of development )
+	• Password reminders and resets are handled by the website
+	• With the exception of system administrators, all user accounts are tied to an institution
+
+• Data Integrity
+	• At designated intervals (at least monthly), the system sends an email reminding entities to update their profile
+	• System will also be able to send reminders on certain data elements when the data has become out of date (SAM expiration date, Audit date, etc) A list of these data elements will be developed by the ECWG and provided to the ECSDWG.
+	• If feasible, system will also provide alert/notification upon sign-in by entity user when any of the above dates or data elements requires updating
+	• Consideration will be given to requiring a Profile update at FDP Annual report time to help ensure Profiles are kept current
+	• New profiles must be reviewed and approved by FDP designee before appearing online
+
+• FDP Administration Panel
+	• System provides designated FDP administrators with additional rights.
+	• FDP Administrators create new entities and approve new profiles
+	• FDP Administrators designate first primary user for entity
+	• FDP Administrators can create, edit, and disable user accounts.
+
+• System Security
+	• Public has read-only access via website
+	• API provides read-only data access
+	• Profile editing requires password-protected user account with manually-assigned rights
+	• Change log records details on data modification (date, username)
+	• Consideration will be given to potentially hiding of email address from public view to avoid collection by spam senders
+
+• Links to related systems/external compliance databases
+	• Future development considerations include:
+		o Links from each Entity Profile to Entity’s SAM.gov page. Consideration will be given to a select set of fields in SAM that could be accessed to help “jump start” the profile creation (ECWG to compile list)
+		o Assessment of feasibility of merging data from current FDP Institution Profile
+		o A-133 data base integration
+		o FCOI clearinghouse integration
+		o Assessment of feasibility of utilizing data in the Federal Audit Clearinghouse (FAC)

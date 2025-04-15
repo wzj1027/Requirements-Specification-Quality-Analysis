@@ -1,0 +1,3999 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/265397639
+
+Software Requirements Speciﬁcation (SRS) for the <Nodes Portal Toolkit (NPT)>
+Technical Report · September 2011
+
+CITATIONS
+
+READS
+
+0
+
+23,506
+
+2 authors, including:
+Bruno Danis
+Université Libre de Bruxelles
+184 PUBLICATIONS 2,677 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects:
+
+Biogeographic Atlas of the Southern Ocean View project
+
+rECTO - Refugia and Ecosystem Tolerance in the Southern Ocean View project
+
+All content following this page was uploaded by Bruno Danis on 08 September 2014.
+The user has requested enhancement of the downloaded file.
+
+Software Requirements
+Specification (SRS)
+For the
+
+<Nodes Portal Toolkit
+(NPT)>
+Version 0.3
+September 2011
+
+Revision History
+Contributors
+
+Date
+
+Reason for changes
+
+B. Danis, S. Renaudier
+B. Chi-Jen Ko, B. Danis, D.
+Remsen, F. Pando, M. A. Mora,
+N. Noé, P. Desmet, S. Renaudier,
+W. Addink
+A. Heughebaert, B. Chi-Jen Ko,
+B. Danis, D. Remsen, M. Carausu,
+N. Noé, N. Youdjou, P. Desmet,
+S. Renaudier, S. Rycroft, V.
+Smith
+
+18 Jul 2011
+13 Sep 2011
+
+Initial draft, open for discussion
+Second version, includes comments and
+revisions from the NPT-Advisory Group and
+GBIF-Secretariat
+
+27 Sep 2011
+
+Third version, includes revisions from the
+NPT-Technical Task Force, circulated to
+NPT-Advisory Group and GBIF-Secretariat
+
+	  
+
+	  
+
+2	  
+
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+	  
+
+	  
+
+	  
+
+	  
+
+3	  
+
+Table	  of	  Contents	  	  
+Revision	  History	  
+
+2	  
+
+Introduction	  
+
+6	  
+6	  
+6	  
+7	  
+7	  
+
+Purpose	  
+Scope	  of	  the	  NPT	  
+Product	  perspective	  and	  historical	  background	  
+Document	  conventions	  
+
+Actor	  Survey	  
+
+Primary	  actors	  
+Front	  end	  users	  
+Back	  office	  users	  
+Secondary	  actors	  
+
+Use-­‐Case	  Model	  Survey	  
+
+9	  
+
+9	  
+9	  
+9	  
+9	  
+
+11	  
+
+Back	  end	  users	  
+Administrator	  
+Data	  manager	  
+Portal	  manager	  
+Front	  end	  users	  
+Visitor	  
+Registered	  visitor	  
+
+11	  
+11	  
+12	  
+15	  
+16	  
+16	  
+19	  
+
+Functional	  requirements	  
+
+21	  
+21	  
+21	  
+21	  
+23	  
+24	  
+24	  
+25	  
+
+Back	  end	  functionalities	  
+Administrator	  
+Data	  manager	  
+Portal	  manager	  
+Front-­‐end	  functionalities	  
+Visitor	  
+Registered	  visitor	  
+
+Nonfunctional	  Requirements	  
+
+26	  
+
+Assumptions	  and	  Dependencies	  
+Security	  Requirements	  
+Scalability	  Requirements	  
+Robustness	  Requirements	  
+Interoperability	  Requirements	  
+Operating	  Environment	  
+Usability	  Requirements	  
+Supportability	  Requirements	  
+User	  Documentation	  Requirements	  
+Design	  and	  Implementation	  Constraints	  
+
+26	  
+26	  
+26	  
+27	  
+27	  
+27	  
+27	  
+27	  
+27	  
+28	  
+
+Interfaces	  
+
+28	  
+28	  
+28	  
+28	  
+28	  
+28	  
+
+User	  Interfaces	  
+Pagination	  
+Distribution	  map	  
+Filter	  building	  interface	  
+Hardware	  Interfaces	  
+
+	  
+
+4	  
+
+Software	  Interfaces	  
+Application	  programming	  interface	  
+GBIF	  IPT	  
+GBIF	  resource	  Web	  services	  
+GBIF	  Registry	  
+Communications	  Interfaces	  
+Licensing	  Requirements	  
+
+28	  
+28	  
+29	  
+29	  
+29	  
+29	  
+29	  
+
+Glossary	  
+
+30	  
+
+Appendixes	  
+
+Back	  end	  use	  cases	  
+Administrator	  
+Data	  manager	  
+Portal	  manager	  
+Front	  end	  use	  cases	  
+Visitor	  
+Registered	  visitor	  
+Business	  rules	  
+References	  
+
+32	  
+
+32	  
+32	  
+36	  
+43	  
+46	  
+46	  
+52	  
+54	  
+55	  
+
+	  
+Table	  of	  figures	  
+
+Figure	  1:	  Primary	  Actors	  ..................................................................................................................................................................	  9	  
+Figure	  2:	  Secondary	  Actors	  ..........................................................................................................................................................	  10	  
+Figure	  3:	  Administrator	  Use	  Cases	  ............................................................................................................................................	  11	  
+Figure	  4:	  Data	  Manager	  Use	  Cases	  -­‐	  Data	  source	  and	  harvesting	  job	  management	  ..........................................	  12	  
+Figure	  5:	  Data	  manager	  Use	  Cases	  -­‐	  Resource	  Registration	  .........................................................................................	  13	  
+Figure	  6:	  Data	  manager	  Use	  Cases	  -­‐	  Resource	  Management	  ........................................................................................	  15	  
+Figure	  7:	  Portal	  Manager	  Use	  Cases	  ........................................................................................................................................	  16	  
+Figure	  8:	  Visitor	  Use	  Cases	  –	  	  selecting	  and	  viewing	  occurrence	  records	  ................................................................	  17	  
+Figure	  9:	  Visitor	  Use	  Cases	  (continued)	  ..................................................................................................................................	  18	  
+Figure	  10:	  Registered	  Visitor	  Use	  Cases	  ..................................................................................................................................	  19	  
+
+	  
+
+5	  
+
+Introduction
+The NPT is a community, open source project.
+
+Purpose
+The present Nodes Portal Toolkit (NPT) Software Requirements Specification (SRS)
+document was prepared as the next incremental step after the NPT Scoping and
+Requirements (S&R) document, which was drafted by the NPT Advisory Group (AG),
+during the Madrid workshop in March 2011 and publicly released in June 2011.
+The purpose of the SRS is to describe the software requirements for the NPT, reaching
+a level of detail which makes it fit to be circulated amongst the NPT stakeholders, and
+in particular amongst the NPT developers. It is also intended to serve as a basis for
+discussion during the Brussels NPT technical meeting (September 2011), during which
+elements for a high-level architectural and design document will be gathered.
+The purpose of the current version of the SRS document is to clarify, validate and
+verify the requirements for the NPT as expressed by the NPT-AG, focusing on its
+functional aspects. The SRS captures and describes the desired behavior of the end
+product in a wide range of situations.
+Some of the non-functional requirements in this document were taken as is from the
+scoping document and can still be refined.
+The present document is also intended to be a planning instrument for the
+development of the NPT and its potential derivatives.
+
+Scope of the NPT
+As described in the NPT (S&R) document, the Nodes Portal Toolkit is a tool to
+facilitate discovery and access to GBIF data at a national, regional or thematic level,
+including the possibility to offer access to additional sources of information. The
+primary users of the NPT are the Node Managers (specifically, the technical teams
+involved in GBIF Participant Nodes and/or relevant biodiversity information networks),
+as well as the End-Users of the data published through the various NPT instances. The
+NPT should enable the Node Managers to customize the way GBIF-compliant data are
+served to their own community or to a specific group of data users.
+Development of the NPT is based on the needs expressed by the Nodes community. To
+the best extent possible, the wishes of the Nodes and their communities regarding NPT
+functionalities will be expressed in the flexibility and scalability of the tool itself.
+Commitment and feedback is expected from the Nodes community in order to align
+their needs and the functionalities of the NPT, as it evolves in its various releases.
+Even if the NPT is intended to be a technical tool, NPT-based portals are also
+envisioned as an important public relations and communication tool for GBIF
+Participant Nodes, serving also to demonstrate the possibilities that the GBIF network
+offers at different levels (national, regional, thematic).
+
+	  
+
+6	  
+
+Product perspective and historical background
+The need for GBIF Participant Node data portals distinct from (and interacting with)
+the GBIF central portal was already recognized at the first meeting of the Nodes
+committee in Oct 2002 in San Juan, Costa Rica as a major component of the overall
+GBIF architecture. This quickly led to the release of a first version of a GBIF Portal
+toolkit for Nodes (Dec 2002). As there were still no GBIF-mediated data to share at
+that time, this early portal was mainly a communication tool (featuring a hierarchical
+directory of links, files and html pages, announcements, news and articles, calendar of
+events, news channels syndication, etc.…). It also featured a repository for
+biodiversity data files exported from databases (prefiguring to some degree the
+approach adopted by the current IPT software in which exported Darwin Core Archives
+are used to facilitate indexing). Nodes started to deploy the GBIF DiGIR network to
+publish species occurrence data in the fall of 2004 (BioCASE sites following shortly
+after). A first prototype GBIF central portal was officially launched in February 2004.
+In April 2004, Nodes recommended to consider the development of a data portal
+toolkit for nodes as part of a work program. In October 2004, the recommendation
+became a ranked priority, second only to hiring a full time Nodes officer. Between May
+and October 2005, a draft requirements document was developed, a workshop was
+held in Copenhagen and some resources were allocated to an early prototype
+presented in April 2006 in South Africa. At that time, the customized portal for nodes
+was pretty much perceived as a national or thematic subset of the central portal.
+Subsequently the secretariat focused on the development of a new central portal and
+the prototype custom portal for nodes was never deployed. In the summer of 2009, an
+online survey was conducted with preliminary results presented at the Nodes meeting
+in Copenhagen in October. This led to convening an Advisory Group (AG) in December
+2009 in Montreal to work on a scoping document for a Nodes Portal Toolkit (NPT) and a
+set of recommendations on how to develop, implement and deploy such a toolkit.
+The AG met again in March 2011 in Madrid and prepared the scoping (S&R) document,
+under the supervision of the NPT Coordinator. After revision and consultation loops
+between the NPT AG, the GBIF secretariat and the NPT-Coordinator, the S&R
+document was publicly released in June 2011.
+
+Document conventions
+The main type of convention used throughout this document helps to represent the
+level of priority of the different software requirements. These priorities are
+established in function of many factors, including those identified in the NPT (S&R)
+document, consultation loops with the NPT stakeholders, and technical constraints
+which represent the reality at the moment this document is prepared.
+In the functional requirements section, to keep consistency with the NPT (S&R)
+document, the same color codes define priorities as defined by the MoSCoW method.
+Green: NPT V1.0 must have this feature
+Yellow: NPT V1.0 should have this feature if at all possible
+Red: NPT V1.0 could have this feature (if it doesn't affect anything else)
+Black: NPT V1.0 won't have this feature (maybe in the future)
+
+	  
+
+	  
+
+7	  
+
+In Use Case surveys, and Use Case sections, priorities and frequency are attributed an
+increasing index, ranging from 1 (low priority/frequency) to 5 (high
+priority/frequency).
+In the nonfunctional requirements section, a series of acronyms are used, as
+described below:
+BR = Business Rules
+CO = Design and Implementation Constraints
+CR = Capacity Requirements
+IR = Interoperability Requirements
+OE = Operating Environment
+RR = Robustness Requirements
+ScaR = Scalability Requirements
+SR = Security Requirements
+SupR = Supportability Requirements
+UD = User Documentation
+UR = Usability Requirements
+
+	  
+
+8	  
+
+Actor Survey
+This section lists the different actors NPT instances shall interact with: end users
+(primary actors) and actors from which the system needs assistance to satisfy a goal
+(secondary actors).
+
+Primary actors
+
+Figure	  1:	  Primary	  Actors	  
+
+	  
+
+Front	  end	  users	  
+1. Visitors: the data consumers, they only have access to the system frontend.
+2. Registered visitors: once registered, a visitor is offered extra functionalities to save
+and load custom occurrence filters.
+
+Back	  office	  users
+	  
+1. Administrators: they are responsible for installing, configuring and monitoring the
+system and managing modules. They are also in charge of managing user accounts and
+associated roles. Administrators should have skills in system administration, database
+management and deployment of Web applications. They should also have basic
+knowledge of Web-based GIS.
+2. Data managers: they are in charge of maintaining portal resources. Data managers
+should have basic knowledge of taxonomy and biodiversity data.
+3. Portal managers: they configure the portal according to the node profile and
+contribute news, blog entries and articles.
+
+Secondary actors
+
+	  
+
+9	  
+
+Figure	  2:	  Secondary	  Actors	  
+
+1. GBIF Registry: the GBIF Registry is an application that manages the nodes,
+organizations, resources, and IPT installations registered with GBIF, making them
+discoverable and interoperable. More importantly in the context of the NPT, it also
+acts as a repository for extensions.
+2. Data sources: resource repositories that NPT instances can harvest. Two types of
+sources are envisioned in a first approach: IPT instances and GBIF portal Web services
+(using GBIF Portal API). Other data source types may be provided as modules in the
+future.
+
+	  
+
+10	  
+
+Use-Case Model Survey
+Back end users
+Administrator	  
+UC ID
+UC-A1
+UC-A2
+UC-A3
+UC-A4
+
+Name
+
+Priority
+
+Manage modules
+Configure the distribution map
+Manage spatial layers
+Manage user accounts
+
+	  
+
+Figure	  3:	  Administrator	  Use	  Cases	  
+
+	  
+
+Manage	  modules	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-A1 – Manage modules
+The administrator selects to manage modules in order to add new
+functionalities to the system by installing modules. This use cases also
+allows the administrator to configure or update previously installed
+modules.
+Administrator
+1
+Frequency
+2
+
+	  
+Configure	  the	  distribution	  map	  
+Identifier-Name	  
+Description	  
+Actors	  
+Priority	  
+
+UC-A2 – Configure the distribution map	  
+The administrator selects to configure the distribution map to set the
+specific projection and default extent for the Node area of interest. 	  
+Administrator	  
+Frequency	  
+5	  
+1	  
+
+	  
+
+	  
+
+11	  
+
+Manage	  spatial	  layers	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-A3 – Manage spatial layers
+The administrator selects to add or delete the spatial layers displayed on the
+distribution map for the specific Node.
+Administrator
+1
+Frequency
+3
+
+	  
+Manage	  user	  accounts	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-A4 – Manage user accounts
+The security officer performs this use case in order to create or delete
+accounts for the portal staff members so they can access restricted
+functionalities.
+Administrator
+4
+Frequency
+3
+
+	  
+	  
+	  
+Data	  manager	  
+
+Figure	  4:	  Data	  Manager	  Use	  Cases	  -­‐	  
+Data	  source	  and	  harvesting	  job	  management	  
+
+	  
+
+	  
+UC ID
+UC-DM1
+UC-DM2
+UC-DM3
+UC-DM4
+
+	  
+
+Name
+
+Priority
+
+Manage resources
+Register a new data source
+Register a GBIF index data source
+Register an IPT data source
+
+12	  
+
+UC-DM5
+UC-DM6
+UC-DM7
+UC-DM8
+UC-DM9
+UC-DM10
+
+Unregister a data source
+Manage harvesting jobs
+Check core resources consistency with registered data sources
+Trigger a harvesting job
+Update taxonomic backbone
+Install an extension
+
+Manage	  resources	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM1 – Manage resources
+The data manager wants to manage resources in order to import a new
+resource, edit a resource metadata or delete a resource.
+Data manager
+3
+Frequency
+3
+
+	  
+	  
+
+Figure	  5:	  Data	  manager	  Use	  Cases	  -­‐	  Resource	  Registration	  
+
+	  
+
+	  
+Register	  a	  new	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM2 – Register a new data source
+The data manager registers a new data source so the associated core
+resource is harvested during next harvesting job.
+Data manager – Secondary: Data source
+5
+Frequency
+2
+
+	  
+Register	  a	  GBIF	  index	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM3 – Register a GBIF index data source
+Specializes Register a new data source to allow specific configuration for
+GBIF occurrence Web services data sources.
+Data manager – Secondary: GBIF Web services
+5
+Frequency
+2
+
+	  
+Register	  an	  IPT	  data	  source	  
+Identifier-Name
+Description
+
+	  
+
+UC-DM4 – Register an IPT data source
+Specializes Register a new data source to allow specific configuration for IPT
+
+13	  
+
+Actors
+Priority
+
+data sources.
+Data manager – Secondary: IPT instance
+2
+Frequency
+
+2
+
+	  
+Unregister	  a	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM5 – Unregister a data source
+The data manager previously added a data source which is no more relevant
+to the node or which is no more available. The data manager wants to
+unregister this source.
+Data manager
+1
+Frequency
+2
+
+	  
+Manage	  harvesting	  jobs	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM6 – Manage harvesting jobs
+The data manager wants to manage jobs so as to monitor finished and
+upcoming jobs, schedule a new job or cancel a scheduled job.
+Data manager
+3
+Frequency
+1
+
+Check	  core	  resources	  consistency	  with	  registered	  data	  sources	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM7 – Check core resources consistency with registered data sources
+The data manager checks core resources consistency with registered data
+sources to identify outdated core resources and unavailable data sources.
+Data manager - Secondary: Registered occurrence data source
+5
+Frequency
+3
+
+Trigger	  a	  harvesting	  job	  
+Identifier-Name
+Description
+Actors
+Priority
+
+	  
+
+UC-DM8 – Trigger a harvesting job
+The data manager selects to backup portal data so as to synchronize the
+portal biodiversity data with those hosted on the registered data sources.
+Primary: Data manager - Secondary: Data source
+5
+Frequency
+3
+
+14	  
+
+	  
+
+Figure	  6:	  Data	  manager	  Use	  Cases	  -­‐	  Resource	  Management	  
+
+	  
+Update	  taxonomic	  backbone	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM9– Update taxonomic backbone
+The data manager updates the taxonomic backbone.
+Data manager
+5
+Frequency
+3
+
+	  
+Install	  an	  extension	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-DM10 – Install an extension
+The data manager wants to install an extension to allow the system to deal
+with extra attributes for records of core resources.
+Primary: Data manager – Secondary: GBIF registry
+3
+Frequency
+3
+
+	  
+	  
+	  
+Portal	  manager	  
+
+	  
+	  
+
+15	  
+
+Figure	  7:	  Portal	  Manager	  Use	  Cases	  
+
+	  
+UC ID
+UC-PM1
+UC-PM3
+UC-PM3
+
+Name
+
+Priority
+
+Configure data metrics visibility
+Customize NPT instance
+Configure front office languages
+
+	  
+
+Configure	  data	  metrics	  visibility	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-PM3 - Configure data metrics visibility
+The portal manager configures data metrics visibility in order to hide some
+metrics from the visitors in the front office.
+Portal manager
+5
+Frequency
+1
+
+Customize	  NPT	  instance	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-PM2 - Customize NPT instance
+Portal manager customizes NPT instance to adapt the portal appearance
+and parameters to fit its organization.
+Portal manager
+5
+Frequency
+1
+
+Configure	  front	  office	  languages	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-PM3 – Configure front office languages
+The data manager selects to manage front office languages so as to set the
+default language and chooses alternate language.
+Portal manager
+3
+Frequency
+2
+
+	  
+Front end users
+Visitor	  
+	  
+UC ID
+UC-V1
+UC-V2
+UC-V3
+UC-V4
+UC-V5
+UC-V6
+UC-V7
+UC-V8
+UC-V9
+
+Name
+
+Priority
+
+Send feedback to the portal contact person
+Select occurrence records and view distribution map
+View occurrence record selection as a table
+Export occurrence record selection
+Export distribution map as an image
+Search portal using full text search
+Contact an occurrence resource publisher
+Export a checklist
+Choose portal language
+
+	  
+	  
+
+16	  
+
+	  
+
+Figure	  8:	  Visitor	  Use	  Cases	  –	  	  
+selecting	  and	  viewing	  occurrence	  records	  
+
+	  
+
+	  
+Send	  feedback	  to	  the	  portal	  contact	  person	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-V1 - Send feedback to the portal contact person
+The visitor sends feedback to the portal contact person so as to
+communicate remarks or suggestions about the portal or about the hosted
+data.
+Visitor
+5
+Frequency
+1
+
+	  
+Select	  occurrence	  records	  and	  view	  distribution	  map	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-V2 – Select occurrence records and view distribution map
+The visitor wants to discover and access occurrence records. He can select
+his records of interest using simple taxonomic search or a more elaborate
+advanced search by combining various criteria.
+Visitor
+5
+Frequency
+5
+
+View	  occurrence	  record	  selection	  as	  a	  table	  
+Identifier-Name
+Description
+Actors
+
+	  
+
+UC-V3 - View occurrence record selection as a table
+User selects to view occurrence records selection as a table in order to
+display their attributes.
+Visitor
+
+17	  
+
+Priority
+
+3
+
+Frequency
+
+3
+
+Export	  occurrence	  record	  selection	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-V4 - Export occurrence record selection
+User exports the occurrence selection for further analysis.
+Visitor
+3
+Frequency
+4
+
+Export	  distribution	  map	  as	  an	  image	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-V5 - Export distribution map as an image
+The visitor exports distribution map as an image so as to be able to insert it
+in a document.
+Visitor
+3
+Frequency
+4
+
+Figure	  9:	  Visitor	  Use	  Cases	  (continued)	  
+
+	  
+Search	  portal	  using	  full	  text	  search	  
+Identifier-Name
+Description
+Actors
+Priority
+
+	  
+
+UC-V6 – Search portal using full text search
+The visitor searches resource metadata, blog, article and news entries using
+full text search in order to find and access matching resources and entries.
+Visitor
+3
+Frequency
+4
+
+18	  
+
+Contact	  an	  occurrence	  resource	  publisher	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-V7 – Contact an occurrence resource publisher
+The visitor contacts the publisher of an occurrence resource to request
+more information or send a comment.
+Visitor
+2
+Frequency
+1
+
+Export	  	  a	  checklist	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-V8 – Export a checklist
+The visitor downloads a checklist for consultation/analysis.
+Visitor
+3
+Frequency
+2
+
+Choose	  portal	  language	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+
+UC-V9 - Choose portal language
+The visitor chooses his language of preference.
+Visitor
+5
+Frequency
+2
+The portal manager has configured front office languages with at least one
+alternate language.
+
+	  
+	  
+Registered	  visitor	  
+	  
+UC ID
+UC-RV1
+UC-RV2
+UC-RV3
+
+Name
+
+Priority
+
+Save a custom filter
+Load a custom filter
+Delete a custom filter
+
+	  
+	  
+
+Figure	  10:	  Registered	  Visitor	  Use	  Cases	  
+
+	  
+
+Save	  a	  custom	  filter	  
+Identifier-Name
+
+	  
+
+UC-RV1 – Save a custom filter
+
+19	  
+
+Description
+Actors
+Priority
+
+The registered visitor has built a filter and wants to be able to reuse it in
+the future. He saves the filter in his profile.
+Registered visitor
+1
+Frequency
+2
+
+	  
+Load	  a	  custom	  filter	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-RV2 – Load a custom filter
+Visitor loads a filter he previously saved in his profile.
+Registered visitor
+1
+Frequency
+2
+
+	  
+Delete	  a	  custom	  filter	  
+Identifier-Name
+Description
+Actors
+Priority
+
+UC-RV3 – Delete a custom filter
+Visitor has built a filter. He wants to be able to reuse it in future visits. He
+saves the filter to be able to load it later.
+Registered visitor
+1
+Frequency
+2
+
+	  
+	  
+
+	  
+
+20	  
+
+Functional requirements
+Back end functionalities
+Administrator	  
+FR ID
+FR-A1
+FR-A2
+FR-A3
+FR-A4
+FR-A5
+FR-A6
+FR-A7
+FR-A8
+FR-A9
+FR-A10
+FR-A11
+FR-A12
+FR-A13
+FR-A14
+FR-A15
+FR-A16
+FR-A17
+
+Name
+The system shall allow the administrator to
+The system shall allow the administrator to
+The system shall allow the administrator to
+distribution map projection
+The system shall allow the administrator to
+distribution map default extent
+The system shall allow the administrator to
+server configuration (URL, port, account)
+The system shall allow the administrator to
+to the distribution map
+The system shall allow the administrator to
+layer from the distribution map
+The system shall allow the administrator to
+spatial layer of the distribution map
+The system shall allow the administrator to
+The system shall allow the administrator to
+The system shall allow the security officer
+user account
+The system shall allow the security officer
+account
+The system shall allow the security officer
+a user account
+The system shall allow the security officer
+from a user account
+The system shall allow the security officer
+address associated with a user account
+The system shall allow the security officer
+
+install modules
+uninstall modules
+configure the
+
+UC ID
+UC-A1
+UC-A1
+UC-A2
+
+configure the
+
+UC-A2
+
+Priority
+
+edit the email
+add a spatial layer
+
+UC-A3
+
+remove a spatial
+
+UC-A3
+
+edit the name of a
+
+UC-A3
+
+view error logs
+download error logs
+
+to create a new
+
+UC-A4
+
+to delete a user
+
+UC-A4
+
+to assign a role to
+
+UC-A4
+
+to remove a role
+
+UC-A4
+
+to edit the email
+
+UC-A4
+
+to view audit logs
+
+-
+
+The system shall allow the security officer to download audit
+log entries for a given month
+
+-
+
+	  
+Data	  manager	  
+FR ID
+FR-DM1
+FR-DM2
+FR-DM3
+FR-DM4
+FR-DM5
+
+	  
+
+Name
+The system shall allow the data manager
+occurrence resource
+The system shall allow the data manager
+occurrence resource
+The system shall allow the data manager
+metadata of an occurrence resource
+The system shall allow the data manager
+occurrence resources by keywords
+The system shall allow the data manager
+
+to import an
+
+UC ID
+UC-DM1
+
+to delete an
+
+UC-DM1
+
+to edit the
+
+UC-DM1
+
+to search
+
+UC-DM1
+
+to import a
+
+UC-DM1
+
+Priority
+
+21	  
+
+FR-DM6
+FR-DM7
+FR-DM8
+FR-DM9
+FR-DM10
+FR-DM11
+FR-DM12
+FR-DM13
+FR-DM14
+FR-DM15
+FR-DM16
+FR-DM17
+FR-DM18
+FR-DM19
+FR-DM20
+FR-DM21
+FR-DM22
+FR-DM23
+FR-DM24
+FR-DM25
+FR-DM26
+FR- DM27
+FR- DM28
+FRFRFRFR-
+
+DM29
+DM30
+DM31
+DM32
+
+FR- DM33
+FR- DM34
+
+	  
+
+checklist resource
+The system shall allow the data manager to delete a
+checklist resource
+The system shall allow the data manager to edit the
+metadata of a checklist resource
+The system shall allow the data manager to search
+checklist resources by keywords
+The system shall allow the data manager to import a
+multimedia resource
+The system shall allow the data manager to delete a
+multimedia resource
+The system shall allow the data manager to edit the
+metadata of a multimedia resource
+The system shall allow the data manager to search
+multimedia resources by keywords
+The system shall allow the data manager to import a
+bibliographic resource
+The system shall allow the data manager to delete a
+bibliographic resource
+The system shall allow the data manager to edit the
+metadata of a bibliographic resource
+The system shall allow the data manager to search
+bibliographic resources by keywords
+The system shall allow the data manager to import an
+institution resource
+The system shall allow the data manager to delete an
+institution resource
+The system shall allow the data manager to edit the
+metadata of an institution resource
+The system shall allow the data manager to search
+institution resources by keywords
+The system shall allow the data manager to import an
+expert resource
+The system shall allow the data manager to delete an
+expert resource
+The system shall allow the data manager to edit the
+metadata of an expert
+The system shall allow the data manager to search expert
+resources by keywords
+The system shall allow the data manager to register a
+GBIF index data source
+The system shall allow the data manager to register an
+IPT data source
+The system shall allow the data manager to unregister an
+IPT data source
+The system shall allow the data manager to unregister a
+GBIF index data source
+Schedule a harvesting job
+Cancel an harvesting job
+View report for a harvesting jobs
+Check core resources consistency with registered data
+sources
+Trigger a harvesting job
+The system shall allow the data manager to request
+
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM1
+UC-DM3
+UC-DM4
+UC-DM5
+UC-DM5
+UC-DM6
+UC-DM6
+UC-DM6
+UC-DM7
+UC-DM8
+-
+
+22	  
+
+FR- DM35
+FR- DM36
+FR- DM37
+
+restoration of the latest backup
+Update taxonomic backbone
+Install an extension
+Monitor portal usage
+
+	  
+
+UC-DM9
+UC-DM10
+-
+
+Portal	  manager	  
+FR ID
+FR-PM1
+FR-PM2
+FR-PM3
+FR-PM4
+FR-PM5
+FR-PM6
+FR-PM7
+FR-PM8
+FR-PM9
+FR-PM10
+FR-PM11
+FR-PM12
+FR-PM13
+FR-PM14
+FR-PM15
+FR-PM16
+FR-PM17
+FR-PM18
+FR-PM19
+FR-PM20
+
+	  
+
+Name
+The system shall allow the portal manager to configure data
+metrics visibility
+The system shall allow the portal manager to change the logo
+displayed on the portal
+The system shall allow the portal manager to change the
+Node name displayed on the portal
+The system shall allow the portal manager to change the
+portal banner
+The system shall allow the portal manager to configure the
+name and email of the portal contact person
+The system shall allow the portal manager to configure the
+Network summary information
+The system shall allow the portal manager to choose the
+default language of the portal
+The system shall allow the portal manager to add an
+alternate language to the portal
+The system shall allow the portal manager to remove an
+alternate language to the portal
+The system shall allow the portal manager to contribute a
+portal news entry
+The system shall allow the portal manager to edit a portal
+news entry
+The system shall allow the portal manager to delete a portal
+news entry
+The system shall allow the portal manager to contribute a
+blog post
+The system shall allow the portal manager to edit a blog post
+The system shall allow the portal manager to delete a blog
+post
+The system shall allow the portal manager to manage the
+portal menu
+The system shall allow the portal manager to add a page to
+the portal
+The system shall allow the portal manager to delete a page
+from the portal
+The system shall allow the portal manager to edit a page
+from the portal
+The system shall allow the portal manager to edit the HTML
+metadata tags for the portal pages to help the portal to be
+discoverable through search engines
+
+UC ID
+UC-PM1
+
+Priority
+
+UC-PM2
+UC-PM2
+UC-PM2
+UC-PM2
+UC-PM2
+-
+
+23	  
+
+Front-end functionalities
+Visitor	  
+FR ID
+FR-V1
+FR-V2
+FR-V3
+FR-V4
+FR-V5
+FR-V6
+FR-V7
+FR-V8
+FR-V9
+FR-V10
+FR-V11
+FR-V12
+FR-V13
+FR-V14
+FR-V15
+FR-V16
+FR-V17
+FR-V18
+FR-V19
+FR-V20
+FR-V21
+FR-V22
+FR-V23
+FR-V24
+FR-V25
+FR-V26
+FR-V27
+
+	  
+
+Name
+The system shall allow a visitor to build an occurrence
+selection filter
+The system shall allow a visitor to add a taxonomic criterion
+to a filter
+The system shall allow a visitor to add a dataset criterion to a
+filter
+The system shall allow a visitor to add a depth criterion to a
+filter
+The system shall allow a visitor to add an altitude criterion to
+a filter
+The system shall allow a visitor to add a basis of records
+criterion to a filter
+The system shall allow a visitor to add a geographic criterion
+to a filter
+The system shall allow a visitor to add a date criterion to a
+filter
+The system shall allow a visitor to remove a criterion from a
+filter
+The system shall allow a visitor to select occurrence records
+using a filter
+The system shall allow a visitor to view the distribution map
+for an occurrence record selection
+The system shall allow a visitor to view an occurrence record
+selection as a table
+The system shall allow a visitor to export an occurrence
+record selection
+The system shall allow a visitor to export the distribution map
+for an occurrence record selection as an image
+The system shall allow a visitor to search all the portal
+content using full text search
+The system shall allow a visitor to contact an occurrence
+resource publisher
+The system shall allow a visitor to export a checklist
+The system shall allow a visitor to choose his preferred
+language for the portal interface
+The system shall allow a visitor to send feedback to the portal
+contact person
+The system shall allow a visitor to view latest blog posts
+The system shall allow a visitor to read a blog post
+The system shall allow a visitor to view latest portal news
+entries
+The system shall allow a visitor to read a portal news entry
+The system shall allow a visitor to view details for a taxon
+The system shall allow a visitor to view metadata for a
+dataset
+The system shall allow a visitor to view metadata for a
+checklist
+The system shall allow a visitor to view details for a
+
+UC ID
+UC-V1
+
+Priority
+
+UC-V1
+UC-V1
+UC-V1
+UC-V1
+UC-V1
+UC-V1
+UC-V1
+UC-V1
+UC-V2
+UC-V2
+UC-V3
+UC-V4
+UC-V5
+UC-V6
+UC-V7
+UC-V8
+UC-V9
+UC-V10
+-
+
+24	  
+
+FR-V28
+FR-V29
+FR-V30
+FR-V31
+FR-V32
+FR-V33
+FR-V34
+FR-V35
+FR-V36
+FR-V37
+FR-V38
+FR-V39
+FR-V40
+FR-V41
+FR-V42
+
+	  
+
+bibliographic record
+The system shall allow a visitor to view details for an
+institution
+The system shall allow a visitor to view details for an expert
+The system shall allow a visitor to view metadata for a
+multimedia file
+The system shall allow a visitor to download a multimedia file
+The system shall allow a visitor to navigate (pan, zoom in and
+out) a distribution map
+The system shall allow a visitor to toggle spatial layers
+visible/hidden on a distribution map
+The system shall allow a visitor to register
+The system shall allow a visitor to access the log in
+functionality
+The system shall allow a visitor to request to be sent his
+password by email
+The system shall allow a visitor to share a distribution map on
+twitter
+The system shall allow a visitor to access a dashboard
+displaying data metrics for the portal
+The system shall allow a visitor to export data metric archives
+for the portal
+The system shall allow a visitor to view Network summary
+information
+The system shall allow a visitor to view information about
+tools and services offered by the portal
+The system shall allow a visitor to view latest news from GBIF
+newsfeeds relayed by the system
+
+-
+
+Registered	  visitor	  
+FR ID
+FR-RV1
+FR-RV2
+FR-RV3
+
+	  
+
+Name
+The system shall allow a registered visitor to save a custom
+filter
+The system shall allow a registered visitor to load a custom
+filter
+The system shall allow a registered visitor to delete a custom
+filter
+
+UC ID
+UC-RV1
+
+Priority
+
+UC-RV2
+UC-RV3
+
+25	  
+
+Nonfunctional Requirements
+Assumptions and Dependencies
+DE1
+DE2
+DE3
+
+The operation of the system depends on GBIF registry to allow addition of new
+extensions.
+The operation of the system depends on GBIF occurrence Web services1 to harvest a
+data source if it is of GBIF global index type.
+The operation of the system to harvest occurrence resource for an IPT instance data
+source depends on that IPT instance.
+
+Security Requirements
+SR1
+SR2
+SR3
+SR4
+SR5
+SR6
+
+SR7
+SR8
+SR9
+SR10
+
+The system shall retain an audit log for all successful back end operations.
+The system shall restrict access to all functionalities altering data to data
+managers (BR4).
+The system shall restrict access to user management functionalities to
+administrators. (BR3).
+The system shall restrict access to module management functionalities to
+administrators (BR6).
+The system shall restrict access to distribution map configuration
+functionalities to administrators (BR6).
+The system shall restrict access to portal manager for the following
+functionalities: manage blog posts, pages and news entries, customize NPT
+instance and choose languages available on the front end (BR5).	  
+The system shall restrict access to portal manager for blog management
+functionalities (BR5).
+The system shall restrict access to portal manager for news management
+functionalities (BR5).
+The system shall restrict access to portal manager for the NPT instance
+customization function (BR5).
+The system shall restrict access to portal manager for front-end available
+language management functionalities (BR5).
+
+Scalability Requirements
+ScaR1
+ScaR2
+ScaR3
+ScaR4
+
+The system should be able to cope with 300 000 000 occurrence records (size
+of the GBIF index at the time of writing).
+The system shall have no limitation on the number records the export
+occurrence records functionality can process (UC-V4, FR-V13).
+The system should be able to cope (without crashing) with a wide range of
+stress situations.
+The system should perform reasonably under important workload (queries and
+data discovery).
+
+	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  	  
+1
+
+	  
+
+http://code.google.com/p/gbif-portalapi/
+
+26	  
+
+Robustness Requirements
+RR1
+RR2
+RR3
+RR4
+
+An error tracking system shall be in place.
+Database transactions shall insure data consistency in case of failure.
+Backups of all system data shall be generated on a weekly basis.
+Upon request from the data manager, a backup shall be restored within the next
+24 hours.
+
+Interoperability Requirements
+IR1
+IR2
+IR3
+IR4
+IR5
+IR6
+IR7
+IR8
+IR9
+IR10
+
+The system
+The system
+The system
+The system
+The system
+The system
+The system
+The system
+The system
+The system
+metadata.
+
+shall
+shall
+shall
+shall
+shall
+shall
+shall
+shall
+shall
+shall
+
+allow
+allow
+allow
+allow
+allow
+allow
+allow
+allow
+allow
+allow
+
+importing checklist resources as DwC-A files.
+importing occurrence resources as DwC-A files.
+exporting checklist resources as DwC-A files.
+exporting occurrence records as DwC-A files.
+exporting occurrences records as KMZ files.
+exporting occurrences records as CSV files.
+exporting occurrences records as ESRI shapefiles.
+exporting distribution map as images.
+exporting core resource metadata as EML profiles.
+using the Audubon Core format for multimedia
+
+Operating Environment
+OE1
+OE2
+
+The system shall operate with the two latest major releases of the following
+Web browsers: Firefox, Opera, Chrome, Internet Explorer and Safari.
+The system shall operate on a server running Linux, Windows server or Mac OS.
+
+Usability Requirements
+UR1
+UR2
+UR3
+UR4
+UR5
+
+The interface for end-users should be relatively intuitive and easy to use,
+without requiring extensive technical assistance, support or off line user guides.
+For system managers, guides may be needed to explore advanced
+functionalities, but those advanced functionalities should be as intuitive as
+possible.
+Maintenance in terms of user interface configuration, user rights management,
+and data source settings should be done with visual tools.
+The system shall allow a visitor to select the language used on the front end.
+The system shall display friendly error messages to the users.
+
+Supportability Requirements
+SupR1
+
+A clear and standard practice for the maintenance and documentation of code
+should be set in place, agreed and communicated as a best practice. Any
+features developed outside the core of the NPT should follow that practice.
+
+User Documentation Requirements
+UD1
+UD2
+
+	  
+
+The system shall provide a short tutorial video explaining how to search and
+export occurrence records.
+One offline installation guide with step-by-step instructions shall be provided
+(with different notes for each OS the system can operate on).
+
+27	  
+
+UD3
+
+A wiki, organized around the different types of users, on the NPT Google Code
+site, similar to that developed for the GBIF IPT project will be available.
+
+Design and Implementation Constraints
+CO1
+CO2
+CO3
+
+CO4
+
+CO5
+
+The system shall be implemented using open-source technologies.
+The system shall be written in PHP.
+The system should be built in a modular way, which ensures that component
+functionalities can be adjusted, added, improved, removed or exchanged
+without impacting the application as a whole. Approaching the system using
+development best practices such as MVC (Model-View-Controller) can allow this
+sort of modularity.
+The NPT development and implementation should follow design principles that
+will enable future growth, both in terms of the addition of new functionality or
+through modification of existing functionality. In addition, NPT developers
+should provide the possibility to consume services and functions that are
+created elsewhere. Examples include reference taxonomic data sources,
+mapping functions or web map services (WMS).
+Sustainability embedded at each stage of development. The developers of the
+NPT should be mindful of the strategic implications of development choices to
+the long term sustainability of the NPT in a number of key areas: underlying
+hardware and software; development tools and frameworks; level of effort for
+system administrators and portal managers; level of interest and engagement of
+users, including researchers, data providers and other interested visitors.
+
+Interfaces
+User Interfaces
+Pagination	  
+Long (more than 25) lists of items shall be paginated.
+
+Distribution	  map	  
+Distribution map shall allow the user to pan and to zoom in and out.
+
+Filter	  building	  interface	  
+While building a filter, visitors shall be presented the count of matching occurrences
+in real time (before launching the search).
+
+	  
+
+Hardware Interfaces
+No hardware interfaces have been identified.
+
+Software Interfaces
+Application	  programming	  interface	  
+SI1.1
+
+	  
+
+The system shall provide a Web service-based API to search and access core
+
+28	  
+
+SI1.2
+SI1.3
+
+resource metadata.
+The system shall provide a Web service-based API to search and retrieve
+occurrence records.
+The system shall provide a Web service-based API to search and retrieve taxa
+from the taxonomic backbone.
+
+GBIF	  IPT	  
+SI2.1
+SI2.2
+
+The system shall poll IPT instances to retrieve the list of public core resources
+available.
+The system shall poll IPT instances to retrieve core resources.
+
+GBIF	  resource	  Web	  services	  
+SI3.1
+
+The system shall poll GBIF occurrence Web service to retrieve core resources.
+
+GBIF	  Registry	  
+SI4.1
+
+The system shall poll GBIF Registry to retrieve the list of available extensions.
+
+Communications	  Interfaces	  
+CI1
+CI2
+CI3
+CI4
+CI5
+
+The system shall send an email
+feedbacks.
+The system shall send an email
+visitor feedbacks.
+The system shall send an email
+harvesting job.
+The system shall send an email
+backup operation.
+The system shall send an email
+backup restoration operation.
+
+to the portal contact person to forward visitor
+to data provider contact person to forward
+to the data manager upon completion of a
+to the data manager upon completion of a
+to the data manager upon completion of a
+
+Licensing Requirements
+LR1
+LR2
+
+	  
+
+The system shall be released under an open-source compliant license.
+The system shall use the same data usage agreement as GBIF portal.
+
+29	  
+
+Glossary
+
+	  
+
+•
+
+API: an application programming interface (API) is a particular set of rules and
+specifications that software programs can follow to communicate with each
+other. It serves as an interface between different software programs and
+facilitates their interaction, similar to the way the user interface facilitates
+interaction between humans and computers. (source: Wikipedia)
+
+•
+
+Audit log: this log keeps track of all successful operations in the system front
+end. An audit log entry consists of the name of the operation, the name of the
+user who initiated the action and the date and time it occurred.
+
+•
+
+Backup report: report sent to the data manager once a backup operation is
+completed. If successful, the report contains statistics about the backup data
+and a link to the backup file.
+
+•
+
+CMS: Content Management System.
+
+•
+
+Core resource: an occurrence or checklist resource.
+
+•
+
+Darwin core: A standard consisting of terms and classes of terms used to share
+biodiversity data. (source: The GBIF Integrated Publishing Toolkit User Manual)
+
+•
+
+Darwin core archive (DwC-A): A single zipped archive for a data set consisting
+of one or more text files of data, an XML file describing the contents of the
+text files and how they relate to each other, and an XML file containing the
+dataset metadata in EML format. (source: The GBIF Integrated Publishing
+Toolkit User Manual)
+
+•
+
+Data usage log: A usage log entry contains the following information for each
+usage of the occurrence data: the date and time of the usage, the type
+("mapped" or "exported") of the usage, the originating country, the number of
+occurrence records and a text representation of the filter used.
+
+•
+
+Data usage statistics: monthly statistics about the data visitors. They’re
+computed from the data usage logs.
+
+•
+
+Data metrics: data usage statistics and statistics about the data hosted on the
+portal i.e. data mass (number of occurrence records), taxonomic diversity
+(number of different taxa with occurrences).
+
+•
+
+EML: The Ecological Metadata Language is an XML-based profile used to encode
+metadata about a data set.
+
+•
+
+GIS: A geographic information system (GIS), geographical information system,
+or geospatial information system is a system designed to capture, store,
+manipulate, analyze, manage and present all types of geographically
+referenced data.
+
+•
+
+Harvesting job: the process of fetching core resources from registered data
+sources and updating the portal index with those data.
+
+•
+
+Harvesting report: a report containing success status and possible failure
+causes for each harvested data sources.
+
+30	  
+
+	  
+
+•
+
+IPT: The Integrated Publishing Toolkit (IPT) is a deployable web-based tool that
+allows users to serve onto the Internet (or Intranet): primary biodiversity
+occurrence data [...], taxonomic checklist data [...] and higher-level dataset
+descriptive data (metadata) [...]. (source: Integrated Publishing Toolkit (IPT) Architectural view)
+
+•
+
+Maintenance mode: the mode the system switches to when achieving certain
+operations that may prevent to deliver a satisfactory experience to the user in
+particular when the index may be inconsistent. When in that mode, all portal
+screens display an apology message informing the visitors that the portal is
+under maintenance and inviting them to wait a moment before trying to use it.
+
+•
+
+MVC: the Model View Controller is a software architecture pattern used in web
+applications to separate the concerns of data modeling, the rendering of the
+model for client consumption and the logic for accessing the content.
+
+•
+
+Report: a file generated when a consuming operation on core resource index
+has been completed. Such a file contains a success status, description on the
+job outcome and statistics about the core resource index after completion. In
+case of failure, the report indicates the cause.
+
+•
+
+Resource: In this document, a resource refers to a dataset and associated
+metadata. Resources handled by NPT instances are core resources, multimedia
+files, institutions, literature entries and experts.
+
+•
+
+Resource file: a file containing data for a resource (i.e. both records and
+metadata).
+
+•
+
+Spatial layers: the geospatial layers displayed on the distribution map.
+
+•
+
+Taxonomic backbone: A specialized checklist, which is used to organize
+biodiversity data, indexed within the NPT, particularly occurrence data.
+
+31	  
+
+Appendixes
+Notes and conventions for use cases:
+•
+•
+•
+
+Identifier of use cases start with ‘UC’ and sub flows with ‘S’.
+an underlined phrase in a use case flow refers to the use case (or sub flow)
+with the same name.
+standard (e.g. “log in” or “register”) or obvious (e.g. “view Network summary
+information”) functionalities haven’t been promoted as a use case but are
+nevertheless listed in the functionality requirement section.
+
+Back end use cases
+Administrator	  
+A user may only initiate the use cases in this section if he is logged into the system
+using a user account with administrator role.
+Manage	  modules	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+a
+b
+c
+d
+e
+f
+g
+h
+
+UC-A1 – Manage modules
+The administrator selects to manage modules so as to add new
+functionalities to the system by installing modules, configure or update
+previously installed modules.
+Administrator
+1
+Frequency
+2
+The use case starts when the administrator selects to manage modules.
+The system retrieves the list of all installed modules and displays the list to
+the administrator. The system provides two options for each module:
+update and configure. The system also displays the function install a new
+module.
+The administrator selects to install a new module.
+The system requests the administrator to provide the module file.
+The administrator selects the module file on his local computer.
+The system installs the module from the file.
+The system records an audit log entry.
+The system informs the administrator that the module has been successfully
+installed.
+The use case ends.
+
+i
+Alternate flows
+Configure module
+c1
+The administrator selects the module of interest and chooses to configure
+it.
+d1
+The system requests the administrator to enter the configuration
+parameters specific to that module.
+e1
+The administrator enters the configuration parameters so the module fits
+the Node’s needs.
+f1
+The system saves the module configuration.
+g1
+The system records an audit log entry.
+h1
+The system informs the administrator that the module has been successfully
+configured.
+
+	  
+
+32	  
+
+i1
+Update module
+c2
+d2
+e2
+f2
+
+The use case ends.
+The administrator selects the module of interest and chooses the option to
+update it.
+The system requests the administrator to provide the module file.
+The administrator selects the module file on his local computer.
+The system installs the new version of the module from the file. The system
+configures it with the parameters used for the previous version.
+The system records an audit log entry.
+The system informs admin the module has been successfully updated.
+The use case ends.
+
+g2
+h2
+i2
+Exceptions
+Handle error during module installation
+The system reports the installation failure to the administrator. The use
+f3
+case ends.
+g3
+The system records an error log entry.
+f3
+The use case ends.
+Handle error during module update
+f2.1
+The system reports the update failure to the administrator.
+f2.2
+The system records an error log entry.
+f2.3
+The use case ends.
+
+Configure	  the	  distribution	  map	  
+Identifier-Name	  
+Description	  
+Actors	  
+Priority	  
+Post conditions	  
+Trigger	  
+
+UC-A2 – Configure the distribution map	  
+The administrator selects to configure the distribution map so it uses the
+specific projection and default extent for the Node area of interest. 	  
+Administrator	  
+Frequency	  
+5
+1
+The distribution map will use the projection and default extent the
+administrator chose. 	  
+Upon NPT instance configuration, the administrator selects to configure the
+distribution map.	  
+
+Main flow	  
+
+a	  
+b	  
+c	  
+d	  
+e	  
+f	  
+g	  
+h	  
+
+The administrator selects to configure the distribution map.	  
+The system retrieves the list of standard projections and displays the list to
+the administrator. The system requests the administrator to select the
+projection and to enter the default extent for the map.	  
+The administrator enters the default extent and selects the projection that
+will be used by the distribution map from the list. The Portal manager
+updates the system configuration.	  
+The system validates the provided default extent values.
+The system updates its portal configuration with the new projection and
+default extent.
+The system records an audit log entry.
+The system informs the administrator the changes have successfully been
+saved.
+The use case ends.
+
+Alternate flow
+Handle invalid values for default extent
+
+	  
+
+33	  
+
+f3
+
+The system informs the administrator that the values he entered for the
+map default extent are invalid. The system updates the portal
+configuration with the provided projection. The use case ends.
+
+	  
+Manage	  spatial	  layers	  
+Identifier-Name
+
+UC-A3 – Manage spatial layers
+The administrator selects to add or delete the spatial layers displayed on
+Description
+the distribution map for the specific Node.
+Actors
+Administrator
+Priority
+1
+Frequency
+3
+Main flow (add a spatial layer)
+The use case starts when the administrator selects to manage spatial
+a
+layers.
+The system retrieves the list of all available spatial layers. The system
+displays the list to the administrator with two options for each layer:
+b
+“delete this layer” and “update this layer”. The system offers a third
+function: “add a layer”.
+c
+The administrator chooses the option to add a new spatial layer.
+d
+The system requests the administrator to enter a name for the layer and to
+provide the spatial layer file.
+e
+The administrator enters a name for the layer.
+f
+The administrator selects the spatial layer file on his local computer.
+g
+The system validates the spatial layer file.
+h
+The system saves the spatial layer.
+i
+The system records an audit log entry.
+j
+The system informs the administrator that the addition was successful.
+k
+The use case ends.
+Alternate flows
+Update a spatial layer.
+The administrator selects the spatial layer of interest and chooses the
+c1
+option to update it.
+d1
+The system displays the spatial layer name. The system proposes the
+administrator to edit the layer name and to provide a new version of the
+spatial layer file.
+e1
+The administrator edits the layer name and/or selects a spatial layer file on
+his local computer.
+f1
+The use case resumes at step g.
+Delete a spatial layer.
+The administrator selects the spatial layer of interest and chooses the
+c2
+option to delete it.
+d2
+The system deletes the spatial layer.
+e2
+The system records an audit log entry.
+f2
+The system informs the administrator of the deletion success.
+g2
+The use case ends.
+Exceptions
+Handle corrupted file or file of an invalid format
+The system informs the administrator that the file corrupted or is not of an
+f3
+invalid format and requests him to try again.
+g3
+The system records an error log entry.
+
+	  
+
+34	  
+
+f3
+The use case ends.
+An error occurred during the spatial layer file import.
+g4
+The system informs the administrator the file could not be imported.
+h4
+The system records an error log entry.
+i4
+The use case ends.
+
+	  
+Manage	  user	  accounts	  
+Identifier-Name
+
+UC-A4 – Manage user accounts
+The administrator performs this use case in order to create or delete
+accounts for the portal staff members. Depending on the roles the
+Description
+administrator associates with those accounts, the users may be allowed to
+access restricted back end functionalities.
+Actors
+Administrator
+Priority
+4
+Frequency
+3
+Main flow (create a user account)
+a
+The administrator selects to manage user accounts.
+The system retrieves the list of user accounts and displays the list to the
+administrator. For each user accounts, the system displays options to delete
+b
+and update the user account. The system also provides an option to create a
+new user account.
+c
+The administrator selects to create a new user account.
+d
+The system requests the security officer to enter user account information.
+e
+The administrator enters user account information.
+The system displays the list of roles and requests the administrator to select
+f
+the security roles for the user account.
+g
+The administrator selects the security roles for this user account.
+The system verifies that no user account with the provided user name
+h
+already exists.
+i
+The system saves the user account.
+j
+The system records an audit log entry.
+The system informs the administrator that the user account was successfully
+k
+created.
+l
+The use case ends.
+Alternate flow
+Update a user account.
+The data manager selects the user account of interest and chooses the
+c1
+option to update it.
+The system displays the user account information associated with this
+d1
+account and requests the administrator to edit the user account password or
+contact email address.
+e1
+If needed, the administrator edits the user account information.
+The system displays the list of roles. Each role is preselected if the user
+account is associated with it. For each role, the system provides the option
+f1
+to select or unselect it. The system requests the security officer to select
+the security roles this user account will be associated with.
+The administrator selects the security roles to be associated with that user
+g1
+account.
+h1
+The system updates the user account.
+i1
+The system records an audit log entry.
+
+	  
+
+35	  
+
+j1
+The system informs the administrator of the update success.
+k1
+The use case ends.
+Delete a user account.
+The administrator selects the user account of interest and chooses the
+c2
+option to delete it.
+d2
+The system deletes the user account.
+i1
+The system records an audit log entry.
+j1
+The system informs the administrator of the deletion success.
+k1
+The use case ends.
+A user account with that user name already exists.
+A user account with that user name already exists; the system informs the
+h3
+administrator that the user account could not be created because the user
+name already exists. The use case returns to step b.
+
+	  
+Data	  manager	  
+A user may only initiate the use cases in this section if he is logged into the system using a user
+account with data manager role.
+
+Manage	  resources	  
+Identifier-Name
+
+UC-DM1 – Manage resources
+The data manager wants to manage resources so as to import a new
+Description
+resource, edit a resource metadata or delete a resource.
+Actors
+Data manager
+Priority
+3
+Frequency
+3
+Main flow (import a resource)
+a
+The use case starts when the data manager selects to manage resources.
+The system displays the list of available resource types (occurrence,
+checklist, institution, multimedia, literature or expert). The system
+b
+requests the data manager to select the type of resource he wishes to
+manage.
+c
+The data manager selects the type of resources to manage.
+d
+The system retrieves the list of resources of that type.
+e
+The system displays the list to the data manager with two options for each
+resource: delete and edit metadata. The system also displays two high level
+functions: import a resource and search resources.
+f
+The data manager chooses the option to import a resource.
+g
+The system requests the data manager to provide the resource file and a
+short name for the resource.
+h
+The data manager selects the resource file from his local computer and
+enters a short name.
+i
+The system validates the resource file.
+j
+The system archives the resource file. The system extracts the records and
+metadata from the file and saves them.
+k
+The system records an audit log entry.
+l
+The system informs the data manager that the import was successful.
+m
+The use case ends.
+Alternate flows
+Edit a resource metadata.
+
+	  
+
+36	  
+
+f1
+g1
+
+The data manager selects the resource of interest and chooses the option to
+edit its metadata.
+The system retrieves the resource metadata. The system displays the
+metadata to the data manager.
+The data manager edits the metadata.
+The system records an audit log entry.
+The system saves the metadata. The use case ends.
+
+h1
+i1
+j1
+Delete a resource.
+f2
+The data manager selects a resource and chooses the option to delete it.
+g2
+The system asks the data manager for confirmation.
+h2
+The data manager confirms deletion.
+i2
+The system records an audit log entry.
+The system deletes the resource records and its metadata. The system
+j2
+deletes the archived resource file. The system informs the data manager of
+the deletion success. The use case ends.
+Search resources.
+d3
+The data manager selects to search secondary resource of interest.
+e3
+The system requests the data manager to enter a keyword query.
+f3
+The data manager enters the keywords and launches search.
+g3
+The system records an audit log entry.
+h3
+The system retrieves the list of resources which metadata match the
+keyword query. The use case resumes at step c.
+Cancel resource deletion.
+h2.1
+The data manager cancels deletion. The use case ends.
+Exception
+Handle corrupted file or file of an invalid format
+The system informs the data manager that the import operation failed
+i4
+because the provided file was corrupted or have an invalid format.
+j4
+The system records an error log entry.
+k4
+The use case ends.
+
+	  
+Register	  a	  new	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+a
+b
+
+UC-DM2 – Register a new data source
+The data manager registers a new data source so the associated core
+resource is harvested during next harvesting job.
+Data manager – Secondary: Data source
+5
+Frequency
+2
+
+f
+g
+
+The use case starts when the data manager selects to register a data source.
+The data manager selects to add a new data source.
+The system displays the list of available data source types to the data
+manager. The system requests the data manager to select a type and
+provide a name and a URL for the source.
+Data manager selects the type and enters a name for the source.
+The system requests the data manager to enter the specific configuration
+parameters for this source type.
+Data manager enters the configuration parameters.
+The system sends a request to the data source.
+
+	  
+
+37	  
+
+c
+d
+e
+
+h
+i
+
+The data source responds with a success OK code.
+The system saves the new data source to its source registry. The system
+informs the data manager of the addition success.
+The system records an audit log entry.
+The use case ends.
+
+j
+k
+Exceptions
+Handle communication failure with the data source.
+If the system cannot communicate with the data source, the system informs
+h1
+the data manager that the data source cannot be added because the source
+is not accessible.
+i1
+The system records an error log entry.
+j1
+The use case ends.
+Handle a response with an error code.
+If the data source responded with an error code, the system informs the
+h2
+data manager that the data source cannot be added because the source
+responded with an error code.
+i2
+The system records an error log entry.
+j2
+The use case ends.
+
+	  
+	  
+Register	  a	  GBIF	  index	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+f3
+
+UC-DM3 – Register a GBIF index data source
+Specializes Register a new data source to allow specific configuration for
+GBIF occurrence Web services data sources.
+Data manager – Secondary: GBIF Web services
+5
+Frequency
+2
+The visitor enters the request parameters that will be used to query GBIF
+portal API. The use case resumes at step g.
+
+	  
+Register	  an	  IPT	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+f4.1
+f4.2
+f4.3
+f4.4
+f4.5
+
+	  
+
+UC-DM4 – Register an IPT data source
+Specializes Register a new data source to allow specific configuration for IPT
+data sources.
+Data manager – Secondary: IPT data source
+2
+Frequency
+2
+The data manager enters the URL of the IPT instance hosting the data
+source of interest.
+The system calls the IPT instance for the list of hosted public core
+resources.
+The IPT instance returns the resource list to the system.
+The system displays this list of resources to the data manager. The system
+requests the data manager to select the core resource he wishes to
+register.
+The data manager selects the core resource. The use case resumes at step
+g.
+
+38	  
+
+	  
+Unregister	  a	  data	  source	  
+Identifier-Name
+Description
+Actors
+Priority
+Post conditions
+
+UC-DM5 – Unregister a data source
+The data manager previously added a data source which is no more relevant
+to the node or not available any more. The data manager wants to
+unregister this source.
+Data manager
+1
+Frequency
+2
+The data source has been removed from the system configuration. During
+next harvesting job, no occurrence records will be harvested from this data
+source.
+
+Main flow
+a
+b
+c
+d
+e
+
+The use case starts when the data manager selects to unregister a data
+source.
+The data manager selects the source of interest and chooses the option to
+unregister it.
+The system prompts the user for confirmation and displays an option to also
+delete related occurrence records from the index.
+The data manager confirms that he wishes to unregister the selected data
+source and selects the option to delete related occurrence records from the
+index.
+The system deletes occurrence records that were harvested from this
+source.
+The system removes this source from its registry.
+The system records an audit log entry.
+The use case ends.
+
+f
+g
+h
+Alternate flows
+Cancel to unregister the data source.
+The data manager chooses to cancel unregistering the data source. The use
+d1
+case ends.
+Unregister data source but keep related occurrence records.
+If the data manager confirms data source deletion but doesn’t select the
+d2
+option to delete related occurrence records from the index. The use case
+resumes to step g.
+
+	  
+Manage	  harvesting	  jobs	  
+Identifier-Name
+
+UC-DM6 – Manage harvesting jobs
+The data manager wants to manage jobs so as to monitor finished and
+Description
+upcoming jobs, schedule a new job or cancel a scheduled job.
+Actors
+Data manager
+Priority
+3
+Frequency
+1
+Main flow (schedule a new harvesting job)
+The use case starts when the data manager chooses the option to manage
+a
+harvesting jobs.
+The system retrieves two lists of jobs: finished and forthcoming jobs. The
+b
+system displays the lists to the data manager. For the former, an option to
+
+	  
+
+39	  
+
+c
+d
+e
+f
+g
+h
+i
+Alternate flows
+Cancel a job.
+
+view the associated harvesting report is provided. For the latter, the system
+displays a cancel option for each job. The system also offers the function
+schedule a new job.
+The data manager chooses to schedule a new job.
+The system requests the data manager to provide date and time for the new
+job.
+Data manager enters the new job date and time.
+The system saves the new job.
+The system records an audit log entry.
+The system informs the data manager that the job has successfully been
+scheduled.
+The use case ends.
+
+The data manager selects the job of interest and chooses the option to
+cancel it.
+d1
+The system deletes the job. The use case ends.
+View harvesting report for a job.
+The data manager selects the job of interest and chooses the option to view
+c2
+the harvesting report associated to it.
+The system displays the harvesting report for this job to the data manager.
+d2
+The use case ends.
+c1
+
+Retrieve	  the	  list	  of	  updated	  data	  sources	  
+Identifier-Name
+Description
+a
+b
+c
+d
+e
+
+S-DM1 – Retrieve the list of data sources updated since last harvesting job
+The system builds two lists: updated and unavailable data sources.
+The system retrieves the list of registered data sources.
+The system picks a data source.
+The system requests this data source to return the version number of the
+associated core resource.
+The data source returns the version number of its core resource.
+If the version number doesn’t match the one of the local core resource, the
+system adds the source to the list of updated data sources.
+Step c to f repeats for all registered data sources.
+Return to the next step.
+
+f
+g
+Exception
+Handle communication failure with the data source.
+If the system cannot communicate with the data source, the system adds
+d1
+the data source to the list of unavailable data sources.
+e1
+The system records an error log entry.
+f1
+The sub flow resumes at step c.
+
+Check	  core	  resources	  consistency	  with	  registered	  data	  sources	  
+Identifier-Name
+Description
+Actors
+
+	  
+
+UC-DM7 – Check core resources consistency with registered data sources
+The data manager checks core resources consistency with registered data
+sources to identify outdated core resources and unavailable data sources.
+Data manager - Secondary: Registered occurrence data source
+
+40	  
+
+Priority
+Preconditions
+Main flow
+a
+b
+c
+d
+e
+
+5
+Frequency
+3
+At least one data source has been registered.
+At least one harvesting job has been successfully carried out.
+Data manager selects to check occurrence data consistency.
+Perform Retrieve the list of updated data sources.
+The system displays two lists to the data manager: updated and unavailable
+data sources.
+The system records an audit log entry.
+The use case ends.
+
+Trigger	  a	  harvesting	  job	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Post conditions
+
+UC-DM8 – Trigger a harvesting job
+The data manager selects to trigger a harvesting job so as to synchronize
+the portal biodiversity data with those hosted on the registered data
+sources.
+Primary: Data manager - Secondary: Data sources
+5
+Frequency
+3
+At least one data source has been added.
+The local occurrence index is consistent with all configured data source
+index.
+
+Main Flow
+a
+b
+c
+d
+e
+
+The use case starts when the data manager selects to trigger a harvesting
+job.
+The system adds a new job to the harvesting schedule with the current date
+and time.
+Perform Retrieve the list of updated data sources
+The system picks a resource from the updated data source list.
+The system requests this resource originating data source to return the
+associated resource file.
+The data source returns the core resource file.
+The system validates and archives the core resource file.
+The system repeats steps d to g for all data sources in the list.
+The system switches to maintenance mode.
+The system updates its index with harvested data.
+The system switches back to normal mode.
+The system records an audit log entry.
+The system sets job status to “finished” and success status to “success”.
+The system sends a harvesting report to the data manager by email.
+The use case ends.
+
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+Exceptions
+Handle communication failure with the data source.
+If the system cannot communicate with the data source, the system adds
+f1
+the data source to the list of unharvested data sources.
+g1
+The system records an error log entry.
+h1
+The use case resumes at step d.
+Handle corrupted resource file.
+e2
+If the file served by the source is corrupted, the system adds the data
+
+	  
+
+41	  
+
+source to the list of unharvested data sources.
+f2
+The system records an error log entry.
+g2
+The use case resumes at step d.
+Handle indexes update error
+If an error occurs while updating all indexes referring to entries in the
+j3
+taxonomic backbone, the system rollbacks. The system adds the data source
+to the list of unharvested data sources.
+k3
+The system records an error log entry.
+l3
+The use case resumes at step d.
+
+Update	  taxonomic	  backbone	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+
+UC-DM9 – Update taxonomic backbone
+The data manager updates the taxonomic backbone with a checklist
+resource.
+Data manager
+5
+Frequency
+3
+A file containing the checklist resource to be used as the new taxonomic
+backbone is stored on the data manager’s local computer.
+
+Main flow
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+
+The use case starts when the data manager selects to update the system
+taxonomic backbone.
+The system requests the data manager to provide a file containing the
+checklist resource to replace the taxonomic backbone with.
+The data manager selects the file containing the new taxonomic backbone
+from his local computer.
+The system validates the file.
+The system informs the data manager that the process may be long and that
+an email will be sent to him upon completion.
+The system switches to maintenance mode.
+The system updates its taxonomic backbone with the chosen checklist
+resource.
+The system updates all indexes referring to entries in the taxonomic
+backbone to ensure index consistency.
+The system records an audit log entry.
+The system switches back to normal mode.
+The system sends a taxonomic backbone update report with a ‘success’
+status to the data manager by email.
+The use case ends.
+
+l
+Exceptions
+Handle corrupted file or file of an invalid format
+If the file provided by the data manager is corrupted or of an invalid
+d1
+format, the system sends the data manager a backup restoration report
+with a ‘failure’ status by email.
+e1
+The system records an error log entry.
+f1
+The use case ends.
+Handle taxonomic backbone index update error
+If an error occurs while updating the taxonomic backbone index, the system
+g2
+rollbacks. The system sends an email to the data manager containing a
+backup restoration report with a ‘failure’ status.
+
+	  
+
+42	  
+
+f2
+The system records an error log entry.
+g2
+The use case ends.
+Handle indexes update error
+If an error occurs while updating all indexes referring to entries in the
+taxonomic backbone, the system rollbacks. The system sends an email to
+h3
+the data manager containing a backup restoration report with a ‘failure’
+status.
+i3
+The system records an error log entry.
+j3
+The use case ends.
+
+	  
+Install	  an	  extension	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+
+UC-DM10 – Install an extension
+The data manager wants to install an extension to allow the system to deal
+with extra attributes for records of core resources.
+Primary: Data manager – Secondary: GBIF registry
+3
+Frequency
+3
+The use case starts when the data manager chooses the option to manage
+extensions.
+The system retrieves the list of installed extensions from its local registry
+and displays the list to the data manager.
+The data manager chooses to install a new extension.
+The system requests the GBIF registry for the lists of extensions.
+GBIF registry returns the list of all available extensions along with their
+URLs.
+The system removes the list of already installed extensions from this list.
+The system displays this list to the data manager.
+The data manager chooses the extension to install.
+The system calls the GBIF registry for the extension.
+The GBIF registry returns the extension to the system.
+The system saves the extension and adds it to its local registry. The system
+creates an index for the data type or extra attributes defined by this
+extension.
+The system records an audit log entry.
+The system informs the data manager that the installation was successful.
+The use case ends.
+
+	  
+	  
+Portal	  manager	  
+	  
+A user may only initiate the use cases in this section if he is logged into the system using an
+account with portal manager role.
+
+Configure	  data	  metrics	  visibility	  
+Identifier-Name
+
+	  
+
+UC-PM3 - Configure data metrics visibility
+
+43	  
+
+Description
+Actors
+Priority
+Post conditions
+
+The portal manager configures data metrics visibility in order to hide some
+metrics from the visitors.
+Portal manager
+5
+Frequency
+1
+The data metrics not declared as visible by the portal manager are hidden
+to the portal visitors.
+
+Main flow
+a
+b
+c
+d
+e
+f
+
+The use case starts when the portal manager selects to configure data
+metrics public availability.
+The system displays the list of all data metrics and associated visibility
+status to the data manager.
+The portal manager selects the desired visibility status for each data
+metrics.
+The system updates its configuration with the new visibility status for the
+data metrics.
+The system records an audit log entry.
+The use case ends.
+
+Customize	  NPT	  instance	  
+Identifier-Name
+
+UC-PM2 - Customize NPT instance
+The portal manager customizes the NPT instance to adapt the portal
+Description
+appearance and parameters to fit its organization.
+Actors
+Portal manager
+Priority
+5
+Frequency
+1
+The system displays the node banner, logo and custom information on the
+Post conditions
+portal.
+Main flow (Customize NPT institutional information)
+The use case starts when the portal manager selects to configure
+a
+institutional information.
+The system displays two functions: customize “look and feel” and configure
+b
+portal.
+c
+The portal manager chooses to configure the portal.
+The system requests the portal manager to enter the node name, Network
+d
+summary information (in all front office languages) and contact person’s
+name and email address, and HTML metadata tags
+e
+The portal manager enters this information.
+f
+The system updates the NPT configuration with the new parameters.
+g
+The system records an audit log entry.
+h
+The use case ends.
+Alternate flow
+Customize “look and feel”
+The system requests the portal manager to provide files for the
+d1
+organization logo and the portal banner image.
+e1
+The portal manager selects the logo and/or banner image files on his local
+computer. The use case resumes at step f.
+
+Configure	  front	  office	  languages	  
+Identifier-Name
+
+	  
+
+UC-PM3 – Configure front office languages
+
+44	  
+
+The data manager selects to manage front office languages so as to set the
+default and alternate portal languages.
+Actors
+Portal manager
+Priority
+3
+Frequency
+2
+Main flow (list text documents)
+The use case starts when the portal manager selects to manage front office
+a
+languages.
+The system retrieves the list of all installed languages.
+The system displays the default language and the list of alternate languages
+b
+and two options: change the default language and install a new language.
+For each alternate language, the system displays two options: uninstall and
+set as default.
+c
+The data manager selects to change the default language.
+d
+The system displays the list of all installed non-default languages.
+e
+The data manager selects the new default language.
+f
+The system saves the new default language in its configuration.
+g
+The system records an audit log entry.
+h
+The system informs the security officer of the operation success.
+g
+The use case ends.
+Alternate flows
+Install a new alternate language
+c1
+The portal manager selects to install a new language.
+d1
+The system requests the portal manager to provide the language file.
+e1
+The portal manager selects the language file on his local computer.
+f1
+The system validates the language file.
+g1
+The file is valid. The system installs the new language from the file.
+h1
+The system records an audit log entry.
+i1
+The system informs the portal manager of the install success.
+j1
+The use case ends.
+Uninstall an alternate language
+The data manager selects the language of interest and chooses the option
+c2
+to uninstall it.
+d2
+The system uninstalls the language.
+e2
+The system records an audit log entry.
+i2
+The system informs the portal manager of the uninstall success.
+j2
+The use case ends.
+Handle invalid language file
+The system informs the portal manager that it’s impossible to install the
+g1.1
+language because the file he provided is invalid. The use case ends.
+Description
+
+	  
+
+45	  
+
+Front end use cases
+Visitor	  
+Send	  feedback	  to	  the	  portal	  contact	  person	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Trigger
+Main flow
+a
+b
+c
+d
+e
+
+UC-V1 - Send feedback to the portal contact person
+The visitor sends remarks or suggestions about the portal or about the
+hosted data to the portal contact person.
+Visitor
+5
+Frequency
+1
+The portal manager has customized NPT instance and provided information
+for the contact person.
+The visitor decides to contact the NPT portal contact person.
+The use case starts when the visitor selects to send feedback.
+The system requests the visitor to enter a text and body for the message
+and personal information (name and email address).
+The visitor supplies that information.
+The system validates the email address and checks that the message body
+is not empty.
+The system sends the message along with the visitor’s personal information
+to the contact person by email.
+The system informs the visitor that his feedback has successfully been sent.
+The use case ends.
+
+f
+g
+Alternate flows
+Handle invalid email address
+If the email address is invalid, the system asks the visitor to enter a valid
+d1
+email address and prevents her to send the feedback until done. The use
+case resumes to step b.
+Handle blank message body
+If the message body is empty, the system asks the visitor to enter one. The
+d2
+use case resumes to step b.
+Exceptions
+Handle error during sending the email
+If an error occurs while sending the email, the system warns the user about
+e3
+the issue, apologies and asks the user to try again later.
+f3
+The system records an error log entry.
+g3
+The use case ends.
+
+	  
+Build	  an	  occurrence	  record	  selection	  filter	  
+Identifier-Name
+Main flow
+a
+b
+c
+d
+
+	  
+
+S-V1 – Build an occurrence record selection filter
+The sub flow starts when the selects to search for occurrence records.
+The system displays the filter-building interface to the visitor.
+Perform Add a criterion to the filter.
+User repeats step c until the filter matches only the occurrence records
+he’s interested in.
+
+46	  
+
+Alternate flow
+Remove a criterion.
+c1.1
+Provided that the filter has at least one criterion. The visitor selects a
+criterion and chooses to remove it.
+c1.2
+The system removes the criterion from the filter. The use case resumes at
+step d.
+
+Add	  a	  criterion	  to	  the	  filter	  	  
+Identifier-Name
+S-V2 - Add a criterion to the filter
+Main flow: Add a taxonomic criterion
+a
+The visitor selects to add a taxonomic criterion.
+The visitor finds the taxon of interest.
+b
+c
+The system adds the criterion to the filter.
+d
+The sub flow ends.
+Alternate flows
+Add a depth criterion
+a1
+The visitor selects to add a depth criterion.
+The visitor enters a minimum and/or maximum observation depth value(s).
+b1
+The sub flow ends.
+Add an altitude criterion
+a2
+The visitor selects to add an altitude criterion.
+The visitor enters a minimum and/or maximum observation altitude
+b2
+value(s). The sub flow ends.
+Add a date criterion
+a3
+The visitor selects to add a date criterion
+The visitor enters a start and/or an end observation date(s). The sub flow
+b3
+ends.
+Add a dataset criterion
+a4
+The visitor selects to add a dataset criterion.
+The system retrieves the list of hosted occurrence resources and displays
+b4.1
+the list to the visitor.
+b4.2
+The visitor selects the occurrence resource of interest. The sub flow ends.
+Add a basis of record criterion
+a5
+The visitor selects to add a basis of records criterion.
+b5.1
+The system displays the list of basis of records to the visitor.
+The visitor selects the basis of record from the proposed list. The sub flow
+b5.2
+ends.
+Add a geographic area criterion
+a6
+The visitor selects to add a geographic area criterion.
+b6
+User draws a polygon defining his area of interest on a map interface. The
+sub flow ends.
+
+Select	  occurrence	  records	  and	  view	  distribution	  map	  
+Identifier-Name
+Description
+
+	  
+
+UC-V2 – Select occurrence records and view distribution map
+The visitor wants to discover and access occurrence records. He can select
+
+47	  
+
+his records of interest using simple taxonomic search or a more elaborate
+advanced search by combining various criteria.
+Actors
+Visitor
+Priority
+5
+Frequency
+5
+Main flow (search occurrence records by building a selection filter i.e. advanced search)
+a
+The use case starts when the visitor selects to search occurrences.
+The system proposes the visitor two search options: taxonomic search and
+b
+advanced search.
+c
+The visitor selects to search occurrence records using advanced search.
+d
+Perform Build an occurrence record selection filter.
+e
+The visitor launches the search.
+f
+The system retrieves the occurrence records matching the filter criteria.
+g
+The system records a data usage log entry with type ‘mapped’.
+The system displays the distribution map for the occurrence record
+h
+selection.
+i
+The use case ends.
+Alternate flows
+Search occurrence records using taxonomic search.
+c1
+The visitor selects to search occurrence records using taxonomic search.
+d1
+Perform Select a taxon.
+e1
+The visitor launches the search.
+f1
+The system retrieves the occurrence records for that taxon. Use case
+resumes at step g.
+Search occurrence records for a dataset.
+a2
+Perform Select an occurrence resource.
+The system displays the details for this occurrence resource and the
+b2
+distribution map for associated occurrence records. The use case ends.
+Search occurrence records for a taxon using full text search.
+The visitor searches portal using full text search. If no taxon is returned, the
+a3
+use case ends.
+b3
+The visitor selects a taxon.
+The system displays the details for this taxon and the distribution map for
+d2
+associated occurrence records. The use case ends.
+
+View	  occurrence	  record	  selection	  as	  a	  table	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Main flow
+a
+b
+c
+
+	  
+
+UC-V3 - View occurrence record selection as a table
+User selects to view occurrence records selection as a table in order to
+display their attributes.
+Visitor
+3
+Frequency
+3
+The record selection contains at least one record.
+The visitor selects occurrence records and view distribution map.
+The visitor chooses the option to view the occurrence record selection as a
+table.
+The system records a data usage log entry with type ‘viewed’.
+
+48	  
+
+d
+e
+
+The system retrieves the selected occurrence records and displays them as
+a table.
+The use case ends.
+
+Export	  occurrence	  record	  selection	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Post conditions
+Main flow
+a
+b
+c
+d
+e
+f
+g
+h
+
+UC-V4 - Export occurrence record selection
+User exports the occurrence selection for further analysis.
+Visitor
+3
+Frequency
+4
+The record selection contains at least one record.
+A file containing the record selection has been transferred to the visitor's
+local computer.
+The visitor selects occurrence records and views distribution map.
+The visitor chooses the option to download the record selection in his
+format of choice.
+The system checks that the user has accepted the data usage agreement.
+The system records a data usage log entry with type ‘downloaded’.
+The system warns visitor that the process may take up to half an hour. It
+provides visitor a download link that will allow him to retrieve the file
+later.
+The system builds the file.
+The visitor later follows the download link.
+The file is ready for download. The system informs the visitor that the
+building process has been successfully carried out and offers an option to
+download the file.
+The visitor chooses to download the file.
+The system transfers the file to the visitor's local computer.
+The use case ends.
+
+i
+j
+k
+Alternate flows
+The data usage agreement hasn’t been accepted by the visitor
+If the visitor has not accepted the data usage agreement, the system
+displays it to the user and prompts the user to accept it. If the user does,
+c1
+the system will remember and the use case resumes at step c. If he doesn't,
+the use case ends.
+The file is not finished building yet
+h2
+The system informs the visitor that the export process is not finished yet
+and suggests him to try again in a few moments. Use case returns to step f.
+
+Export	  distribution	  map	  as	  an	  image	  
+Identifier-Name
+Description
+Actors
+Priority
+Post conditions
+
+	  
+
+UC-V5 - Export distribution map as an image
+The visitor exports distribution map as an image so as to be able, e.g., to
+insert it in a paper.
+Visitor
+3
+Frequency
+4
+An image of the distribution map has been transferred to the visitor’s local
+
+49	  
+
+computer.
+Main flow
+a
+b
+c
+d
+
+The visitor selects and accesses occurrence records.
+The visitor chooses the option to export the distribution map as an image.
+The system transfers an image file of the distribution map to the visitor's
+local computer.
+The use case ends.
+
+Search	  portal	  using	  full	  text	  search	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+a
+b
+c
+d
+
+e
+
+UC-V6 – Search portal using full text search
+The visitor searches resource metadata, blog, article and news entries using
+full text search in order to find and access matching resources and entries.
+Visitor
+3
+Frequency
+4
+The use case starts when the visitor selects to search the portal using full
+text search.
+The system prompts visitor to type his keyword query.
+The visitor enters the query.
+The system retrieves the list of matching resources and entries. The system
+displays the those results grouped by data types with an option to view the
+details for each of them.
+The use case ends.
+
+Contact	  an	  occurrence	  resource	  publisher	  
+Identifier-Name
+Description
+Actors
+Priority
+Precondition
+Post conditions
+Main flow
+a
+b
+c
+d
+e
+f
+g
+Alternate flows
+
+	  
+
+UC-V7 – Contact an occurrence resource publisher
+The visitor contacts the publisher of an occurrence resource to request
+more information or send a comment.
+Visitor
+2
+Frequency
+1
+The dataset provider’s metadata contains a valid contact email address.
+The visitor’s message has been sent to the provider’s contact email address.
+Perform Select an occurrence resource.
+The visitor selects to contact the data provider of this dataset.
+The system requests the visitor to enter the subject and body of the
+message and personal information (name and email address).
+The visitor enters the requested information.
+The system validates the email address and checks that the message body is
+not empty.
+The system sends the visitor’s message and personal information to the
+dataset provider by email. The system informs the visitor that the message
+has successfully been sent.
+The use case ends.
+
+50	  
+
+Handle invalid email address
+The system informs the visitor that the email address he provided is
+e2
+invalid. Use case resumes at step c.
+Handle blank message body
+The system informs the visitor that the message body cannot be left blank.
+e3
+The use case resumes at step c.
+Exception
+Handle error sending the email
+If an error occurs while sending the email, the system warns the user that
+f4
+the message could not be sent, apologies for the inconvenience and
+suggests the visitor to try again later.
+g4
+The system records an error log entry.
+h4
+The use case ends.
+
+Export	  a	  checklist	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+a
+b
+c
+d
+e
+f
+g
+
+UC-V8 – Export a checklist
+The visitor downloads a checklist for local consultation/analysis.
+Visitor
+3
+Frequency
+2
+The use case starts when the visitor chooses the option to view the list of
+checklists hosted on the portal.
+The system retrieves the list of checklist resources and displays it to the
+visitor.
+The visitor selects the checklist resource of interest and chooses the option
+to view its details.
+The system displays detailed metadata for this checklist resource and an
+export checklist option.
+The visitor selects to export the checklist.
+The system transfers the archived checklist resource file to the visitor’s
+local computer.
+The use case ends.
+
+Select	  a	  taxon	  
+Identifier-Name
+S-V3 – Select a taxon
+Main flow
+a
+The visitor chooses the option to find a taxon.
+b
+The system presents a taxonomic tree and a taxon search interface.
+c
+The visitor browses the tree until he finds the taxon he’s interested in.
+d
+The visitor selects this taxon.
+Alternative flow
+Selects taxon by searching by name
+c1.1
+The visitor searches the taxon by name (scientific or common). The visitor
+enters part of the name.
+c1.2
+The system presents the list of matching taxa. The use case resumes at step
+d.
+
+	  
+
+51	  
+
+Select	  an	  occurrence	  resource	  
+Identifier-Name
+Main flow
+a
+b
+c
+Alternate flows
+a1
+
+S-V4 – Select an occurrence resource
+The visitor selects to list datasets.
+The system retrieves the list of occurrence resources. The system displays
+the list to the visitor.
+The visitor selects the occurrence resource of interest.
+The visitor searches portal using full text search. If at least one occurrence
+resource is returned, the flow resumes to step c. If not, it ends.
+
+Choose	  portal	  language	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Post conditions
+Main flow
+a
+b
+c
+d
+e
+f
+
+UC-V9 - Choose portal language
+The visitor chooses his language of preference.
+Visitor
+5
+Frequency
+2
+The portal manager has configured front office languages with at least one
+alternate language.
+The portal uses the chosen language for that visitor from now on.
+The
+The
+The
+The
+The
+The
+
+use case starts when the visitor selects to choose portal language.
+system retrieves the list of available languages to the visitor.
+system displays the list to the visitor.
+visitor chooses his preferred language.
+system switches portal language to the chosen language.
+use case ends.
+
+	  
+Registered	  visitor	  
+A visitor may only initiate the use cases in this section if he is logged into the system
+as a registered visitor.
+Save	  a	  custom	  filter	  
+Identifier-Name
+Description
+Actors
+Priority
+Main flow
+a
+b
+c
+d
+e
+f
+
+	  
+
+UC-RV1 – Save a custom filter
+The registered visitor builds an occurrence record filter and wants to be
+able to reuse it in the future. To do so, he saves the filter in his profile.
+Registered visitor
+1
+Frequency
+2
+Perform Build an occurrence record selection filter.
+Visitor selects to save the current filter.
+The system prompts visitor for a name and description for the filter.
+The visitor enters a name and description for the filter.
+The system saves the filter in the registered visitor’s profile.
+The use case ends.
+
+52	  
+
+	  
+Load	  a	  custom	  filter	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Main flow
+a
+b
+c
+d
+e
+
+UC-RV2 – Load a custom filter
+The registered visitor loads a filter he previously saved in his profile.
+Registered visitor
+1
+Frequency
+2
+The registered visitor is displayed the filter building interface.
+The registered visitor has saved at least one filter.
+The use case starts when the visitor selects to manage custom filters.
+The system retrieves the list of filters for the registered visitor. The system
+displays the list to the visitor with options to load or delete each of them.
+The visitor selects the filter of interest and chooses the option to load it.
+The system retrieves the filter criteria and populates the filter-building
+interface with these criteria.
+The use case ends.
+
+	  
+Delete	  a	  custom	  filter	  
+Identifier-Name
+Description
+Actors
+Priority
+Preconditions
+Main flow
+a
+b
+c
+d
+e
+
+UC-RV3 – Delete a custom filter
+The visitor wants to delete a previously saved filter.
+Registered visitor
+1
+Frequency
+2
+The visitor is displayed the filter building interface.
+The visitor has saved at least one filter.
+The use case starts when the visitor selects to manage custom filters.
+The system retrieves the list of filters for the registered visitor. The system
+displays the list to the visitor with options to load or delete each of them.
+The visitor selects the filter of interest and chooses the option to delete it.
+The system deletes the filter and informs the registered visitor of the
+deletion success.
+The use case ends.
+
+	  
+	  
+	  
+
+	  
+
+53	  
+
+Business rules
+BR ID
+
+Name
+
+BR1
+
+Visitors must accept the portal data usage agreement before being allowed to
+export data from the portal.
+To avoid conflict, the data usage agreement for all NPT instances is the same as
+on GBIF portal.
+Only user logged into the system using an account with an administrator role can
+manage user accounts.
+Only user logged into the system using an account with a data manager role can
+access the following functionalities: manage resources, manage data sources,
+manage harvesting jobs, and manage taxonomic backbone.
+Only user logged into the system using an account with a portal manager role
+can access the following functionalities: manage blog posts, pages and news
+entries, customize NPT instance and choose languages available on the front
+end.
+Only user logged into the system using an account with an administrator role can
+configure the distribution map, manage installed modules and manage user
+accounts.
+Only user logged into the system using an account with a portal manager,
+administrator or data manager role can access data metrics with a visibility
+status of ‘hidden’.
+
+BR2
+BR3
+BR4
+BR5
+
+BR6
+BR7
+
+	  
+
+	  
+
+54	  
+
+References
+NPT resources for further information can be found on:
+•
+
+NPT group on GBIF Community site:
+http://community.gbif.org/pg/groups/3507/nodes-portal-toolkit-npt/
+
+Standards, formats, tools and API documentation:
+•
+•
+•
+•
+•
+•
+•
+
+	  
+View publication stats
+
+Audubon: http://www.keytonature.eu/wiki/Audubon_Core
+EML:http://knb.ecoinformatics.org/software/eml/eml-2.0.1/index.html
+Darwin core: http://rs.tdwg.org/dwc/
+Darwin core archive: http://www.gbif.org/informatics/standards-andtools/publishing-data/data-standards/darwin-core-archives/
+Documentation on the GBIF Portal API Google Code site:
+http://code.google.com/p/gbif-portalapi/
+The GBIF Integrated Publishing Toolkit User Manual:
+http://code.google.com/p/gbif-providertoolkit/wiki/IPT2ManualNotes
+Integrated Publishing Toolkit (IPT) - Architectural view:
+http://code.google.com/p/gbif-providertoolkit/downloads/detail?name=iptarchitecture_1.1.pdf
+
+55

@@ -1,0 +1,42 @@
+Back end users
+
+Administrator
+The administrator selects to manage modules in order to add new functionalities to the system by installing modules. This use cases also allows the administrator to configure or update previously installed modules.
+The administrator selects to configure the distribution map to set the specific projection and default extent for the Node area of interest.
+The administrator selects to add or delete the spatial layers displayed on the distribution map for the specific Node.
+The security officer performs this use case in order to create or delete accounts for the portal staff members so they can access restricted functionalities.
+
+Data manager
+The data manager wants to manage resources in order to import a new resource, edit a resource metadata or delete a resource.
+The data manager registers a new data source so the associated core resource is harvested during next harvesting job.
+Specializes Register a new data source to allow specific configuration for GBIF occurrence Web services data sources.
+Specializes Register a new data source to allow specific configuration for IPT data sources.
+The data manager previously added a data source which is no more relevant to the node or which is no more available. The data manager wants to unregister this source.
+The data manager wants to manage jobs so as to monitor finished and upcoming jobs, schedule a new job or cancel a scheduled job.
+The data manager checks core resources consistency with registered data sources to identify outdated core resources and unavailable data sources.
+The data manager selects to backup portal data so as to synchronize the portal biodiversity data with those hosted on the registered data sources.
+The data manager updates the taxonomic backbone.
+The data manager wants to install an extension to allow the system to deal with extra attributes for records of core resources.
+
+Portal manager
+The portal manager configures data metrics visibility in order to hide some metrics from the visitors in the front office.
+Portal manager customizes NPT instance to adapt the portal appearance and parameters to fit its organization.
+The data manager selects to manage front office languages so as to set the default language and chooses alternate language.
+
+Front end users
+
+Visitor
+The visitor sends feedback to the portal contact person so as to communicate remarks or suggestions about the portal or about the hosted data.
+The visitor wants to discover and access occurrence records. He can select his records of interest using simple taxonomic search or a more elaborate advanced search by combining various criteria.
+User selects to view occurrence records selection as a table in order to display their attributes.
+User exports the occurrence selection for further analysis.
+The visitor exports distribution map as an image so as to be able to insert it in a document.
+The visitor searches resource metadata, blog, article and news entries using full text search in order to find and access matching resources and entries.
+The visitor contacts the publisher of an occurrence resource to request more information or send a comment.
+The visitor downloads a checklist for consultation/analysis.
+The visitor chooses his language of preference.
+
+Registered visitor
+The registered visitor has built a filter and wants to be able to reuse it in the future. He saves the filter in his profile.
+Visitor loads a filter he previously saved in his profile.
+Visitor has built a filter. He wants to be able to reuse it in future visits. He saves the filter to be able to load it later.

@@ -1,0 +1,1 @@
+Rink, M.: Text generator implementation for description of UML 2 models. MSc. Thesis, TU Chemnitz (2008)

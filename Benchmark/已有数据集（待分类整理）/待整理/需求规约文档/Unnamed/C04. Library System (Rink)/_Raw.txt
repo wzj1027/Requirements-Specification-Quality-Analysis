@@ -1,0 +1,179 @@
+Specification: Library system
+
+1. Objective
+Media and user of a library are managed by the library system.
+
+2. Operational Area
+The library system is operated by the library staff (librarian) and library user (user) through terminals.
+
+3. Product overview
+The library system contains a user administration and a media administration.
+
+3.1 User administration
+The user administration contains a user account for each user which contains all user data.
+A librarian is able to create a new user account, to edit and to delete an existing user account.
+A user is able to register at the system with his user number, to manage his user account, and to extend the media's rental period.
+A password is not necessary because the user number on the identification card is read with a bar code scanner.
+
+3.2 Media administration
+The media administration contains an entry for each 28 medium in the library.
+Several instances of each medium may be available, and they may have different 30 locations.
+A librarian is able to add a new instance to the media 32 administration, change the status of an instance and remove an instance from the media administration.
+A user is able to search for a medium by specifying one or more features of the media.
+A found instance can be chosen and reserved. To this end, the user number on the identification card is scanned.
+If a user borrows an instance, it is added to his account and will only be deleted when it is returned.
+
+4. Product function
+A user account must be available for each user.
+A librarian has access to all accounts of all users.
+A user has only access to his own user account by using his user number.
+A user is able to:
+- Search a medium (search medium)
+- Reserve one or more instances (reserve instance)
+- Borrow one or more instances (borrow instance)
+- Extend the rental period of one or more instances (extend instance)
+- Return one or more instances (return instance)
+A librarian is able to:
+- create, edit and delete a user account (manage user)
+- create, edit and delete a medium (manage medium)
+
+4.1. Use Case: Search medium
+The user specifies one or more titles and obtains a list of media which contain the titles. The search can be restricted to designated media types and attributes.
+Procedure:
+1. The user specifies one or more search criteria.
+2. It is searched for matching media in the media administration.
+3. The user receives a list of media that match the search criteria.
+
+4.2 Use Case: Reserve instance
+The user specifies an instance which he would like to reserve (e.g. by selection after a search) and has to identify himself to the system.
+The instance is registered in the reservation list of his user account.
+The status of the instance is set to 'available and reserved' or to 'borrowed and reserved'.
+Procedure:
+1. The user enters the shelfmark of the requested medium.
+2. The user receives a list of instances of the medium.
+3. The user chooses an instance.
+4. The user identifies himself to the system.
+5. The procedure is terminated with a status signal if the user account is not valid anymore or closed.
+6. The status of the instance is set from available to 'available and reserved' or from 'borrowed' to 'borrowed and reserved'.
+
+4.3. Use Case: Borrow instance
+The user has to identify himself to the system and specifies a list of instances he wishes to borrow.
+The instances are listed in the borrowing list of his user account.
+Only instances can be borrowed which are available, or available and reserved and the user is the first on the reservation list.
+Procedure:
+1. The user identifies himself to the system and chooses the 'borrow' menu.
+2. The procedure is terminated if the user account is not valid anymore or closed.
+3. The user specifies an instance which should be borrowed (shelfmark of the instance is scanned).
+4. If the instance's status is 'available' or 'reserved and available', and the user is the first on the reservation list, the instance can be borrowed otherwise borrowing the instance is rejected.
+5. The instance is registered in the list of borrowed media of the user account.
+6. The user is registered in the list of users who have/had borrowed the instance.
+7. The status of the instance is changed to 'borrowed' or 'reserved and borrowed'.
+8. The instance is unlocked.
+9. If a further instance shall be borrowed, continue at step 3.
+10. The user receives a receipt for the newly borrowed instance.
+
+4.4. Use Case: Extend rental period of instance
+The user has to identify himself to the system and specifies a medium instance whose rental period he would like to extend.
+The return date is updated according to the new rental period if it does not exceed the maximum rental period and if it is not reserved by another user.
+Procedure:
+1. User indicates his wish to extend the rental period of one or more medium's instances.
+2. System prompts the user to identify himself.
+3. User identifies himself to the system.
+4. System validates that the user account is valid and is not locked.
+5. System presents a view containing a list of medium instances the user has currently borrowed.
+6. User selects an instance whose rental period he wants to extend.
+7. System validates that the selected instance is not reserved and that its maximum rental time will not be exceeded.
+8. System extends the instance' rental period and adds the extension time to the instance's total time for this rental.
+
+4.5. Use Case: Return instance
+The user specifies a list of instances he would like to return. The instances are removed from the borrowing list of his user account.
+The status of the instances is set to 'available' or 'available and reserved'.
+Procedure:
+1. The user specifies an instance he wants to return (instance is recognised automatically at the terminal by scanning the shelfmark).
+2. The instance is locked.
+3. If the instance did not have the status 'borrowed' or 'reserved and borrowed', the procedure is terminated with an error message.
+4. The return date is added to the list of users who have/had borrowed the instance.
+5. The instance is removed from the borrowing list of the user account.
+6. The status of the instance is changed to 'available' or 'available and reserved'.
+
+4.6 The system automatically
+reminds the user when he has an instance that is overdue (by mail or eMail), informs a user about a reserved and available instance, releases a reserved instance not borrowed within a certain time period, and informs the next user on the reservation list (if there is one).
+
+5. Product data
+
+5.1 A user account contains:
+- user number by which the user identifies himself to the system
+- user classification (e.g. staff, student, pupil, guest)
+- user name
+- user's postal address (street, number, postcode, city)
+- user's telephone number (optionally)
+- user's email address (optionally)
+- date until the user account is valid (valid until).
+A user account ist valid until a certain date and can be extended by a librarian.
+- indication whether the account has been locked or not.
+A user account can be locked temporarily, if more than 30 instance have been borrowed, if an instance is overdue or if the unpaid fees exceed a certain amount.
+- amount of unpaid fees
+- a list of borrowed instances (borrowed media), which contains the instances' shelfmarks
+- a list of reserved instances (reserved media), which contains the instances' shelfmarks
+- a list of unpaid fees, which contains amounts and a reason for each amount
+
+5.2 A medium is defined by
+- a partial shelfmark, namely the part of the shelfmark which is independent of the instance
+- an identification code (medium code indicating its type: book, magazine, CD, video)
+- a list of authors
+- a title
+- an additional title
+- the year of publication
+- a list of keywords
+
+5.3 An instance is defined by
+- a definite identification (shelfmark) according to the Regensburger Verbundklassifikation, which consists of:
+- local identification: up to 4 digits for location (part library) of a medium, followed by a slash
+- notation: two large capitals for the discipline and 4 to 5 digits for a sub-discipline.
+- author name in coded form according to the Cutter Sanborn notation (a capital and 3 digits)
+- volume number followed by a dash
+- edition in brackets
+- multiple instance (plus sign) for example: 100/ST 230 B198-1(2)+9
+- a status (acquisition process, reading room, available, reserved and available, borrowed, reserved and borrowed, missing)
+- a return date
+- a list of users who have/had borrowed the medium (with return date if already returned)
+- a sorted list of users who have reserved the medium (FIFO)
+- a list of components belonging to the instance (e.g. a CD belonging to a book, map)
+- a text file for comments
+
+A medium is either a book or a magazine or a video or a CD.
+
+5.4 A book is described by
+- a publisher
+- a place of publication
+- an editor
+- an ISBN
+
+5.5 A magazine is described by
+- a publisher
+- a year of publication
+- a list of articles
+- a list of authors
+
+5.6 A video is described by
+- a genre
+- a list of actors
+
+5.7 A CD is described by
+- a genre
+- a list of titles
+- a list of artists
+
+6. Instance states
+When a new instance is bought, it is in the state of 'newly acquired'.
+When an acquired instance is released, it is put into a shelf and is then available.
+When an instance is available, it can be borrowed, registered as missing or sorted out.
+When a borrowed instance's rental period is extended, it is still borrowed.
+Alternatively, a borrowed instance can be returned, and is then available again.
+Alternatively, a borrowed instance can be reserved and is then in the state of 'borrowed and reserved'.
+A borrowed instance can only be returned, and is then 'available and reserved'.
+When an instance is transfered into the state of 'available and reserved', the first user on its reservation list is informed.
+When an instance is available and reserved, it can be borrowed or, if not borrowed within a certain time period, the next user on its reservation list is informed.
+If no user has reserved the instance, then it is available.
+A missing instance can become available by releasing it.
+When an instance is sorted out, it is in its final state.

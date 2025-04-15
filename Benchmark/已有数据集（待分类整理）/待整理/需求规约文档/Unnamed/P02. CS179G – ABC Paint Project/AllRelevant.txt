@@ -1,0 +1,108 @@
+As defined in sections 1.1 and 1.4, the application for ABC Paint will be a first-of-type solution to
+ensure that their business and their customer’s paint selecting experience maintains continuity and
+consistency throughout their transition to an entirely new product line.
+The product is a stand-alone web application with a theme mechanism to allow easy integration
+of the application into the ABC Paint website. The ColorKast solution is a server based
+application with a web-based client for consumer and enterprise access.
+In some respects, the application is the next generation of the old mechanical, hand-select,
+palette board system located in paint stores everywhere.
+Primarily, the application will include a old to new product-line “translator,” a graphical color
+chooser, a color search-engine, a user color palette, possibly, an easy to use color matching
+system, and an administrative interface. All of these will be defined and described later in this
+same document. The actual user interface will be described in a separate user interface
+specification whitepaper.
+All references to performance or specification apply to the application client. Specifications and
+performance estimates apply to the application server only if explicitly stated.
+
+These functions are modularized sub-components of the client application. Each of the functions
+has a single purpose and can accomplish its mission without the other components. Together, the
+components function as a stand-alone application.
+· Color Chooser (Pointing device driven color selection utility)
+· Color number translator (old scheme -> new scheme)
+· Find a particular number of colors near a given color
+· Session persistent user color palette (colors picked, images uploaded)
+· Color search engine (all collections, specific collection)
+· Color matching (uploaded image, see section 4)
+· Administrative interface (update, add, delete colors, add users)
+
+ColorKast has identified two user classes for access to the new application. The first user class is
+default for all users and allows no administrative functionality whatsoever. The second class, the
+administrative user, is composed of several subclasses for the secure management of access to
+data and permissions throughout the organization.
+
+Default: This user has access to all functionality of the application except the administrative
+function. The user data stored by this user is not password protected but is session
+persistent.
+Administrative: This user is composed of three subclasses. Level 3, the highest level
+administrative user has all access, update, add, delete permissions, and can
+create other administrative users at any level. Level 2, has update, add
+permissions, and can create administrative users up to Level 2. Level 1, has
+add permissions and can add administrative users at Level 1 only.
+
+The proposed ColorKast Solution will be implemented in a client/server model. All processing of
+searches and storing of information will be local to the server.
+Server: The server requires at least a 1GHz processor and 512 MB of system memory for
+each group of 50 employee or consumer users.
+Client: The web-based client is compatible with most operating systems and requires a
+working installation of Internet Explorer 4.01, Netscape 6.0, or Mozilla 1.0 or later.
+The client computer should match or exceed the system requirements specified for
+the web browser intended for use with the client application.
+
+A few issues limit our choices when implementing a suitable solution for the ABC Paint Project.
+It is very important that the application be web-based. We understand that in any design choice,
+precedence should be given to the implementation of a completely web-based client.
+Wherever possible, the application should retain full usability with a keyboard input device only.
+This allows an easy transition for employees who are primarily used to keyboard input in current
+ABC Paint business applications.
+Finally, a utility should be available to report errors. In all instances, the application should
+attempt full recovery and report errors automatically to ColorKast without encroaching on the user
+experience.
+
+ColorKast assumes that any use of the application will occur in an environment with full
+compliance to this specification.
+The application will be used on a client computer that matches or exceeds the requirements laid
+out in section 2.4. The server component of the application will run on a computer system that
+matches or exceeds the requirements laid out for the server in section 2.4.
+
+We assume that the application will only be in use for duration of the wide-installation of the
+software and hardware, as defined in this document, that is required for installation of the server
+component and use of the client application.
+We assume that finding the nearest colors in the red-green-blue color space will always give
+acceptably similar colors to the given color for the purpose of color search.
+The application will be dependant on third-party databases for storage of paint information and
+implementation of the color search engine. The databases will give responses to Queries in subsecond
+time.
+
+
+The graphical color chooser will be a pointing device driven intuitive color selection tool. 
+The color chooser requires the presence of a hardware pointing device.
+
+The color translator is a special case of the color search engine. The color translator allows old
+scheme to new scheme paint number translation, given a paint number, collection and a target
+collection. The color translator requires the presence of the software color search module.
+
+The closest color tool is a special case of the color search engine. The closest color tool allows the
+user to locate an arbitrary number of close colors to given a paint number, collection in a target
+collection. The closest colors tool requires the presence of the software color search module.
+
+The color search engine tool will allow locating an arbitrary number of colors in any or all
+collections based on initial input of a paint name, number, or color value in a industry standard
+common format. The color search engine requires the color space and paint information databases
+to be present. These two databases store paint and collection information.
+
+This is a user experience tool. The user color palette tool will store a list of the user’s recent color
+searches. If the color sample matcher is loaded, the user color palette tool will also store recent
+uploaded images for matching. The user color matcher only associates this information with a
+single client based on a persistent client session. This user data will be removed from the server
+after 30 days. This information is private but not secure. The User Color Palette requires the color search engine for color requests and the
+color sample matcher to enable the storing of uploaded images for matching.
+
+The administrative interface allows administrative users to update, add, and delete paint
+information. Administrative users are also able to add users. Refer to section 2.3 for development
+and implementation of user classes and access permissions. The application administrative interface requires the color space and paint
+information databases to be present.
+
+The color sample matcher allows the client user to upload images in a common format for
+matching. The color sample matcher will allow the user to graphically select with a hardware
+pointing device the color or blended color group they wish to use in a color search. The color sample matcher requires the color search engine module to function. The
+color chooser requires the presence of a hardware pointing device.
